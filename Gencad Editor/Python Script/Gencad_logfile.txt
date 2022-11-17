@@ -1,0 +1,49 @@
+2022-11-17 10:41:13,481 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 10:41:13,482 INFO     Reading .pcb file...
+2022-11-17 10:41:13,740 INFO     Finished reading pcb file!
+2022-11-17 10:41:53,509 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 10:41:53,510 INFO     Reading .pcb file...
+2022-11-17 10:43:49,465 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 10:43:49,466 INFO     Reading .pcb file...
+2022-11-17 10:44:32,762 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 10:44:32,764 INFO     Reading .pcb file...
+2022-11-17 10:44:32,991 INFO     Finished reading pcb file!
+2022-11-17 11:01:24,677 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 11:01:24,678 INFO     Reading .pcb file...
+2022-11-17 11:01:24,877 INFO     Writing modified pcb file...
+2022-11-17 11:01:25,396 INFO     Finished writing!
+2022-11-17 11:03:29,682 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 11:03:29,683 INFO     Reading .pcb file...
+2022-11-17 11:05:00,402 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 11:05:00,402 INFO     Reading .pcb file...
+2022-11-17 11:05:00,590 INFO     Writing modified pcb file...
+2022-11-17 11:05:01,021 INFO     Finished writing!
+2022-11-17 11:11:01,400 ERROR    <class '_tkinter.TclError'>
+2022-11-17 11:11:01,405 ERROR    Error while fetching file!
+2022-11-17 11:11:01,406 ERROR    bad file type "*.cad", should be "typeName {extension ?extensions ...?} ?{macType ?macTypes ...?}?"
+2022-11-17 11:11:18,832 ERROR    <class '_tkinter.TclError'>
+2022-11-17 11:11:18,833 ERROR    Error while fetching file!
+2022-11-17 11:11:18,833 ERROR    bad file type ".cad", should be "typeName {extension ?extensions ...?} ?{macType ?macTypes ...?}?"
+2022-11-17 11:11:40,626 ERROR    <class '_tkinter.TclError'>
+2022-11-17 11:11:40,626 ERROR    Error while fetching file!
+2022-11-17 11:11:40,626 ERROR    bad file type "*.txt", should be "typeName {extension ?extensions ...?} ?{macType ?macTypes ...?}?"
+2022-11-17 11:12:59,702 ERROR    <class '_tkinter.TclError'>
+2022-11-17 11:12:59,703 ERROR    Error while fetching file!
+2022-11-17 11:12:59,703 ERROR    bad file type "*.cad", should be "typeName {extension ?extensions ...?} ?{macType ?macTypes ...?}?"
+2022-11-17 11:14:18,302 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 11:14:18,302 INFO     Reading .cad file...
+2022-11-17 11:14:18,540 INFO     Finished reading!
+2022-11-17 11:14:18,540 INFO     Writing modified .cad file...
+2022-11-17 11:14:18,992 INFO     Finished writing!
+2022-11-17 12:15:20,705 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 12:15:20,706 INFO     Reading .cad file...
+2022-11-17 12:15:21,110 INFO     Finished reading!
+2022-11-17 12:15:21,110 INFO     Writing modified .cad file...
+2022-11-17 12:15:21,411 INFO     Finished writing!
+2022-11-17 12:15:35,523 INFO     Dash replaced to Underscore at 3202 places!
+2022-11-17 12:16:07,451 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Gencad_from_factoryLx.cad Selected
+2022-11-17 12:16:07,452 INFO     Reading .cad file...
+2022-11-17 12:16:07,565 INFO     Finished reading!
+2022-11-17 12:16:07,565 INFO     Writing modified .cad file...
+2022-11-17 12:16:07,835 INFO     Finished writing!
+2022-11-17 12:16:10,198 INFO     Dash replaced to Underscore at 3202 places!
