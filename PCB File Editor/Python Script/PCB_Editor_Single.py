@@ -104,6 +104,9 @@ def modify(bomfile, pcb_file):
         bom_delimiter = output[4].strip()
         bom_separator = output[5].strip()
 
+        messagebox.showinfo(title="Permission",
+                            message="Please close the BOM file if open. \nHit OK only when the file is closed!")
+
         logging.info("Reading BOM excel...")
         file_extension = pathlib.Path(bomfile).suffix
         if file_extension == ".xls":
@@ -154,7 +157,9 @@ def modify(bomfile, pcb_file):
                                 pointer = x.index(item)
                                 x.pop(pointer)
                                 x.extend(res)
-                bom_data.append([x, var[bom_col_pn], 0])
+                y = str(var[bom_col_pn])
+                y = y.split(".")
+                bom_data.append([x, y[0], 0])
         else:
             wb_bom = openpyxl.load_workbook(bomfile)
             ws_bom = wb_bom.worksheets[0]
@@ -203,7 +208,9 @@ def modify(bomfile, pcb_file):
                                 pointer = x.index(item)
                                 x.pop(pointer)
                                 x.extend(res)
-                bom_data.append([x, row[bom_col_pn].value, 0])
+                y = str(row[bom_col_pn].value)
+                y = y.split(".")
+                bom_data.append([x, y[0], 0])
         logging.info("Finished reading BOM excel!")
 
     except Exception as e:
@@ -220,7 +227,7 @@ def modify(bomfile, pcb_file):
         for value in pcbrefdes:
             flag = 0
             for ref in bom_data:
-                if value[0] in ref[0]:
+                if value[0] in ref[0] and ref[1] is not None:
                     pcbrefdes[pointer].append(ref[1])
                     ref[2] = 1
                     flag = 1
@@ -245,13 +252,13 @@ def modify(bomfile, pcb_file):
         for line in pcbfiledata:
             match = re.match("^F8\s", line)
             if match:
-                if pcbrefdes[pointer][1] != "Not found":
+                if pcbrefdes[pointer][1] != "Not found" and pcbrefdes[pointer][1] is not None:
                     x = line.strip().split(" ")
-                    x.pop()
+                    x = x[0:7]
                     x.append(pcbrefdes[pointer][1])
                     x = " ".join(x)
                     pcbfiledata[line_pointer] = x + "\n"
-                    pointer += 1
+                pointer += 1
             line_pointer += 1
         logging.info("Finished editing!")
 
@@ -294,13 +301,13 @@ def modify(bomfile, pcb_file):
             wksht = wkbk.Worksheets(1)
             col = 5
             count = 0
-            missing = []
             row = int(wksht.UsedRange.Rows.Count) + 3
             wksht.Cells(row, 2).Value = "Missing values in PCB File:"
             for item in bom_data:
                 if item[2] == 0:
                     val = ", ".join(item[0])
                     wksht.Cells(row, col).Value = val
+                    wksht.Cells(row, col+1).Value = item[1]
                     row += 1
                 count += 1
 
@@ -308,7 +315,7 @@ def modify(bomfile, pcb_file):
             wksht.Cells(row, 2).Value = "Missing values in BOM:"
             for item in pcbrefdes:
                 if item[1] == "Not found":
-                    wksht.Cells(row, col).Font.ColorIndex = 3
+                    # wksht.Cells(row, col).Font.Color = 30
                     wksht.Cells(row, col).Value = item[0]
                     row += 1
 
@@ -325,6 +332,7 @@ def modify(bomfile, pcb_file):
                 if item[2] == 0:
                     val = ", ".join(item[0])
                     ws_bom.cell(row=row, column=col).value = val
+                    ws_bom.cell(row=row, column=col+1).value = item[1]
                     row += 1
                 count += 1
 
@@ -332,7 +340,7 @@ def modify(bomfile, pcb_file):
             ws_bom.cell(row=row, column=2).value = "Missing values in BOM:"
             for item in pcbrefdes:
                 if item[1] == "Not found":
-                    ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
+                    # ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
                     ws_bom.cell(row=row, column=col).value = item[0]
                     row += 1
             wb_bom.save(bomfile)
@@ -351,6 +359,6 @@ if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
     getfiles()
-    logging.info("Sucessfully Executed!!!\n\n")
-    print("Sucessfully Executed!!!")
+    logging.info("Successfully Executed!!!\n\n")
+    print("Successfully Executed!!!")
     messagebox.showinfo(title="Status", message="Completed!!!")

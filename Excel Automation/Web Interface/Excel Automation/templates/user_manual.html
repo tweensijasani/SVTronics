@@ -50,17 +50,17 @@
                         <h3 style="color:#ec2028;font-weight: bold;font-size: 22px;" class="mb-3">Why Excel Automation?</h3>
                         <p style="font-weight:normal; font-size:14px; letter-spacing: 1px;">
                             <b>Let me first give you an overview of this module.</b><br>
-                            This module will help you populate Manex P/N from Manex BOM to Customer BOM by mapping the Ref. Designators.
-                            It is very tedious work to find Part Numbers of a specific designator from all the Part Numbers of
-                            various Ref. Designators from the Manex BOM. Not only that, once you find them,
-                            you also have to look for duplicates if any.<br><br>
-                            In order to lessen your work, we have brought this feature that will fetch the Manex BOM as well as Customer BOM of a
-                            specific customer and populate the Manex P/N with indicating discrepancies if any.
+                            This module will help you populate Manex P/N from Manex BOM to Customer BOM by mapping the RefDes.
+                            It is very tedious work to find Part Numbers of a specific designator from all the Part Numbers
+                            of various RefDes from the Manex BOM. Not only that, once you find them, you also have to look
+                            for duplicates if any.<br><br>
+                            In order to lessen your work, we have brought this feature that will fetch the Manex BOM as well as
+                            Customer BOM of a specific customer and populate the Manex P/N with indicating discrepancies if any.
                             <span style="color:#ec2028;"><b>This will save you a lot of time, which you can utilize for other significant tasks instead.</b></span>
-                            It also highlights records of Manex BOM that has no match or the records
-                            that Customer BOM finds as duplicates, so that you can easily compare and save time analyzing the whole BOM.<br><br>
-                            There is one more perk of using this app. You can directly use the BOM sent by the customer without the need of renaming
-                            because this feature will do that for you.
+                            It also highlights records of Manex BOM that has no match or the records that Customer BOM
+                            finds as duplicates, so that you can easily compare and save time analyzing the whole BOM.<br><br>
+                            There is one more perk of using this app. You can directly use the BOM sent by the customer
+                            without the need of renaming because this feature will do that for you.
                         </p>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
                             <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ec2028; border-bottom:4px solid #ec2028; background-color:#fce3e4; border-radius:0.25rem !important; min-height:83px">
                               <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
-                                Maps Designators to Manex Ref. Des.
+                                Maps Designators to Manex RefDes.
                               </span>
                             </div>
                           </div>
@@ -154,16 +154,13 @@
                         <div class="tab-pane center">
                             <ul style="padding:0">
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    Generates Manex P/N for Customer BOM with the help of Manex BOM.
-                                </li>
-                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
                                     It appends the work order number in the customer BOM file name.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    It reads both excel files and maps the ref. des. from both the BOMs.
+                                    It reads both excel files and maps the RefDes from both the BOMs.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    It uses delimiters to separate all the designators of a record for comparison.
+                                    It uses delimiters to segregate all the RefDes of a record for comparison.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
                                     It also uses separators if any to predict the undefined values of designators.
@@ -172,18 +169,32 @@
                                     You are only needed to provide the Manex BOM and Customer BOM excel files.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    In addition, just few details of the Customer BOM excel file is to be filled.
+                                    In addition, just few details of the Customer BOM is to be filled.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
                                     It has the mechanism to predict Manex BOM details so you need not provide those.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    Once the program is executed you can find the Manex P/N populated in the Customer BOM
-                                    with few significant highlights in both excel files.
+                                    Once the program is executed you can find the Manex P/N populated in the Customer
+                                    BOM with few significant highlights in both excel files.
                                 </li>
                                 <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
-                                    Yellow highlight for Manex P/N not found, blue for more than one match in Manex BOM and
-                                    red for unutilized Manex P/N.
+                                    The feature will add 2 columns at the beginning, one with the Manex P/N and other to
+                                    display any discrepancies using different highlights.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    The highlight column is just for easy analysis which can be got rid of after proper scanning and validating the data.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    Highlights in Customer BOM:&nbsp;&nbsp;
+                                    Yellow - Manex P/N not found &nbsp;&nbsp;||&nbsp;&nbsp;
+                                    Blue - Duplicates &nbsp;&nbsp;||&nbsp;&nbsp;
+                                    Red Font - For quantity 0.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ec2028; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    Highlights in Manex BOM:&nbsp;&nbsp;
+                                    Red - Manex P/N not utilized &nbsp;&nbsp;||&nbsp;&nbsp;
+                                    Blue - Duplicates.
                                 </li>
                             </ul>
                         </div>
@@ -215,10 +226,26 @@
                               Firstly, you need to make sure that you have both Customer BOM and Manex BOM downloaded in your system.
                               The Manex BOM will be of format .xlsx but the Customer BOM may vary - it can be .xlsx or .xls.
                               You can easily identify format differences with the icon. But you don't have to worry, we have handled both versions
-                              correctly in our module. <b>Not to forget to make sure that customer bom is available on the first sheet of the
-                              excel workbook else just move it to the first place.</b>
-                              <span style="color:#ec2028;"><b>Now, you are completely ready to utilize this feature!!</b></span><br><br>
+                              correctly in our module.
                           </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ec2028 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Excel Worksheet
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/sheet.jpg') }}" alt="Excel Sheet" />
+                          </div><br>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              Not to forget to make sure that customer bom is available on the first sheet of the
+                              excel workbook else just move it to the first place.
+                              <span style="color:#ec2028;"><b>Now, you are completely ready to utilize this feature!!</b></span>
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/sheet_proper.jpg') }}" alt="Excel Sheet" />
+                          </div><br>
                         </div>
                       </section><br>
                     </div>
@@ -229,7 +256,36 @@
                       <section class="oe_container">
                         <div class="panel shadow" style="border:2px #ec2028 solid">
                           <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Customer BOM
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/unmodified_CB.jpg') }}" alt="Customer BOM" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              The unmodified Customer BOM looks like this....<br>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ec2028 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Web Manex BOM
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/unmodified_MB.jpg') }}" alt="Manex BOM" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              The unmodified Web Manex BOM looks like this....<br>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ec2028 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
                             Choose Manex and Customer BOMs
+                          </div><br>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              <b>Let's begin with the execution.....</b>
                           </div>
                           <div class="d-flex justify-content-center" style="padding:10px">
                             <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/select_bom.jpg') }}" alt="Select BOMs" />
@@ -253,7 +309,7 @@
                             <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/bom_info.jpg') }}" alt="BOM Info"/>
                           </div>
                           <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
-                              To read the customer BOM accurately we need few details about its columns and rows.
+                              To read the customer BOM accurately we need few details about its columns and rows.<br>
                               <b>Designator Column >> Quantity Column >> Start Row >> End Row >> Delimiter >> Separator</b><br><br>
                               You might think then what about <b>Manex?</b> Not to worry about that, the script handles it all.
                               <span style="color:#ec2028;"><b> isn't that amazing?</b></span> Once all the details are filled, click on <b>Submit</b>.
@@ -294,7 +350,7 @@
                       <section class="oe_container">
                         <div class="panel shadow" style="border:2px #ec2028 solid">
                           <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
-                            Modified BOMs
+                            Download Output
                           </div>
                           <div class="d-flex justify-content-center" style="padding:10px">
                             <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/output.jpg') }}" alt="Modified BOMs" />
@@ -303,7 +359,55 @@
                               You will find the modified Customer and Manex BOMs ready for download.
                               <b>To download, click on the link.....</b><br>
                               Moreover, the customer BOM is renamed with the work order number.
-                              <span style="color:#ec2028;"><b>And you have your tedious task is done just like that!!</b></span><br>
+                              <span style="color:#ec2028;"><b>Ta-Da, its done!!</b></span><br>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ec2028 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Modified Customer BOM
+                          </div><br>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              <b>Let me help you with the markings on both BOMs.....</b>
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/modified_cb1.jpg') }}" alt="Modified Customer BOM" />
+                          </div><br>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              First of all, the Customer BOM is now renamed with the Work Order Number. Also, you will see 2
+                              columns inserted in the starting, first for stating discrepancies and the second with the Manex P/N.
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/modified_cb2.jpg') }}" alt="Modified Customer BOM" />
+                          </div><br>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              If there is no match for the RefDes of Customer BOM in Manex BOM, then it will be <b>highlighted
+                              to yellow</b>, but if it identifies more than one match then it will be <b>blue highlighted</b>. On the
+                              other hand, if the quantity in the Customer BOM is 0, then that row would be marked with
+                              <b>red font</b>.<span style="color:#ec2028;"><b> Now, to keep track of the execution, it leaves
+                              a timestamp at the end.</b></span>
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/modified_cb3.jpg') }}" alt="Modified Customer BOM" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              Once you analyze the discrepancies, you can get rid of the first column.<b> Select and Delete.</b><br>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ec2028 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ec2028; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Modified Manex BOM
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="{{ url_for('static', filename='/modified_mb.jpg') }}" alt="Modified Manex BOM" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              The Manex BOM has only two kinds of markings. <b>Red font</b> represents the unused
+                              Manex P/N and the <b>blue fonts</b> represent duplicates.
+                              <span style="color:#ec2028;"><b>And you have your tedious task done just like that!!</b></span><br>
                           </div>
                         </div>
                       </section><br>

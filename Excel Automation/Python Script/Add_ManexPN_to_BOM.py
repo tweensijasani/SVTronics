@@ -122,7 +122,7 @@ def readfiles(Manex_File, Bom_File):
     try:
         file_extension = pathlib.Path(Bom_File).suffix
         logging.info("Reading Customer BOM Excel...")
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
             wb_bom = xlrd.open_workbook(Bom_File)
             ws_bom = wb_bom.sheet_by_index(0)
             bom_data = []
@@ -164,12 +164,15 @@ def readfiles(Manex_File, Bom_File):
         manex_col_des = ord(manex_designator) - 65
         manex_col_qty = ord(manex_quantity) - 65
         manex_col_partno = ord(manex_partno) - 65
+        tolerate = 0
         for row in manex_rows[int(manex_start_row)-1:int(manex_end_row)]:
             y = row[manex_col_des].value
             if y is not None:
                 if manex_delimiter is not None:
                     y = (row[manex_col_des].value).replace(" ", "").split(manex_delimiter)
                     y = list(filter(None, y))
+                rem = []
+                new = []
                 for item in y:
                     if manex_separator in item:
                         res = []
@@ -177,13 +180,22 @@ def readfiles(Manex_File, Bom_File):
                         str1 = stry[0]
                         str2 = stry[1]
                         base = ""
+                        if base == '':
+                            break
                         for i in range(len(str1) - 1):
                             if str1[i] == str2[i]:
                                 base = f"{base}{str1[i]}"
                             else:
                                 break
-                        str1 = str1.lstrip(base)
-                        str2 = str2.lstrip(base)
+                        count1 = 0
+                        count2 = 0
+                        for i in range(len(base) - 1):
+                            if str1[i] == base[i]:
+                                count1 += 1
+                            if str2[i] == base[i]:
+                                count2 += 1
+                        str1 = str1[count1+1:]
+                        str2 = str2[count2+1:]
                         my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
                         my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
                         if len(my_list1) > 1:
@@ -202,9 +214,18 @@ def readfiles(Manex_File, Bom_File):
                             else:
                                 for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
                                     res.append(f"{base}{j}")
-                        pointer = y.index(item)
+                        rem.append(item)
+                        new.extend(res)
+                if bool(rem):
+                    for obj in rem:
+                        pointer = y.index(obj)
                         y.pop(pointer)
-                        y.extend(res)
+                    y.extend(new)
+                if row[manex_col_qty].value > 1 and len(y) < 2:
+                    tolerate += 1
+                if tolerate > 5:
+                    messagebox.showerror(title="Delimiter Undefined", message="No Delimiter Found!!! Check Web Manex BOM.....")
+                    sys.exit(1)
             manex_data.append([y, row[manex_col_qty].value, row[manex_col_partno].value])
         logging.info("Finished reading")
 
@@ -279,7 +300,7 @@ def readfiles(Manex_File, Bom_File):
 
     try:
         logging.info("Writing to Customer Bom Excel...")
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
             xlApp = client.Dispatch("Excel.Application")
             wkbk = xlApp.Workbooks.open(Bom_File)
             wksht = wkbk.Worksheets(1)
@@ -289,6 +310,19 @@ def readfiles(Manex_File, Bom_File):
                 wksht.Cells(i, 1).Value = manex_pn[j]
                 j += 1
             wksht.Columns("A").EntireColumn.Insert()
+            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+            wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
+            wksht.Cells(bom_end_row + 2, 3).Interior.ColorIndex = 0
+            # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
+            string = f"Created on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
+            wksht.Cells(bom_end_row + 2, 2).Value = string
+            if bool(pcb) and pcb[0] not in manex_pn:
+                wksht.Rows(bom_end_row+1).EntireRow.Insert()
+                wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
+                wksht.Cells(bom_end_row + 1, bom_col_des+3).Value = "PCB"
+                wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
+            pointer = 0
             for i in range(bom_start_row, bom_end_row+1):
                 if wksht.Cells(i, 2).Value == "Manex PN not found":
                     wksht.Cells(i, 1).Value = "Check"
@@ -298,22 +332,11 @@ def readfiles(Manex_File, Bom_File):
                     wksht.Cells(i, 1).Interior.ColorIndex = 8
                 elif wksht.Cells(i, 2).Value is None:
                     wksht.Cells(i, 1).Value = "Ref des Missing"
-                    wksht.Cells(i, 1).Interior.ColorIndex = 6
-            wksht.Rows(bom_end_row+1).EntireRow.Insert()
-            wksht.Rows(bom_end_row+1).EntireRow.Insert()
-            wksht.Cells(bom_end_row+1, 1).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row+1, 3).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row+2, 1).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row+2, 3).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row+2, 1).Value = "Last modified at"
-            wksht.Cells(bom_end_row+2, 3).Value = str(datetime.date.today())
-            wksht.Cells(bom_end_row + 2, 4).Value = str(datetime.datetime.now().strftime("%H:%M:%S"))
-            if bool(pcb) and pcb[0] not in manex_pn:
-                wksht.Rows(bom_end_row+1).EntireRow.Insert()
-                wksht.Cells(bom_end_row+1, 1).Interior.ColorIndex = 0
-                wksht.Cells(bom_end_row+1, 3).Interior.ColorIndex = 0
-                wksht.Cells(bom_end_row + 1, bom_col_des+3).Value = "PCB"
-                wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
+                if not bool(bom_data[pointer][1]):
+                    for col in range(1, int(wksht.UsedRange.Columns.Count)):
+                        wksht.Cells(i, col).Font.ColorIndex = 3
+                pointer += 1
+
             wkbk.Save()
             wkbk.Close(True)
             xlApp.Quit()
@@ -326,6 +349,7 @@ def readfiles(Manex_File, Bom_File):
 
             ws_bom.insert_cols(0)
             r = bom_start_row
+            pointer = 0
             for rows in ws_bom.iter_rows(min_row=bom_start_row, max_row=bom_end_row, min_col=1, max_col=20):
                 if ws_bom[f"B{str(r)}"].value == "Manex PN not found":
                     rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
@@ -334,13 +358,17 @@ def readfiles(Manex_File, Bom_File):
                     rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
                     rows[0].value = "Duplicate"
                 elif ws_bom[f"B{str(r)}"].value is None:
-                    rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
-                    rows[0].value = "Ref des Missing"
+                    # rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
+                    rows[0].value = "RefDes Missing"
+                if not bool(bom_data[pointer][1]):
+                    for cell in rows:
+                        cell.font = Font(color="00FF1414")
+                pointer += 1
                 r += 1
             ws_bom.insert_rows(bom_end_row+1)
             ws_bom.insert_rows(bom_end_row+1)
-            ws_bom.cell(row=bom_end_row+2, column=1).value = "Last modified at"
-            ws_bom.cell(row=bom_end_row+2, column=3).value = str(datetime.datetime.now())
+            # ws_bom.cell(row=bom_end_row+2, column=2).value = "Last modified at"
+            ws_bom.cell(row=bom_end_row+2, column=2).value = f"Created on {str(datetime.datetime.now())}"
             if bool(pcb) and pcb[0] not in manex_pn:
                 ws_bom.insert_rows(bom_end_row+1)
                 ws_bom.cell(row=bom_end_row+1, column=bom_col_des+3).value = "PCB"
@@ -374,6 +402,12 @@ def readfiles(Manex_File, Bom_File):
         logging.error("Error while writing excel files!")
         logging.error(f"{e}")
         print(e, "\n Error while writing excel files!")
+        if file_extension == ".xls" or file_extension == ".XLS":
+            wkbk.Close()
+            xlApp.Quit()
+        else:
+            wb_bom.close()
+        wb_manex.close()
         sys.exit(1)
 
 
@@ -383,6 +417,8 @@ def readbom(x, bom_delimiter, bom_separator):
             x = x.replace(" ", "").split(bom_delimiter)
             x = list(filter(None, x))
         if bom_separator != '':
+            rem = []
+            new = []
             for item in x:
                 if bom_separator in item:
                     is_sep = tk.messagebox.askyesno(title="Verify", message=f"Is {item} a separator?")
@@ -392,9 +428,9 @@ def readbom(x, bom_delimiter, bom_separator):
                         title = "Enter Details"
                         input_list = ["Base:", "From:", "To:"]
                         output = multenterbox(text, title, input_list)
-                        base = output[0].strip()
-                        range_from = output[1].strip()
-                        range_to = output[2].strip()
+                        base = output[0]
+                        range_from = output[1]
+                        range_to = output[2]
                         my_list1 = list(filter(None, re.split(r'(\d+)', range_from)))
                         my_list2 = list(filter(None, re.split(r'(\d+)', range_to)))
                         if base.isalpha():
@@ -429,9 +465,9 @@ def readbom(x, bom_delimiter, bom_separator):
                             title = "Enter Details"
                             input_list = ["Base:", "From:", "To:"]
                             output = multenterbox(text, title, input_list)
-                            base = output[0].strip()
-                            range_from = output[1].strip()
-                            range_to = output[2].strip()
+                            base = output[0]
+                            range_from = output[1]
+                            range_to = output[2]
                             my_list1 = list(filter(None, re.split(r'(\d+)', range_from)))
                             my_list2 = list(filter(None, re.split(r'(\d+)', range_to)))
                             if base.isalpha():
@@ -463,9 +499,12 @@ def readbom(x, bom_delimiter, bom_separator):
                             if sep_check is False:
                                 messagebox.showwarning(title="Attention", message=f"Please check manually for {item}!")
                                 return x
-                        pointer = x.index(item)
-                        x.pop(pointer)
-                        x.extend(res)
+                        rem.append(item)
+                        new.extend(res)
+            for obj in rem:
+                pointer = x.index(obj)
+                x.pop(pointer)
+            x.extend(new)
     return x
 
 
@@ -473,6 +512,6 @@ if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
     getfiles()
-    logging.info("Sucessfully Executed!!!\n\n")
-    print("Sucessfully Executed!!!")
+    logging.info("Successfully Executed!!!\n\n")
+    print("Successfully Executed!!!")
     messagebox.showinfo(title="Status", message="Completed!!!")

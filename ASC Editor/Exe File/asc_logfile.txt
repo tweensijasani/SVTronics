@@ -1,0 +1,6 @@
+2022-11-17 14:56:26,464 INFO     C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/240-11084-Z1.ASC Selected
+2022-11-17 14:56:26,464 INFO     Reading asc file...
+2022-11-17 14:56:27,706 INFO     Finished reading!
+2022-11-17 14:56:27,706 INFO     Writing modified ASC file...
+2022-11-17 14:56:28,404 INFO     Finished writing!
+2022-11-17 14:56:33,341 INFO     Dash replaced to Underscore at 14982 places!

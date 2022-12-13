@@ -12,13 +12,13 @@
 
   <body>
   <div>
-    {% if flag==1 %}
-    <div>
-        <marquee style="font-family : 'Monotype Corsiva';font-size:20px; color : white ; background-color:#7d2ae8;font-weight:bold;margin-top:1%; padding:8px;">
-            Please wait! A file under process...
-        </marquee>
-    </div>
-    {% endif %}
+<!--    {% if flag==1 %}-->
+<!--    <div>-->
+<!--        <marquee style="font-family : 'Monotype Corsiva';font-size:20px; color : white ; background-color:#7d2ae8;font-weight:bold;margin-top:1%; padding:8px;">-->
+<!--            Please wait! A file under process...-->
+<!--        </marquee>-->
+<!--    </div>-->
+<!--    {% endif %}-->
     <div class="container">
         <form action="/output" method="post" enctype="multipart/form-data">
         <input type="checkbox" id="flip">
@@ -155,12 +155,9 @@
                     </div>
                   </div>
                   <div class="button input-box">
-                    {% if flag == 0 %}
+
                     <input type="submit" value="Submit" onClick="Submit(this.form)">
-                    {% endif %}
-                    {% if flag == 1 %}
-                    <input type="submit" value="Submit" style="background-color: #e7e7e7; color: black;" disabled>
-                    {% endif %}
+
                   </div>
                   <div class="text sign-up-text">Did not select files? <label for="flip">Select Files</label></div>
                 </div>

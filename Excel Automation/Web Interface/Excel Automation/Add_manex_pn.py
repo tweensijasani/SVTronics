@@ -4,6 +4,7 @@ import pathlib
 import logging
 import openpyxl
 import datetime
+import pythoncom
 import configparser
 import tkinter as tk
 from easygui import *
@@ -71,7 +72,7 @@ def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row
             else:
                 manex_pn.append(None)
         logging.info("Finished mapping")
-        cust = WriteCustBom(customer_bom, file_extension, start_row, end_row, wb_bom, ws_bom, manex_pn, duplicate, pcb, bom_col_des)
+        cust = WriteCustBom(customer_bom, file_extension, start_row, end_row, wb_bom, ws_bom, manex_pn, duplicate, pcb, bom_col_des, bom_data)
         man = WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno, manex_pn, duplicate)
         return cust and man
 
@@ -88,7 +89,7 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
     try:
         file_extension = pathlib.Path(customer_bom).suffix
         logging.info("Reading Customer BOM Excel...")
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
             wb_bom = xlrd.open_workbook(customer_bom)
             ws_bom = wb_bom.sheet_by_index(0)
             bom_data = []
@@ -140,9 +141,9 @@ def CustBomInfo(x, bom_delimiter, bom_separator):
                         title = "Enter Details"
                         input_list = ["Base:", "From:", "To:"]
                         output = multenterbox(text, title, input_list)
-                        base = output[0].strip()
-                        range_from = output[1].strip()
-                        range_to = output[2].strip()
+                        base = output[0]
+                        range_from = output[1]
+                        range_to = output[2]
                         my_list1 = list(filter(None, re.split(r'(\d+)', range_from)))
                         my_list2 = list(filter(None, re.split(r'(\d+)', range_to)))
                         if base.isalpha():
@@ -170,9 +171,9 @@ def CustBomInfo(x, bom_delimiter, bom_separator):
                             title = "Enter Details"
                             input_list = ["Base:", "From:", "To:"]
                             output = multenterbox(text, title, input_list)
-                            base = output[0].strip()
-                            range_from = output[1].strip()
-                            range_to = output[2].strip()
+                            base = output[0]
+                            range_from = output[1]
+                            range_to = output[2]
                             my_list1 = list(filter(None, re.split(r'(\d+)', range_from)))
                             my_list2 = list(filter(None, re.split(r'(\d+)', range_to)))
                             if base.isalpha():
@@ -249,6 +250,8 @@ def ManexInfo(manex_bom):
                 if manex_delimiter is not None:
                     y = (row[manex_col_des].value).replace(" ", "").split(manex_delimiter)
                     y = list(filter(None, y))
+                rem = []
+                new = []
                 for item in y:
                     if manex_separator in item:
                         res = []
@@ -256,13 +259,22 @@ def ManexInfo(manex_bom):
                         str1 = stry[0]
                         str2 = stry[1]
                         base = ""
+                        if base == '':
+                            break
                         for i in range(len(str1) - 1):
                             if str1[i] == str2[i]:
                                 base = f"{base}{str1[i]}"
                             else:
                                 break
-                        str1 = str1.lstrip(base)
-                        str2 = str2.lstrip(base)
+                        count1 = 0
+                        count2 = 0
+                        for i in range(len(base) - 1):
+                            if str1[i] == base[i]:
+                                count1 += 1
+                            if str2[i] == base[i]:
+                                count2 += 1
+                        str1 = str1[count1 + 1:]
+                        str2 = str2[count2 + 1:]
                         my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
                         my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
                         if len(my_list1) > 1:
@@ -281,9 +293,13 @@ def ManexInfo(manex_bom):
                             else:
                                 for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
                                     res.append(f"{base}{j}")
-                        pointer = y.index(item)
+                        rem.append(item)
+                        new.extend(res)
+                if bool(rem):
+                    for obj in rem:
+                        pointer = y.index(obj)
                         y.pop(pointer)
-                        y.extend(res)
+                    y.extend(new)
             manex_data.append([y, row[manex_col_qty].value, row[manex_col_partno].value])
         logging.info("Finished reading")
         return manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno
@@ -296,13 +312,14 @@ def ManexInfo(manex_bom):
         return False
 
 
-def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bom, ws_bom, manex_pn, duplicate, pcb, bom_col_des):
+def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bom, ws_bom, manex_pn, duplicate, pcb, bom_col_des, bom_data):
 
     try:
         logging.info("Writing to Customer Bom Excel...")
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
+            pythoncom.CoInitialize()
             xlApp = client.Dispatch("Excel.Application")
-            wkbk = xlApp.Workbooks.open(customer_bom)
+            wkbk = xlApp.Workbooks.open(f"C:/Users/Tweensi Jasani/Desktop/TestExcelAutomation/Excel Automation/{customer_bom}")
             wksht = wkbk.Worksheets(1)
             wksht.Columns("A").EntireColumn.Insert()
             j = 0
@@ -310,6 +327,19 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bo
                 wksht.Cells(i, 1).Value = manex_pn[j]
                 j += 1
             wksht.Columns("A").EntireColumn.Insert()
+            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+            wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
+            wksht.Cells(bom_end_row + 2, 3).Interior.ColorIndex = 0
+            # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
+            string = f"Created on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
+            wksht.Cells(bom_end_row + 2, 2).Value = string
+            if bool(pcb) and pcb[0] not in manex_pn:
+                wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+                wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
+                wksht.Cells(bom_end_row + 1, bom_col_des + 3).Value = "PCB"
+                wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
+            pointer = 0
             for i in range(bom_start_row, bom_end_row+1):
                 if wksht.Cells(i, 2).Value == "Manex PN not found":
                     wksht.Cells(i, 1).Value = "Check"
@@ -320,21 +350,11 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bo
                 elif wksht.Cells(i, 2).Value is None:
                     wksht.Cells(i, 1).Value = "Ref des Missing"
                     wksht.Cells(i, 1).Interior.ColorIndex = 6
-            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
-            wksht.Rows(bom_end_row + 1).EntireRow.Insert()
-            wksht.Cells(bom_end_row + 1, 1).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row + 2, 1).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row + 2, 3).Interior.ColorIndex = 0
-            wksht.Cells(bom_end_row + 2, 1).Value = "Last modified at"
-            wksht.Cells(bom_end_row + 2, 3).Value = str(datetime.date.today())
-            wksht.Cells(bom_end_row + 2, 4).Value = str(datetime.datetime.now().strftime("%H:%M:%S"))
-            if bool(pcb) and pcb[0] not in manex_pn:
-                wksht.Rows(bom_end_row + 1).EntireRow.Insert()
-                wksht.Cells(bom_end_row + 1, 1).Interior.ColorIndex = 0
-                wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
-                wksht.Cells(bom_end_row + 1, bom_col_des + 3).Value = "PCB"
-                wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
+                if not bool(bom_data[pointer][1]):
+                    for col in range(1, int(wksht.UsedRange.Columns.Count)):
+                        wksht.Cells(i, col).Font.ColorIndex = 3
+                pointer += 1
+
             wkbk.Save()
             wkbk.Close(True)
             xlApp.Quit()
@@ -347,6 +367,7 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bo
 
             ws_bom.insert_cols(0)
             r = bom_start_row
+            pointer = 0
             for rows in ws_bom.iter_rows(min_row=bom_start_row, max_row=bom_end_row, min_col=1, max_col=20):
                 if ws_bom[f"B{str(r)}"].value == "Manex PN not found":
                     rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
@@ -357,11 +378,15 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, wb_bo
                 elif ws_bom[f"B{str(r)}"].value is None:
                     rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
                     rows[0].value = "Ref des Missing"
+                if not bool(bom_data[pointer][1]):
+                    for cell in rows:
+                        cell.font = Font(color="00FF1414")
+                pointer += 1
                 r += 1
             ws_bom.insert_rows(bom_end_row + 1)
             ws_bom.insert_rows(bom_end_row + 1)
-            ws_bom.cell(row=bom_end_row + 2, column=1).value = "Last modified at"
-            ws_bom.cell(row=bom_end_row + 2, column=3).value = str(datetime.datetime.now())
+            # ws_bom.cell(row=bom_end_row + 2, column=2).value = "Last modified at"
+            ws_bom.cell(row=bom_end_row + 2, column=2).value = f"Created on {str(datetime.datetime.now())}"
             if bool(pcb) and pcb[0] not in manex_pn:
                 ws_bom.insert_rows(bom_end_row + 1)
                 ws_bom.cell(row=bom_end_row + 1, column=bom_col_des + 3).value = "PCB"
@@ -400,12 +425,13 @@ def WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex,
         logging.error("Error while writing Manex file!")
         logging.error(f"{e}")
         print(e, "\n Error while writing Manex file!")
+        wb_manex.close()
         return False
 
 
 if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
-    logging.info("Sucessfully Executed!!!\n\n")
-    print("Sucessfully Executed!!!")
+    logging.info("Successfully Executed!!!\n\n")
+    print("Successfully Executed!!!")
 

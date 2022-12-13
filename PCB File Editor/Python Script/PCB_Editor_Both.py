@@ -129,6 +129,9 @@ def modify(bomfile, bot_file, top_file):
         bom_separator = output[5].strip()
         logging.info("Info populated!")
 
+        messagebox.showinfo(title="Permission",
+                            message="Please close the BOM file if open. \nHit OK only when the file is closed!")
+
         logging.info("Reading BOM excel...")
         file_extension = pathlib.Path(bomfile).suffix
         if file_extension == ".xls":
@@ -180,8 +183,10 @@ def modify(bomfile, bot_file, top_file):
                                 pointer = x.index(item)
                                 x.pop(pointer)
                                 x.extend(res)
-                bot_bom_data.append([x, var[bom_col_pn], 0])
-                top_bom_data.append([x, var[bom_col_pn], 0])
+                y = str(var[bom_col_pn])
+                y = y.split(".")
+                bot_bom_data.append([x, y[0], 0])
+                top_bom_data.append([x, y[0], 0])
         else:
             wb_bom = openpyxl.load_workbook(bomfile)
             ws_bom = wb_bom.worksheets[0]
@@ -231,8 +236,10 @@ def modify(bomfile, bot_file, top_file):
                                 pointer = x.index(item)
                                 x.pop(pointer)
                                 x.extend(res)
-                bot_bom_data.append([x, row[bom_col_pn].value, 0])
-                top_bom_data.append([x, row[bom_col_pn].value, 0])
+                y = str(row[bom_col_pn].value)
+                y = y.split(".")
+                bot_bom_data.append([x, y[0], 0])
+                top_bom_data.append([x, y[0], 0])
         logging.info("Finished reading BOM excel!")
 
     except Exception as e:
@@ -249,7 +256,7 @@ def modify(bomfile, bot_file, top_file):
         for value in botrefdes:
             flag = 0
             for ref in bot_bom_data:
-                if value[0] in ref[0]:
+                if value[0] in ref[0] and ref[1] is not None:
                     botrefdes[pointer].append(ref[1])
                     ref[2] = 1
                     flag = 1
@@ -263,7 +270,7 @@ def modify(bomfile, bot_file, top_file):
         for value in toprefdes:
             flag = 0
             for ref in top_bom_data:
-                if value[0] in ref[0]:
+                if value[0] in ref[0] and ref[1] is not None:
                     toprefdes[pointer].append(ref[1])
                     ref[2] = 1
                     flag = 1
@@ -288,13 +295,13 @@ def modify(bomfile, bot_file, top_file):
         for line in botfiledata:
             match = re.match("^F8\s", line)
             if match:
-                if botrefdes[pointer][1] != "Not found":
+                if botrefdes[pointer][1] != "Not found" and botrefdes[pointer][1] is not None:
                     x = line.strip().split(" ")
-                    x.pop()
+                    x = x[0:7]
                     x.append(botrefdes[pointer][1])
                     x = " ".join(x)
                     botfiledata[line_pointer] = x + "\n"
-                    pointer += 1
+                pointer += 1
             line_pointer += 1
 
         logging.info("Editing top.pcb content...")
@@ -303,13 +310,13 @@ def modify(bomfile, bot_file, top_file):
         for line in topfiledata:
             match = re.match("^F8\s", line)
             if match:
-                if toprefdes[pointer][1] != "Not found":
+                if toprefdes[pointer][1] != "Not found" and toprefdes[pointer][1] is not None:
                     x = line.strip().split(" ")
-                    x.pop()
+                    x = x[0:7]
                     x.append(toprefdes[pointer][1])
                     x = " ".join(x)
                     topfiledata[line_pointer] = x + "\n"
-                    pointer += 1
+                pointer += 1
             line_pointer += 1
         logging.info("Finished editing!")
 
@@ -373,6 +380,7 @@ def modify(bomfile, bot_file, top_file):
                         missing.append(item[0])
                     val = ", ".join(item[0])
                     wksht.Cells(row, col).Value = val
+                    wksht.Cells(row, col+1).Value = item[1]
                     row += 1
                 count += 1
 
@@ -383,6 +391,7 @@ def modify(bomfile, bot_file, top_file):
                 if item[2] == 0:
                     val = ", ".join(item[0])
                     wksht.Cells(row, col).Value = val
+                    wksht.Cells(row, col+1).Value = item[1]
                     row += 1
                 count += 1
 
@@ -397,12 +406,12 @@ def modify(bomfile, bot_file, top_file):
             wksht.Cells(row, 2).Value = "Missing values in BOM:"
             for item in botrefdes:
                 if item[1] == "Not found":
-                    wksht.Cells(row, col).Font.ColorIndex = 3
+                    # wksht.Cells(row, col).Font.ColorIndex = 3
                     wksht.Cells(row, col).Value = item[0]
                     row += 1
             for item in toprefdes:
                 if item[1] == "Not found":
-                    wksht.Cells(row, col).Font.ColorIndex = 3
+                    # wksht.Cells(row, col).Font.ColorIndex = 3
                     wksht.Cells(row, col).Value = item[0]
                     row += 1
 
@@ -422,6 +431,7 @@ def modify(bomfile, bot_file, top_file):
                         missing.append(item[0])
                     val = ", ".join(item[0])
                     ws_bom.cell(row=row, column=col).value = val
+                    ws_bom.cell(row=row, column=col+1).value = item[1]
                     row += 1
                 count += 1
 
@@ -432,6 +442,7 @@ def modify(bomfile, bot_file, top_file):
                 if item[2] == 0:
                     val = ", ".join(item[0])
                     ws_bom.cell(row=row, column=col).value = val
+                    ws_bom.cell(row=row, column=col+1).value = item[1]
                     row += 1
                 count += 1
 
@@ -446,12 +457,12 @@ def modify(bomfile, bot_file, top_file):
             ws_bom.cell(row=row, column=2).value = "Missing values in BOM:"
             for item in botrefdes:
                 if item[1] == "Not found":
-                    ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
+                    # ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
                     ws_bom.cell(row=row, column=col).value = item[0]
                     row += 1
             for item in toprefdes:
                 if item[1] == "Not found":
-                    ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
+                    # ws_bom.cell(row=row, column=col).font = Font(color="00FF0000")
                     ws_bom.cell(row=row, column=col).value = item[0]
                     row += 1
 
@@ -471,6 +482,6 @@ if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
     getfiles()
-    logging.info("Sucessfully Executed!!!\n\n")
-    print("Sucessfully Executed!!!")
+    logging.info("Successfully Executed!!!\n\n")
+    print("Successfully Executed!!!")
     messagebox.showinfo(title="Status", message="Completed!!!")
