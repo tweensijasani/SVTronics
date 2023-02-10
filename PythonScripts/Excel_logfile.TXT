@@ -1,0 +1,195 @@
+2023-02-09 11:34:05,835 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.87:5000
+2023-02-09 11:34:05,836 INFO     [33mPress CTRL+C to quit[0m
+2023-02-09 11:34:05,861 INFO      * Restarting with stat
+2023-02-09 11:34:10,681 WARNING   * Debugger is active!
+2023-02-09 11:34:10,718 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:34:19,633 INFO     127.0.0.1 - - [09/Feb/2023 11:34:19] "GET / HTTP/1.1" 200 -
+2023-02-09 11:34:19,676 INFO     127.0.0.1 - - [09/Feb/2023 11:34:19] "GET /static/style.css HTTP/1.1" 200 -
+2023-02-09 11:34:41,481 INFO     127.0.0.1 - - [09/Feb/2023 11:34:41] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-09 11:34:41,539 INFO     127.0.0.1 - - [09/Feb/2023 11:34:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:34:41,563 INFO     127.0.0.1 - - [09/Feb/2023 11:34:41] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-02-09 11:36:38,470 INFO     Reading Customer BOM Excel...
+2023-02-09 11:36:38,615 INFO     Finished reading
+2023-02-09 11:36:38,615 INFO     Reading first pcb file...
+2023-02-09 11:36:38,685 INFO     Finished reading pcb files!
+2023-02-09 11:36:38,685 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:36:38,685 INFO     Finished mapping!
+2023-02-09 11:36:38,685 INFO     Writing modified pcb file...
+2023-02-09 11:36:39,945 INFO     Finished writing!
+2023-02-09 11:36:39,945 INFO     Writing to BOM excel...
+2023-02-09 11:36:40,194 INFO     Finished writing!
+2023-02-09 11:36:40,406 INFO     127.0.0.1 - - [09/Feb/2023 11:36:40] "[35m[1mPOST /pcb_editor HTTP/1.1[0m" 500 -
+2023-02-09 11:36:40,560 INFO     127.0.0.1 - - [09/Feb/2023 11:36:40] "GET /pcb_editor?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-02-09 11:36:40,627 INFO     127.0.0.1 - - [09/Feb/2023 11:36:40] "GET /pcb_editor?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-02-09 11:36:40,787 INFO     127.0.0.1 - - [09/Feb/2023 11:36:40] "GET /pcb_editor?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-02-09 11:36:40,884 INFO     127.0.0.1 - - [09/Feb/2023 11:36:40] "[36mGET /pcb_editor?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-02-09 11:38:18,223 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-02-09 11:38:18,417 INFO      * Restarting with stat
+2023-02-09 11:38:21,585 WARNING   * Debugger is active!
+2023-02-09 11:38:21,599 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:39:04,550 INFO     Reading Customer BOM Excel...
+2023-02-09 11:39:04,592 INFO     Finished reading
+2023-02-09 11:39:04,592 INFO     Reading first pcb file...
+2023-02-09 11:39:04,592 INFO     Finished reading pcb files!
+2023-02-09 11:39:04,592 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:39:04,592 INFO     Finished mapping!
+2023-02-09 11:39:04,592 INFO     Writing modified pcb file...
+2023-02-09 11:39:05,474 INFO     Finished writing!
+2023-02-09 11:39:05,474 INFO     Writing to BOM excel...
+2023-02-09 11:39:05,767 INFO     Finished writing!
+2023-02-09 11:39:05,854 INFO     127.0.0.1 - - [09/Feb/2023 11:39:05] "[35m[1mPOST /pcb_editor HTTP/1.1[0m" 500 -
+2023-02-09 11:39:05,889 INFO     127.0.0.1 - - [09/Feb/2023 11:39:05] "[36mGET /pcb_editor?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:39:05,896 INFO     127.0.0.1 - - [09/Feb/2023 11:39:05] "[36mGET /pcb_editor?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-02-09 11:39:05,930 INFO     127.0.0.1 - - [09/Feb/2023 11:39:05] "[36mGET /pcb_editor?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-02-09 11:39:41,472 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-02-09 11:39:41,605 INFO      * Restarting with stat
+2023-02-09 11:39:44,407 WARNING   * Debugger is active!
+2023-02-09 11:39:44,425 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:39:54,392 INFO     Reading Customer BOM Excel...
+2023-02-09 11:39:54,412 INFO     Finished reading
+2023-02-09 11:39:54,412 INFO     Reading first pcb file...
+2023-02-09 11:39:54,423 INFO     Finished reading pcb files!
+2023-02-09 11:39:54,423 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:39:54,424 INFO     Finished mapping!
+2023-02-09 11:39:54,424 INFO     Writing modified pcb file...
+2023-02-09 11:39:55,448 INFO     Finished writing!
+2023-02-09 11:39:55,448 INFO     Writing to BOM excel...
+2023-02-09 11:39:55,569 INFO     Finished writing!
+2023-02-09 11:39:55,666 INFO     127.0.0.1 - - [09/Feb/2023 11:39:55] "POST /pcb_editor HTTP/1.1" 200 -
+2023-02-09 11:39:55,813 INFO     127.0.0.1 - - [09/Feb/2023 11:39:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:40:00,300 INFO     127.0.0.1 - - [09/Feb/2023 11:40:00] "GET /download/pcbfile1 HTTP/1.1" 200 -
+2023-02-09 11:40:02,688 INFO     127.0.0.1 - - [09/Feb/2023 11:40:02] "GET /download/customer HTTP/1.1" 200 -
+2023-02-09 11:51:18,980 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 11:51:19,168 INFO      * Restarting with stat
+2023-02-09 11:51:22,645 WARNING   * Debugger is active!
+2023-02-09 11:51:22,670 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:52:12,185 INFO     Reading Customer BOM Excel...
+2023-02-09 11:52:12,217 INFO     Finished reading
+2023-02-09 11:52:12,217 INFO     Reading first pcb file...
+2023-02-09 11:52:12,226 INFO     Finished reading pcb files!
+2023-02-09 11:52:12,226 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:52:12,226 INFO     Finished mapping!
+2023-02-09 11:52:12,226 INFO     Writing modified pcb file...
+2023-02-09 11:52:13,023 INFO     Finished writing!
+2023-02-09 11:52:13,023 INFO     Writing to BOM excel...
+2023-02-09 11:52:16,540 ERROR    <class 'pywintypes.com_error'> from line 239
+2023-02-09 11:52:16,540 ERROR    Error while writing to BOM excel file!
+2023-02-09 11:52:16,541 ERROR    (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Sorry, we couldn't find upload_folder/Mustang-Bom.xls. Is it possible it was moved, renamed or deleted?", 'xlmain11.chm', 0, -2146827284), None)
+2023-02-09 11:52:16,676 INFO     127.0.0.1 - - [09/Feb/2023 11:52:16] "POST /pcb_editor HTTP/1.1" 200 -
+2023-02-09 11:52:16,785 INFO     127.0.0.1 - - [09/Feb/2023 11:52:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:52:16,789 INFO     127.0.0.1 - - [09/Feb/2023 11:52:16] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 11:52:20,262 INFO     127.0.0.1 - - [09/Feb/2023 11:52:20] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-09 11:52:20,383 INFO     127.0.0.1 - - [09/Feb/2023 11:52:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:52:20,393 INFO     127.0.0.1 - - [09/Feb/2023 11:52:20] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 11:53:17,123 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.87:5000
+2023-02-09 11:53:17,123 INFO     [33mPress CTRL+C to quit[0m
+2023-02-09 11:53:17,131 INFO      * Restarting with stat
+2023-02-09 11:53:21,304 WARNING   * Debugger is active!
+2023-02-09 11:53:21,342 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:53:31,446 INFO     127.0.0.1 - - [09/Feb/2023 11:53:31] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-09 11:53:31,620 INFO     127.0.0.1 - - [09/Feb/2023 11:53:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 11:53:31,630 INFO     127.0.0.1 - - [09/Feb/2023 11:53:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:53:54,905 INFO     Reading Customer BOM Excel...
+2023-02-09 11:53:54,956 INFO     Finished reading
+2023-02-09 11:53:54,956 INFO     Reading first pcb file...
+2023-02-09 11:53:54,974 INFO     Finished reading pcb files!
+2023-02-09 11:53:54,974 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:53:54,974 INFO     Finished mapping!
+2023-02-09 11:53:54,974 INFO     Writing modified pcb file...
+2023-02-09 11:53:56,078 INFO     Finished writing!
+2023-02-09 11:53:56,100 INFO     Writing to BOM excel...
+2023-02-09 11:57:10,284 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 11:57:10,575 INFO      * Restarting with stat
+2023-02-09 11:57:19,082 WARNING   * Debugger is active!
+2023-02-09 11:57:19,140 INFO      * Debugger PIN: 122-033-292
+2023-02-09 11:57:22,594 INFO     Reading Customer BOM Excel...
+2023-02-09 11:57:22,674 INFO     Finished reading
+2023-02-09 11:57:22,676 INFO     Reading first pcb file...
+2023-02-09 11:57:22,681 INFO     Finished reading pcb files!
+2023-02-09 11:57:22,686 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 11:57:22,689 INFO     Finished mapping!
+2023-02-09 11:57:22,691 INFO     Writing modified pcb file...
+2023-02-09 11:57:24,220 INFO     Finished writing!
+2023-02-09 11:57:24,227 INFO     Writing to BOM excel...
+2023-02-09 11:57:27,837 ERROR    <class 'NameError'> from line 239
+2023-02-09 11:57:27,838 ERROR    Error while writing to BOM excel file!
+2023-02-09 11:57:27,838 ERROR    name 'System' is not defined
+2023-02-09 11:57:27,996 INFO     127.0.0.1 - - [09/Feb/2023 11:57:27] "POST /pcb_editor HTTP/1.1" 200 -
+2023-02-09 11:57:28,120 INFO     127.0.0.1 - - [09/Feb/2023 11:57:28] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 11:57:28,127 INFO     127.0.0.1 - - [09/Feb/2023 11:57:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:57:28,195 INFO     127.0.0.1 - - [09/Feb/2023 11:57:28] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-09 11:57:28,295 INFO     127.0.0.1 - - [09/Feb/2023 11:57:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 11:57:28,298 INFO     127.0.0.1 - - [09/Feb/2023 11:57:28] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 11:59:10,409 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 11:59:10,623 INFO      * Restarting with stat
+2023-02-09 11:59:19,468 WARNING   * Debugger is active!
+2023-02-09 11:59:19,536 INFO      * Debugger PIN: 122-033-292
+2023-02-09 12:01:03,824 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 12:01:04,065 INFO      * Restarting with stat
+2023-02-09 12:01:10,513 WARNING   * Debugger is active!
+2023-02-09 12:01:10,562 INFO      * Debugger PIN: 122-033-292
+2023-02-09 12:02:28,048 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 12:02:28,273 INFO      * Restarting with stat
+2023-02-09 12:02:35,025 WARNING   * Debugger is active!
+2023-02-09 12:02:35,064 INFO      * Debugger PIN: 122-033-292
+2023-02-09 12:02:38,145 INFO     127.0.0.1 - - [09/Feb/2023 12:02:38] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-09 12:02:38,216 INFO     127.0.0.1 - - [09/Feb/2023 12:02:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 12:02:38,216 INFO     127.0.0.1 - - [09/Feb/2023 12:02:38] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 12:03:01,643 INFO     Reading Customer BOM Excel...
+2023-02-09 12:03:01,702 INFO     Finished reading
+2023-02-09 12:03:01,702 INFO     Reading first pcb file...
+2023-02-09 12:03:01,703 INFO     Finished reading pcb files!
+2023-02-09 12:03:01,703 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 12:03:01,712 INFO     Finished mapping!
+2023-02-09 12:03:01,712 INFO     Writing modified pcb file...
+2023-02-09 12:03:02,906 INFO     Finished writing!
+2023-02-09 12:03:02,907 INFO     Writing to BOM excel...
+2023-02-09 12:03:58,303 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\PCB_EditPN.py', reloading
+2023-02-09 12:03:58,618 INFO      * Restarting with stat
+2023-02-09 12:04:05,572 WARNING   * Debugger is active!
+2023-02-09 12:04:05,600 INFO      * Debugger PIN: 122-033-292
+2023-02-09 12:04:08,583 INFO     Reading Customer BOM Excel...
+2023-02-09 12:04:08,665 INFO     Finished reading
+2023-02-09 12:04:08,667 INFO     Reading first pcb file...
+2023-02-09 12:04:08,676 INFO     Finished reading pcb files!
+2023-02-09 12:04:08,678 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 12:04:08,681 INFO     Finished mapping!
+2023-02-09 12:04:08,681 INFO     Writing modified pcb file...
+2023-02-09 12:04:10,138 INFO     Finished writing!
+2023-02-09 12:04:10,143 INFO     Writing to BOM excel...
+2023-02-09 12:04:18,208 INFO     Reading Customer BOM Excel...
+2023-02-09 12:04:18,276 INFO     Finished reading
+2023-02-09 12:04:18,276 INFO     Reading first pcb file...
+2023-02-09 12:04:18,285 INFO     Finished reading pcb files!
+2023-02-09 12:04:18,286 INFO     Mapping pcb RefDes to BOM excel...
+2023-02-09 12:04:18,291 INFO     Finished mapping!
+2023-02-09 12:04:18,291 INFO     Writing modified pcb file...
+2023-02-09 12:04:20,288 INFO     Finished writing!
+2023-02-09 12:04:20,288 INFO     Writing to BOM excel...
+2023-02-09 12:04:52,663 ERROR    <class 'pywintypes.com_error'> from line 239
+2023-02-09 12:04:52,664 ERROR    Error while writing to BOM excel file!
+2023-02-09 12:04:52,664 ERROR    (-2147417848, 'The object invoked has disconnected from its clients.', None, None)
+2023-02-09 12:04:52,665 INFO     Finished writing!
+2023-02-09 12:04:52,767 INFO     127.0.0.1 - - [09/Feb/2023 12:04:52] "POST /pcb_editor HTTP/1.1" 200 -
+2023-02-09 12:04:52,776 INFO     127.0.0.1 - - [09/Feb/2023 12:04:52] "POST /pcb_editor HTTP/1.1" 200 -
+2023-02-09 12:04:52,874 INFO     127.0.0.1 - - [09/Feb/2023 12:04:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 12:04:56,320 INFO     127.0.0.1 - - [09/Feb/2023 12:04:56] "GET /download/customer HTTP/1.1" 200 -
+2023-02-09 12:09:20,158 INFO     127.0.0.1 - - [09/Feb/2023 12:09:20] "GET / HTTP/1.1" 200 -
+2023-02-09 12:09:20,239 INFO     127.0.0.1 - - [09/Feb/2023 12:09:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 12:09:22,209 INFO     127.0.0.1 - - [09/Feb/2023 12:09:22] "GET /add_manexpn HTTP/1.1" 200 -
+2023-02-09 12:09:22,289 INFO     127.0.0.1 - - [09/Feb/2023 12:09:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-09 12:09:22,300 INFO     127.0.0.1 - - [09/Feb/2023 12:09:22] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-09 12:12:53,944 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-02-09 12:12:54,152 INFO      * Restarting with stat
+2023-02-09 12:12:59,621 WARNING   * Debugger is active!
+2023-02-09 12:12:59,646 INFO      * Debugger PIN: 122-033-292
+2023-02-09 12:17:20,351 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\MMD_EditPN.py', reloading
+2023-02-09 12:17:20,566 INFO      * Restarting with stat
+2023-02-09 12:17:27,616 WARNING   * Debugger is active!
+2023-02-09 12:17:27,662 INFO      * Debugger PIN: 122-033-292

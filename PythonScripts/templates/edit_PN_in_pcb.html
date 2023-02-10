@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <title> PCB Automation </title>
+<!--    <meta http-equiv="refresh" content="10">-->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+  <div>
+    <div class="container">
+        <form action="/pcb_editor" method="post" enctype="multipart/form-data">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+          <div class="front">
+            <img src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
+            <div class="text">
+              <span class="text-1">Complete miles of journey <br> with one step</span>
+              <span class="text-2">Let's get started!</span>
+            </div>
+          </div>
+          <div class="back">
+            <img class="backImg" src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
+            <div class="text">
+              <span class="text-1">Complete miles of journey <br> with one step</span>
+              <span class="text-2">Let's get started!</span>
+            </div>
+          </div>
+        </div>
+        <div class="forms">
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">Select Files</div>
+                  <div class="input-box">
+                    <i class="fa fa-server"></i> &nbsp;&nbsp;&nbsp;&nbsp; PCB Files: &nbsp;&nbsp;
+                    <select id="files" name="files" onchange="FileInput('files', 'file_div', 'files_div')">
+                        <option value="single">Single File</option>
+                        <option value="topbot">Separate Files</option>
+                    </select><br><br>
+                  </div>
+                    <div class="input-boxes" id="file_div" style="display:block;">
+                      <i class="fa fa-file"></i>&nbsp;&nbsp;&nbsp; Select PCB File:&nbsp;&nbsp;<br>
+                        <input type="file" id="pcb_file" name="pcb_file" accept=".pcb, .PCB">
+                    </div>
+                      <div class="input-boxes" id="files_div" style="display:none;">
+                      <i class="fa fa-file"></i>&nbsp;&nbsp;&nbsp; Select TOP PCB File:&nbsp;&nbsp;<br>
+                        <input type="file" id="top_pcb" name="top_pcb" accept=".pcb, .PCB">
+                          <br><br>
+                          <i class="fa fa-file"></i>&nbsp;&nbsp;&nbsp; Select BOT PCB File:&nbsp;&nbsp;<br>
+                        <input type="file" id="bot_pcb" name="bot_pcb" accept=".pcb, .PCB">
+
+                    </div>
+
+                <div class="input-boxes">
+                  <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Select Customer BOM:&nbsp;&nbsp;<br>
+                  <input type="file" id="customer_bom" name="customer_bom" accept=".xls, .xlsx">
+                  <br><br>
+                  <div class="text sign-up-text">After Selecting Files <label for="flip">Click here!</label></div><br>
+                </div>
+<!--                  <div class="text" style="padding-left:55px;">Go to <a href="{{ url_for('index') }}"><button>&nbsp;Main Menu&nbsp;</button></a></div>-->
+          </div>
+            <div class="signup-form">
+              <div class="title">BOM Detail</div>
+                <div class="input-boxes">
+                  <div class="input-box">
+                    <i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp; RefDes Column:&nbsp;&nbsp;
+                    <select id="designator" name="designator">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                        <option value="K">K</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="N">N</option>
+                        <option value="O">O</option>
+                        <option value="P">P</option>
+                        <option value="Q">Q</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="T">T</option>
+                        <option value="U">U</option>
+                        <option value="V">V</option>
+                        <option value="W">W</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="Z">Z</option>
+                    </select>
+                  </div>
+                  <div class="input-box">
+                    <i class="fa fa-book"></i> &nbsp;&nbsp;&nbsp; PN Column:&nbsp;&nbsp;
+                    <select id="pn" name="pn">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                        <option value="K">K</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="N">N</option>
+                        <option value="O">O</option>
+                        <option value="P">P</option>
+                        <option value="Q">Q</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="T">T</option>
+                        <option value="U">U</option>
+                        <option value="V">V</option>
+                        <option value="W">W</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="Z">Z</option>
+                    </select>
+                  </div>
+                  <div class="input-box">
+                    <i class="fa fa-hourglass-start"></i>&nbsp;&nbsp;&nbsp; Start Row: &nbsp;
+                    <input type="number" id="start_row" name="start_row" style="width:8em;">
+                  </div>
+                  <div class="input-box">
+                    <i class="fa fa-hourglass-end"></i> &nbsp;&nbsp;&nbsp; End Row: &nbsp;&nbsp;
+                    <input type="number" id="end_row" name="end_row" style="width:8em;">
+                  </div>
+                  <div class="input-box">
+                    <i class="fa fa-tasks"></i> &nbsp;&nbsp;&nbsp;&nbsp; Delimiter: &nbsp;&nbsp;
+                    <select id="delimiter" name="delimiter" onchange="ShowAndHide('delimiter', 'deldiv')">
+                        <option value="comma">,(comma)</option>
+                        <option value="space">&nbsp;&nbsp;(space)</option>
+                        <option value="hyphen">-(hyphen)</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="input-box" id="deldiv" style="display:none; width:100px; padding-left:20px;">
+                      <input type="text" id="del" name="del">
+                    </div>
+                  </div>
+                  <div class="input-box">
+                    <i class="fa fa-server"></i> &nbsp;&nbsp;&nbsp;&nbsp; Separator: &nbsp;&nbsp;
+                    <select id="separator" name="separator" onchange="ShowAndHide('separator', 'sepdiv')">
+                        <option value="none">None</option>
+                        <option value="hyphen">-(hyphen)</option>
+                        <option value="colon">:(colon)</option>
+                        <option value="space"> (space)</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="input-box" id="sepdiv" style="display:none; width:100px; padding-left:20px;">
+                      <input type="text" id="sep" name="sep">
+                    </div>
+                  </div>
+                  <div class="button input-box">
+                    <input type="submit" name="submit" value="Submit" onClick="Submit(this.form)">
+                  </div>
+                  <div class="text sign-up-text">Did not select files? <label for="flip">Select Files</label></div>
+                </div>
+        </div>
+        </div>
+        </div>
+        </form>
+        <div class="text" style="padding-left:50px;">Go to <a href="{{ url_for('index') }}"><button>&nbsp;Main Menu&nbsp;</button></a></div>
+        </div>
+    </div>
+  </body>
+  <script>
+    function ShowAndHide(section, div) {
+        var x = document.getElementById(section);
+        var y = document.getElementById(div);
+        if (x.value == "other"){
+            y.style.display = "block";
+        } else {
+            y.style.display = 'none';
+        }
+    }
+
+    function FileInput(section, div1, div2) {
+        var x = document.getElementById(section);
+        var y = document.getElementById(div1);
+        var z = document.getElementById(div2);
+        if (x.value == "single"){
+            y.style.display = "block";
+            z.style.display = "none";
+        } else if (x.value == "topbot")
+        {
+            y.style.display = 'none';
+            z.style.display = 'block';
+        }
+    }
+  </script>
+
+  {% if error=="notsafe" %}
+  <script>
+    alert("Something Went Wrong!! Please try again....");
+    window.location = ('{{ url_for('edit_PN_in_pcb') }}')
+  </script>
+  {% endif %}
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title> MMD Edited PN </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+      <div class="forms">
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">Modified Files</div><br>
+                <div class="input-boxes">
+                    {% if mmd_file2 == False %}
+                    <i class="fas fa-file" style="font-size:20px;"></i>&nbsp;&nbsp; Download MMD File:&nbsp;&nbsp;<br><br><i class="fa fa-download"></i>
+                  <a href="{{ url_for('download', filename='mmdfile1')}}" download>{{mmd_file1}}</a><br><br>
+                  <br><br>
+                    {% endif %}
+                    {% if mmd_file2 != False %}
+                    <i class="fas fa-file" style="font-size:20px;"></i>&nbsp;&nbsp; Download BOT MMD File:&nbsp;&nbsp;<br><br><i class="fa fa-download"></i>
+                  <a href="{{ url_for('download', filename='mmdfile1')}}" download>{{mmd_file1}}</a><br><br>
+                  <br><br>
+                    <i class="fas fa-file" style="font-size:20px;"></i>&nbsp;&nbsp; Download TOP MMD File:&nbsp;&nbsp;<br><br><i class="fa fa-download"></i>
+                  <a href="{{ url_for('download', filename='mmdfile2')}}" download>{{mmd_file2}}</a><br><br>
+                  <br><br>
+                    {% endif %}
+                    <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Download Modified Customer BOM:&nbsp;&nbsp;<br><br><i class="fa fa-download"></i>
+                  <a href="{{ url_for('download', filename='customer')}}" download>{{customer_bom}}</a><br><br>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          <div class="text"><a href="{{ url_for('index') }}"><button class="button-19" role="button">Start New</button></a></div>
+      </div>
+  </div>
+</body>
+</html>

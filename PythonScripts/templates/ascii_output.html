@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title> Ascii Output </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+      <div class="forms">
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">ASC File</div><br>
+                <div class="input-boxes">
+                    <i class="fas fa-file" style="font-size:20px;"></i>&nbsp;&nbsp; Download ASC File:&nbsp;&nbsp;<br><br><i class="fa fa-download"></i>
+                  <a href="{{ url_for('download', filename='asc_file')}}" download>{{ascii}}</a><br><br>
+                </div>
+              </div>
+            </div>
+          <span>Dash replaced to Underscore at {{count}} places!</span><br><br>
+          <div class="text"><a href="{{ url_for('index') }}"><button class="button-19" role="button">Start New</button></a></div>
+      </div>
+  </div>
+</body>
+</html>
