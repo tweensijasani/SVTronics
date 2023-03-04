@@ -176,7 +176,7 @@ def CustBomInfo(sep_detail, bom_data, customer_bom, manex_bom, file_extension, s
         x = bom_data[item[1]][0].index(item[0])
         bom_data[item[1]][0].pop(x)
         bom_data[item[1]][0].extend(item[2])
-        if len(bom_data[item[1]][0]) != int(bom_data[item[1]][1]):
+        if bool(bom_data[item[1]][0]) and bool(bom_data[item[1]][1]) and len(bom_data[item[1]][0]) != int(bom_data[item[1]][1]):
             bom_data[item[1]][2] = False
     logging.info("Finished reading")
     return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des)

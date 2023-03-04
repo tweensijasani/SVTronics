@@ -164,6 +164,12 @@ def sep_detail():
     my_list2 = list(filter(None, re.split(r'(\d+)', range_to)))
     if base.isalpha():
         base = base.upper()
+    elif not base.isnumeric():
+        base_list = list(base)
+        for val in base_list:
+            if val.isalpha():
+                base_list[base_list.index(val)] = val.upper()
+        base = "".join(base_list)
     if len(my_list1) > 1:
         if my_list1[0].isalpha():
             for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):

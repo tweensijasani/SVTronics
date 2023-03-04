@@ -71,7 +71,9 @@ try:
 
     logging.info("Writing modified ASC file...")
     var = ascfile.name.split("/")
-    new_file_name = var.pop().replace(".ASC", "_modified.ASC")
+    temp = var.pop()
+    new_file_name = temp.replace(".ASC", "_modified.ASC")
+    new_file_name = new_file_name.replace(".asc", "_modified.asc")
     var.append(new_file_name)
     new_file = "/".join(var)
 

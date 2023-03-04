@@ -4,10 +4,10 @@ import xlrd
 import pathlib
 import logging
 import openpyxl
+import easygui.boxes
 import tkinter as tk
 from easygui import *
 from win32com import client
-from openpyxl.styles import Font
 from tkinter import filedialog, messagebox
 
 logging.basicConfig(level=logging.DEBUG, filename="PCB_both_logfile.txt", filemode="a+",
@@ -15,6 +15,14 @@ logging.basicConfig(level=logging.DEBUG, filename="PCB_both_logfile.txt", filemo
 
 root = tk.Tk()
 root.withdraw()
+
+easygui.boxes.global_state.PROPORTIONAL_FONT_FAMILY = ("MS", "Arial")
+easygui.boxes.global_state.MONOSPACE_FONT_FAMILY = "Arial"
+easygui.boxes.global_state.PROPORTIONAL_FONT_SIZE = 14
+easygui.boxes.global_state.MONOSPACE_FONT_SIZE = 14
+easygui.boxes.global_state.TEXT_ENTRY_FONT_SIZE = 14
+easygui.boxes.global_state.prop_font_line_length = 30
+easygui.boxes.global_state.fixw_font_line_length = 40
 
 
 def getfiles():
@@ -134,7 +142,7 @@ def modify(bomfile, bot_file, top_file):
 
         logging.info("Reading BOM excel...")
         file_extension = pathlib.Path(bomfile).suffix
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
             wb_bom = xlrd.open_workbook(bomfile)
             ws_bom = wb_bom.sheet_by_index(0)
             bot_bom_data = []
@@ -144,49 +152,63 @@ def modify(bomfile, bot_file, top_file):
             for row in range(bom_start_row-1, bom_end_row):
                 var = ws_bom.row_values(row)
                 x = var[bom_col_des]
-                if bom_delimiter != '':
-                    x = (var[bom_col_des]).replace(" ", "").split(bom_delimiter)
-                    x = list(filter(None, x))
-                    if bom_separator != '':
-                        for item in x:
-                            if bom_separator in item:
-                                res = []
-                                stry = item.split(bom_separator)
-                                str1 = stry[0]
-                                str2 = stry[1]
-                                base = ""
-                                for i in range(len(str1) - 1):
-                                    if str1[i] == str2[i]:
-                                        base = f"{base}{str1[i]}"
-                                    else:
+                if bool(x):
+                    if bom_delimiter != '':
+                        x = (var[bom_col_des]).replace(" ", "").split(bom_delimiter)
+                        x = list(filter(None, x))
+                        if bom_separator != '':
+                            for item in x:
+                                if bom_separator in item:
+                                    res = []
+                                    stry = item.split(bom_separator)
+                                    str1 = stry[0]
+                                    str2 = stry[1]
+                                    base = ""
+                                    for i in range(len(str1) - 1):
+                                        if str1[i] == str2[i]:
+                                            base = f"{base}{str1[i]}"
+                                        else:
+                                            break
+                                    if base == '':
                                         break
-                                str1 = str1.lstrip(base)
-                                str2 = str2.lstrip(base)
-                                my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
-                                my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
-                                if len(my_list1) > 1:
-                                    if my_list1[0].isalpha():
-                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                            for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                                res.append(f"{base}{chr(i)}{j}")
+                                    count1 = 0
+                                    count2 = 0
+                                    for i in range(len(base) - 1):
+                                        if str1[i] == base[i]:
+                                            count1 += 1
+                                        if str2[i] == base[i]:
+                                            count2 += 1
+                                    str1 = str1[count1 + 1:]
+                                    str2 = str2[count2 + 1:]
+                                    my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
+                                    my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
+                                    if len(my_list1) > 1:
+                                        if my_list1[0].isalpha():
+                                            for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                                    res.append(f"{base}{chr(i)}{j}")
+                                        else:
+                                            for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                                for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                    res.append(f"{base}{i}{chr(j)}")
                                     else:
-                                        for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                            for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                                res.append(f"{base}{i}{chr(j)}")
-                                else:
-                                    if my_list1[0].isalpha():
-                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                            res.append(f"{base}{chr(i)}")
-                                    else:
-                                        for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
-                                            res.append(f"{base}{j}")
-                                pointer = x.index(item)
-                                x.pop(pointer)
-                                x.extend(res)
+                                        if my_list1[0].isalpha():
+                                            for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                res.append(f"{base}{chr(i)}")
+                                        else:
+                                            for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
+                                                res.append(f"{base}{j}")
+                                    pointer = x.index(item)
+                                    x.pop(pointer)
+                                    x.extend(res)
                 y = str(var[bom_col_pn])
-                y = y.split(".")
-                bot_bom_data.append([x, y[0], 0])
-                top_bom_data.append([x, y[0], 0])
+                if bool(y):
+                    y = y.split(".")
+                    bot_bom_data.append([x, y[0], 0])
+                    top_bom_data.append([x, y[0], 0])
+                else:
+                    bot_bom_data.append([x, y, 0])
+                    top_bom_data.append([x, y, 0])
         else:
             wb_bom = openpyxl.load_workbook(bomfile)
             ws_bom = wb_bom.worksheets[0]
@@ -197,49 +219,63 @@ def modify(bomfile, bot_file, top_file):
             bom_col_pn = ord(bom_pn) - 65
             for row in bom_rows[int(bom_start_row) - 1:int(bom_end_row)]:
                 x = row[bom_col_des].value
-                if bom_delimiter != '':
-                    x = (row[bom_col_des].value).replace(" ", "").split(bom_delimiter)
-                    x = list(filter(None, x))
-                    if bom_separator != '':
-                        for item in x:
-                            if bom_separator in item:
-                                res = []
-                                stry = item.split(bom_separator)
-                                str1 = stry[0]
-                                str2 = stry[1]
-                                base = ""
-                                for i in range(len(str1) - 1):
-                                    if str1[i] == str2[i]:
-                                        base = f"{base}{str1[i]}"
-                                    else:
+                if bool(x):
+                    if bom_delimiter != '':
+                        x = (row[bom_col_des].value).replace(" ", "").split(bom_delimiter)
+                        x = list(filter(None, x))
+                        if bom_separator != '':
+                            for item in x:
+                                if bom_separator in item:
+                                    res = []
+                                    stry = item.split(bom_separator)
+                                    str1 = stry[0]
+                                    str2 = stry[1]
+                                    base = ""
+                                    for i in range(len(str1) - 1):
+                                        if str1[i] == str2[i]:
+                                            base = f"{base}{str1[i]}"
+                                        else:
+                                            break
+                                    if base == '':
                                         break
-                                str1 = str1.lstrip(base)
-                                str2 = str2.lstrip(base)
-                                my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
-                                my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
-                                if len(my_list1) > 1:
-                                    if my_list1[0].isalpha():
-                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                            for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                                res.append(f"{base}{chr(i)}{j}")
+                                    count1 = 0
+                                    count2 = 0
+                                    for i in range(len(base) - 1):
+                                        if str1[i] == base[i]:
+                                            count1 += 1
+                                        if str2[i] == base[i]:
+                                            count2 += 1
+                                    str1 = str1[count1 + 1:]
+                                    str2 = str2[count2 + 1:]
+                                    my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
+                                    my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
+                                    if len(my_list1) > 1:
+                                        if my_list1[0].isalpha():
+                                            for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                                    res.append(f"{base}{chr(i)}{j}")
+                                        else:
+                                            for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                                for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                    res.append(f"{base}{i}{chr(j)}")
                                     else:
-                                        for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                            for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                                res.append(f"{base}{i}{chr(j)}")
-                                else:
-                                    if my_list1[0].isalpha():
-                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                            res.append(f"{base}{chr(i)}")
-                                    else:
-                                        for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
-                                            res.append(f"{base}{j}")
-                                pointer = x.index(item)
-                                x.pop(pointer)
-                                x.extend(res)
+                                        if my_list1[0].isalpha():
+                                            for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                res.append(f"{base}{chr(i)}")
+                                        else:
+                                            for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
+                                                res.append(f"{base}{j}")
+                                    pointer = x.index(item)
+                                    x.pop(pointer)
+                                    x.extend(res)
                 y = str(row[bom_col_pn].value)
-                y = y.split(".")
-                bot_bom_data.append([x, y[0], 0])
-                top_bom_data.append([x, y[0], 0])
+                if bool(y):
+                    y = y.split(".")
+                    bot_bom_data.append([x, y[0], 0])
+                    top_bom_data.append([x, y[0], 0])
+                else:
+                    bot_bom_data.append([x, y, 0])
+                    top_bom_data.append([x, y, 0])
         logging.info("Finished reading BOM excel!")
 
     except Exception as e:
@@ -256,7 +292,7 @@ def modify(bomfile, bot_file, top_file):
         for value in botrefdes:
             flag = 0
             for ref in bot_bom_data:
-                if value[0] in ref[0] and ref[1] is not None:
+                if bool(ref[0]) and value[0] in ref[0] and ref[1] is not None:
                     botrefdes[pointer].append(ref[1])
                     ref[2] = 1
                     flag = 1
@@ -270,7 +306,7 @@ def modify(bomfile, bot_file, top_file):
         for value in toprefdes:
             flag = 0
             for ref in top_bom_data:
-                if value[0] in ref[0] and ref[1] is not None:
+                if bool(ref[0]) and value[0] in ref[0] and ref[1] is not None:
                     toprefdes[pointer].append(ref[1])
                     ref[2] = 1
                     flag = 1
@@ -283,9 +319,9 @@ def modify(bomfile, bot_file, top_file):
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
         logging.error(f"{e.__class__} from line 192")
-        logging.error("Error while mapping designators from .pcb files to excel files!")
+        logging.error("Error while mapping designators from .pcb files to excel file!")
         logging.error(f"{e}")
-        print(e, "\n Error while mapping designators from .pcb files to excel files!")
+        print(e, "\n Error while mapping designators from .pcb files to excel file!")
         sys.exit(1)
 
     try:
@@ -334,7 +370,9 @@ def modify(bomfile, bot_file, top_file):
     try:
         logging.info("Writing modified bot.pcb file...")
         var = bot_textfile.name.split("/")
-        new_file_name = var.pop().replace(".pcb", "_modified.pcb")
+        temp = var.pop()
+        new_file_name = temp.replace(".pcb", "_modified.pcb")
+        new_file_name = new_file_name.replace(".PCB", "_modified.PCB")
         var.append(new_file_name)
         new_file = "/".join(var)
 
@@ -345,7 +383,9 @@ def modify(bomfile, bot_file, top_file):
 
         logging.info("Writing modified top.pcb file...")
         var = top_textfile.name.split("/")
-        new_file_name = var.pop().replace(".pcb", "_modified.pcb")
+        temp = var.pop()
+        new_file_name = temp.replace(".pcb", "_modified.pcb")
+        new_file_name = new_file_name.replace(".PCB", "_modified.PCB")
         var.append(new_file_name)
         new_file = "/".join(var)
 
@@ -365,7 +405,7 @@ def modify(bomfile, bot_file, top_file):
 
     try:
         logging.info("Writing to BOM excel...")
-        if file_extension == ".xls":
+        if file_extension == ".xls" or file_extension == ".XLS":
             xlApp = client.Dispatch("Excel.Application")
             wkbk = xlApp.Workbooks.open(bomfile)
             wksht = wkbk.Worksheets(1)
@@ -378,8 +418,9 @@ def modify(bomfile, bot_file, top_file):
                 if item[2] == 0:
                     if top_bom_data[count][2] == 0:
                         missing.append(item[0])
-                    val = ", ".join(item[0])
-                    wksht.Cells(row, col).Value = val
+                    if bool(item[0]):
+                        val = ", ".join(item[0])
+                        wksht.Cells(row, col).Value = val
                     wksht.Cells(row, col+1).Value = item[1]
                     row += 1
                 count += 1
@@ -389,8 +430,9 @@ def modify(bomfile, bot_file, top_file):
             wksht.Cells(row, 2).Value = "Missing values in Top pcb:"
             for item in top_bom_data:
                 if item[2] == 0:
-                    val = ", ".join(item[0])
-                    wksht.Cells(row, col).Value = val
+                    if bool(item[0]):
+                        val = ", ".join(item[0])
+                        wksht.Cells(row, col).Value = val
                     wksht.Cells(row, col+1).Value = item[1]
                     row += 1
                 count += 1
@@ -398,9 +440,10 @@ def modify(bomfile, bot_file, top_file):
             row = row + 2
             wksht.Cells(row, 2).Value = "Missing values in both:"
             for item in missing:
-                val = ", ".join(item)
-                wksht.Cells(row, col).Value = val
-                row += 1
+                if bool(item):
+                    val = ", ".join(item)
+                    wksht.Cells(row, col).Value = val
+                    row += 1
 
             row = row + 2
             wksht.Cells(row, 2).Value = "Missing values in BOM:"
@@ -429,8 +472,9 @@ def modify(bomfile, bot_file, top_file):
                 if item[2] == 0:
                     if top_bom_data[count][2] == 0:
                         missing.append(item[0])
-                    val = ", ".join(item[0])
-                    ws_bom.cell(row=row, column=col).value = val
+                    if bool(item[0]):
+                        val = ", ".join(item[0])
+                        ws_bom.cell(row=row, column=col).value = val
                     ws_bom.cell(row=row, column=col+1).value = item[1]
                     row += 1
                 count += 1
@@ -440,8 +484,9 @@ def modify(bomfile, bot_file, top_file):
             ws_bom.cell(row=row, column=2).value = "Missing values in Top pcb:"
             for item in top_bom_data:
                 if item[2] == 0:
-                    val = ", ".join(item[0])
-                    ws_bom.cell(row=row, column=col).value = val
+                    if bool(item[0]):
+                        val = ", ".join(item[0])
+                        ws_bom.cell(row=row, column=col).value = val
                     ws_bom.cell(row=row, column=col+1).value = item[1]
                     row += 1
                 count += 1
@@ -449,9 +494,10 @@ def modify(bomfile, bot_file, top_file):
             row = row + 2
             ws_bom.cell(row=row, column=2).value = "Missing values in both:"
             for item in missing:
-                val = ", ".join(item)
-                ws_bom.cell(row=row, column=col).value = val
-                row += 1
+                if bool(item):
+                    val = ", ".join(item)
+                    ws_bom.cell(row=row, column=col).value = val
+                    row += 1
 
             row = row + 2
             ws_bom.cell(row=row, column=2).value = "Missing values in BOM:"

@@ -44,10 +44,10 @@
                 <div class="title">Excel Files</div>
                 <div class="input-boxes">
                   <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Select Customer BOM:&nbsp;&nbsp;<br>
-                  <input type="file" id="customer_bom" name="customer_bom" accept=".xls, .xlsx">
+                  <input type="file" id="customer_bom" name="customer_bom" accept=".xls, .xlsx" required>
                   <br><br>
                   <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Select Web Manex BOM:&nbsp;&nbsp;<br>
-                  <input type="file" id="manex_bom" name="manex_bom" accept=".xls, .xlsx">
+                  <input type="file" id="manex_bom" name="manex_bom" accept=".xls, .xlsx" required>
                   <br><br>
                   <i class="fa fa-barcode"></i>&nbsp;&nbsp;&nbsp;Work Order Number:&nbsp;&nbsp;
                   <input type="text" id="work_order" name="work_order">
@@ -125,11 +125,11 @@
                   </div>
                   <div class="input-box">
                     <i class="fa fa-hourglass-start"></i>&nbsp;&nbsp;&nbsp; Start Row: &nbsp;&nbsp;
-                    <input type="number" id="start_row" name="start_row" style="width:8em;">
+                    <input type="number" id="start_row" name="start_row" style="width:8em;" required>
                   </div>
                   <div class="input-box">
                     <i class="fa fa-hourglass-end"></i> &nbsp;&nbsp;&nbsp; End Row: &nbsp;&nbsp;
-                    <input type="number" id="end_row" name="end_row" style="width:8em;">
+                    <input type="number" id="end_row" name="end_row" style="width:8em;" required>
                   </div>
                   <div class="input-box">
                     <i class="fa fa-tasks"></i> &nbsp;&nbsp;&nbsp;&nbsp; Delimiter: &nbsp;&nbsp;

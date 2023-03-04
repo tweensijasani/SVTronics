@@ -193,3 +193,40 @@
 2023-02-09 12:17:20,566 INFO      * Restarting with stat
 2023-02-09 12:17:27,616 WARNING   * Debugger is active!
 2023-02-09 12:17:27,662 INFO      * Debugger PIN: 122-033-292
+2023-02-13 19:07:58,830 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.176.196.133:5000
+2023-02-13 19:07:58,830 INFO     [33mPress CTRL+C to quit[0m
+2023-02-13 19:07:58,886 INFO      * Restarting with stat
+2023-02-13 19:08:01,502 WARNING   * Debugger is active!
+2023-02-13 19:08:01,531 INFO      * Debugger PIN: 688-926-557
+2023-02-13 19:08:18,074 INFO     127.0.0.1 - - [13/Feb/2023 19:08:18] "GET / HTTP/1.1" 200 -
+2023-02-13 19:08:18,187 INFO     127.0.0.1 - - [13/Feb/2023 19:08:18] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-02-13 19:08:18,365 INFO     127.0.0.1 - - [13/Feb/2023 19:08:18] "GET /static/style.css HTTP/1.1" 200 -
+2023-02-13 19:08:18,676 INFO     127.0.0.1 - - [13/Feb/2023 19:08:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-02-13 19:08:29,906 INFO     127.0.0.1 - - [13/Feb/2023 19:08:29] "GET /add_manexpn HTTP/1.1" 200 -
+2023-02-13 19:08:29,986 INFO     127.0.0.1 - - [13/Feb/2023 19:08:29] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-02-13 19:08:30,065 INFO     127.0.0.1 - - [13/Feb/2023 19:08:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:08:30,071 INFO     127.0.0.1 - - [13/Feb/2023 19:08:30] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-02-13 19:08:35,323 INFO     127.0.0.1 - - [13/Feb/2023 19:08:35] "GET / HTTP/1.1" 200 -
+2023-02-13 19:08:35,402 INFO     127.0.0.1 - - [13/Feb/2023 19:08:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:08:44,011 INFO     127.0.0.1 - - [13/Feb/2023 19:08:44] "GET /add_manexpn_to_mmd HTTP/1.1" 200 -
+2023-02-13 19:08:44,081 INFO     127.0.0.1 - - [13/Feb/2023 19:08:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:08:44,085 INFO     127.0.0.1 - - [13/Feb/2023 19:08:44] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-13 19:09:01,007 INFO     127.0.0.1 - - [13/Feb/2023 19:09:01] "GET / HTTP/1.1" 200 -
+2023-02-13 19:09:01,072 INFO     127.0.0.1 - - [13/Feb/2023 19:09:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:09:05,824 INFO     127.0.0.1 - - [13/Feb/2023 19:09:05] "GET /add_manexpn HTTP/1.1" 200 -
+2023-02-13 19:09:05,888 INFO     127.0.0.1 - - [13/Feb/2023 19:09:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:09:05,895 INFO     127.0.0.1 - - [13/Feb/2023 19:09:05] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-13 19:09:09,246 INFO     127.0.0.1 - - [13/Feb/2023 19:09:09] "GET / HTTP/1.1" 200 -
+2023-02-13 19:09:09,293 INFO     127.0.0.1 - - [13/Feb/2023 19:09:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:09:11,279 INFO     127.0.0.1 - - [13/Feb/2023 19:09:11] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-02-13 19:09:11,348 INFO     127.0.0.1 - - [13/Feb/2023 19:09:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:09:11,355 INFO     127.0.0.1 - - [13/Feb/2023 19:09:11] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-02-13 19:09:49,633 INFO     127.0.0.1 - - [13/Feb/2023 19:09:49] "GET / HTTP/1.1" 200 -
+2023-02-13 19:09:49,697 INFO     127.0.0.1 - - [13/Feb/2023 19:09:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:09:58,450 INFO     127.0.0.1 - - [13/Feb/2023 19:09:58] "GET /csv_to_mmd HTTP/1.1" 200 -
+2023-02-13 19:09:58,523 INFO     127.0.0.1 - - [13/Feb/2023 19:09:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-02-13 19:10:08,649 INFO     127.0.0.1 - - [13/Feb/2023 19:10:08] "GET / HTTP/1.1" 200 -
+2023-02-13 19:10:08,713 INFO     127.0.0.1 - - [13/Feb/2023 19:10:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

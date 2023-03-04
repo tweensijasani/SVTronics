@@ -67,7 +67,9 @@ try:
 
     logging.info("Writing modified .cad file...")
     var = gencad.name.split("/")
-    new_file_name = var.pop().replace(".cad", "_modified.cad")
+    temp = var.pop()
+    new_file_name = temp.replace(".cad", "_modified.cad")
+    new_file_name = new_file_name.replace(".CAD", "_modified.CAD")
     var.append(new_file_name)
     new_file = "/".join(var)
 

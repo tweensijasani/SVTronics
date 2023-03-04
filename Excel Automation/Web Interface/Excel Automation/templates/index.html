@@ -2,7 +2,7 @@
 
 <html lang="en" dir="ltr">
   <head>
-    <title> Excel Automation </title>
+    <title> Automation Scripts </title>
 <!--    <meta http-equiv="refresh" content="10">-->
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
@@ -12,234 +12,26 @@
 
   <body>
   <div>
-<!--    {% if flag==1 %}-->
-<!--    <div>-->
-<!--        <marquee style="font-family : 'Monotype Corsiva';font-size:20px; color : white ; background-color:#7d2ae8;font-weight:bold;margin-top:1%; padding:8px;">-->
-<!--            Please wait! A file under process...-->
-<!--        </marquee>-->
-<!--    </div>-->
-<!--    {% endif %}-->
     <div class="container">
-        <form action="/output" method="post" enctype="multipart/form-data">
-        <input type="checkbox" id="flip">
-        <div class="cover">
-          <div class="front">
-            <img src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
-            <div class="text">
-              <span class="text-1">Complete miles of journey <br> with one step</span>
-              <span class="text-2">Let's get started!</span>
-            </div>
-          </div>
-          <div class="back">
-            <img class="backImg" src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
-            <div class="text">
-              <span class="text-1">Complete miles of journey <br> with one step</span>
-              <span class="text-2">Let's get started!</span>
-            </div>
-          </div>
-        </div>
+<!--        <form action="/" method="post" enctype="multipart/form-data">-->
         <div class="forms">
             <div class="form-content">
               <div class="login-form">
-                <div class="title">Excel Files</div>
-                <div class="input-boxes">
-                  <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Select Customer BOM:&nbsp;&nbsp;<br>
-                  <input type="file" id="customer_bom" name="customer_bom" accept=".xls, .xlsx" required>
-                  <br><br>
-                  <i class="fa fa-file-excel"></i>&nbsp;&nbsp;&nbsp; Select Web Manex BOM:&nbsp;&nbsp;<br>
-                  <input type="file" id="manex_bom" name="manex_bom" accept=".xls, .xlsx" required>
-                  <br><br>
-                  <i class="fa fa-barcode"></i>&nbsp;&nbsp;&nbsp;Work Order Number:&nbsp;&nbsp;
-                  <input type="text" id="work_order" name="work_order">
-                  <br><br>
-                  <div class="text">Need Help?? <a href="{{ url_for('user_manual') }}" target="_blank">User Manual</a></div>
-                  <div class="text sign-up-text">After Selecting Files <label for="flip">Click here!</label></div>
-                </div>
-          </div>
-            <div class="signup-form">
-              <div class="title">BOM Detail</div>
-                <div class="input-boxes">
-                  <div class="input-box">
-                    <i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp; RefDes Column:&nbsp;&nbsp;
-                    <select id="designator" name="designator">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                        <option value="G">G</option>
-                        <option value="H">H</option>
-                        <option value="I">I</option>
-                        <option value="J">J</option>
-                        <option value="K">K</option>
-                        <option value="L">L</option>
-                        <option value="M">M</option>
-                        <option value="N">N</option>
-                        <option value="O">O</option>
-                        <option value="P">P</option>
-                        <option value="Q">Q</option>
-                        <option value="R">R</option>
-                        <option value="S">S</option>
-                        <option value="T">T</option>
-                        <option value="U">U</option>
-                        <option value="V">V</option>
-                        <option value="W">W</option>
-                        <option value="X">X</option>
-                        <option value="Y">Y</option>
-                        <option value="Z">Z</option>
-                    </select>
-                  </div>
-                  <div class="input-box">
-                    <i class="fa fa-book"></i> &nbsp;&nbsp;&nbsp; Quantity Column:&nbsp;&nbsp;
-                    <select id="quantity" name="quantity">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                        <option value="G">G</option>
-                        <option value="H">H</option>
-                        <option value="I">I</option>
-                        <option value="J">J</option>
-                        <option value="K">K</option>
-                        <option value="L">L</option>
-                        <option value="M">M</option>
-                        <option value="N">N</option>
-                        <option value="O">O</option>
-                        <option value="P">P</option>
-                        <option value="Q">Q</option>
-                        <option value="R">R</option>
-                        <option value="S">S</option>
-                        <option value="T">T</option>
-                        <option value="U">U</option>
-                        <option value="V">V</option>
-                        <option value="W">W</option>
-                        <option value="X">X</option>
-                        <option value="Y">Y</option>
-                        <option value="Z">Z</option>
-                    </select>
-                  </div>
-                  <div class="input-box">
-                    <i class="fa fa-hourglass-start"></i>&nbsp;&nbsp;&nbsp; Start Row: &nbsp;&nbsp;
-                    <input type="number" id="start_row" name="start_row" style="width:8em;" required>
-                  </div>
-                  <div class="input-box">
-                    <i class="fa fa-hourglass-end"></i> &nbsp;&nbsp;&nbsp; End Row: &nbsp;&nbsp;
-                    <input type="number" id="end_row" name="end_row" style="width:8em;" required>
-                  </div>
-                  <div class="input-box">
-                    <i class="fa fa-tasks"></i> &nbsp;&nbsp;&nbsp;&nbsp; Delimiter: &nbsp;&nbsp;
-                    <select id="delimiter" name="delimiter" onchange="ShowAndHide('delimiter', 'deldiv')">
-                        <option value="comma">,(comma)</option>
-                        <option value="space">&nbsp;&nbsp;(space)</option>
-                        <option value="hyphen">-(hyphen)</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="input-box" id="deldiv" style="display:none; width:100px; padding-left:20px;">
-                      <input type="text" id="del" name="del">
-                    </div>
-                  </div>
-                  <div class="input-box">
-                    <i class="fa fa-server"></i> &nbsp;&nbsp;&nbsp;&nbsp; Separator: &nbsp;&nbsp;
-                    <select id="separator" name="separator" onchange="ShowAndHide('separator', 'sepdiv')">
-                        <option value="none">None</option>
-                        <option value="hyphen">-(hyphen)</option>
-                        <option value="colon">:(colon)</option>
-                        <option value="space"> (space)</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="input-box" id="sepdiv" style="display:none; width:100px; padding-left:20px;">
-                      <input type="text" id="sep" name="sep">
-                    </div>
-                  </div>
-                  <div class="button input-box">
-
-                    <input type="submit" value="Submit" onClick="Submit(this.form)">
-
-                  </div>
-                  <div class="text sign-up-text">Did not select files? <label for="flip">Select Files</label></div>
-                </div>
+                <div class="title">Select Task</div><br>
+              </div><br><br>
+            </div>
+              <div class="text">
+                <a href="{{ url_for('add_manexpn') }}"><button class="button-19" role="button" style="width:250px;">Add Manex PN to BOM</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('edit_PN_in_pcb') }}"><button class="button-19" role="button" style="width:250px;">PCB File Editor</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('csv_to_mmd') }}"><button class="button-19" role="button" style="width:250px;">Convert CSV to MMD</button></a>&nbsp;&nbsp;
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="text">
+                <a href="{{ url_for('add_manexpn_to_mmd') }}"><button class="button-19" role="button" style="width:250px;">Add Manex PN to MMD</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('gencad_editor') }}"><button class="button-19" role="button" style="width:250px;">Gencad File Editor</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('ascii_editor') }}"><button class="button-19" role="button" style="width:250px;">ASCII File Editor</button></a>&nbsp;&nbsp;
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
-        </div>
-        </div>
-        </form>
         </div>
     </div>
   </body>
-  <script>
-    function ShowAndHide(section, div) {
-        var x = document.getElementById(section);
-        var y = document.getElementById(div);
-        if (x.value == "other"){
-            y.style.display = "block";
-        } else {
-            y.style.display = 'none';
-        }
-    }
-  </script>
-  {% if error=="yes" %}
-  <script>
-    alert("Another file in process!! Please try again in some time....");
-    window.location = ('{{ url_for('index') }}')
-  </script>
-  {% endif %}
-  {% if error=="notsafe" %}
-  <script>
-    alert("Something Went Wrong!! Please try again....");
-    window.location = ('{{ url_for('index') }}')
-  </script>
-  {% endif %}
-<!--  <script type="text/javascript">-->
-<!--      window.onbeforeunload = function() {-->
-<!--           var designator = document.getElementById("designator").value;-->
-<!--           var	quantity = document.getElementById("quantity").value;-->
-<!--           var	start_row = document.getElementById("start_row").value;-->
-<!--           var	end_row = document.getElementById("end_row").value;-->
-<!--           var	delimiter = document.getElementById("delimiter").value;-->
-<!--           var	del = document.getElementById("del").value;-->
-<!--           var	separator = document.getElementById("separator").value;-->
-<!--           var	sep = document.getElementById("sep").value;-->
-
-<!--           localStorage.setItem("designator",designator);-->
-<!--           localStorage.setItem("quantity", quantity);-->
-<!--           localStorage.setItem("start_row", start_row);-->
-<!--           localStorage.setItem("end_row",end_row);-->
-<!--           localStorage.setItem("delimiter", delimiter);-->
-<!--           localStorage.setItem("del", del);-->
-<!--           localStorage.setItem("separator", separator);-->
-<!--           localStorage.setItem("sep", sep);-->
-<!--        }-->
-
-<!--      setTimeout(function(){-->
-<!--        window.location.reload();-->
-<!--      }, 25000);-->
-
-<!--      window.onload = function() {-->
-<!--        var getdesignator = localStorage.getItem("designator");-->
-<!--        var getquantity =  localStorage.getItem("quantity");-->
-<!--        var getstart = localStorage.getItem("start_row");-->
-<!--        var getend = localStorage.getItem("end_row");-->
-<!--        var getdelimiter = localStorage.getItem("delimiter");-->
-<!--        var getdel = localStorage.getItem("del");-->
-<!--        var getseparator = localStorage.getItem("separator");-->
-<!--        var getsep = localStorage.getItem("sep");-->
-
-
-<!--	    document.getElementById("designator").value = getdesignator;-->
-<!--        document.getElementById("quantity").value = getquantity;-->
-<!--        document.getElementById("start_row").value = getstart;-->
-<!--        document.getElementById("end_row").value = getend;-->
-<!--        document.getElementById("delimiter").value = getdelimiter;-->
-<!--        document.getElementById("del").value = getdel;-->
-<!--        document.getElementById("separator").value = getseparator;-->
-<!--        document.getElementById("sep").value = getsep;-->
-<!--      }-->
-
-<!--      function Submit (form) {-->
-<!--        localStorage.clear();-->
-<!--      }-->
-
-<!--  </script>-->
 </html>
