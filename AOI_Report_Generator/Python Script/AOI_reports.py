@@ -91,7 +91,7 @@ def reports():
         input_list = ["Mounting", "Solder", "IC", "Total"]
         output = multenterbox(text, title, input_list)
 
-        while not output[0].isnumeric() or not output[1].isnumeric() or not output[3].isnumeric():
+        while not output[0].isnumeric() or not output[1].isnumeric() or not output[2].isnumeric() or not output[3].isnumeric():
             messagebox.showerror(title="Invalid Input", message="Please enter valid text formats")
             text = "Inspection Counts"
             title = "Enter Details"
@@ -143,7 +143,10 @@ def reports():
                 ttime = datetime.strptime(ttime, "%H%M%S") + timedelta(hours=nhours, minutes=nminutes, seconds=nseconds)
                 ttime = ttime.strftime("%H%M%S")
             filename = f"SimpleCoverageExport_{x}_{tdate}_{ttime}.txt"
-            data_list[1][1] = f"{boardsn}"
+            temp = f"{boardsn}"
+            while len(temp) < 9:
+                temp = f"0{temp}"
+            data_list[1][1] = f"{temp}"
             data_list[1][4] = rtime
             data = data_list[0] + data_list[1] + data_list[2] + data_list[3] + data_list[4] + data_list[5] + data_list[6] + data_list[7]
             with open(filename, "w") as f:

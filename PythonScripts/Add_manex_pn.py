@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG, filename="Excel_logfile.txt", filemode=
 
 def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des):
 
-    manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno = ManexInfo(manex_bom)
+    manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno = ManexInfo(manex_bom)
 
     try:
         logging.info("Mapping designators from Manex BOM to Customer BOM...")
@@ -72,7 +72,7 @@ def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row
                 manex_pn.append(None)
         logging.info("Finished mapping")
         cust = WriteCustBom(customer_bom, file_extension, start_row, end_row, manex_pn, duplicate, pcb, bom_col_des, bom_data)
-        man = WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno, manex_pn, duplicate)
+        man = WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno, manex_pn, duplicate)
         return cust and man
 
     except Exception as e:
@@ -210,10 +210,19 @@ def ManexInfo(manex_bom):
         ws_manex = wb_manex.worksheets[0]
         manex_end_row = int(ws_manex.max_row)
         manex_rows = list(ws_manex.rows)
+        header = []
+        for values in manex_rows[0]:
+            header.append(values.value)
+        try:
+            manex_col_des = header.index(manex_designator)
+            manex_col_qty = header.index(manex_quantity)
+            manex_col_partno = header.index(manex_partno)
+        except Exception as e:
+            logging.error(f"{e.__class__} from line 214")
+            logging.error("Can't locate RefDesg/QtEach/PART_NO in Manex BOM!!")
+            logging.error(f"{e}")
+            return False
         manex_data = []
-        manex_col_des = ord(manex_designator) - 65
-        manex_col_qty = ord(manex_quantity) - 65
-        manex_col_partno = ord(manex_partno) - 65
         for row in manex_rows[int(manex_start_row)-1:int(manex_end_row)]:
             y = row[manex_col_des].value
             if bool(y):
@@ -272,7 +281,7 @@ def ManexInfo(manex_bom):
                     y.extend(new)
             manex_data.append([y, row[manex_col_qty].value, row[manex_col_partno].value])
         logging.info("Finished reading")
-        return manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno
+        return manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 190")
@@ -381,16 +390,16 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex
         return False
 
 
-def WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_partno, manex_pn, duplicate):
+def WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno, manex_pn, duplicate):
 
     try:
         logging.info("Writing to Manex BOM Excel...")
         r = manex_start_row
         for rows in ws_manex.iter_rows(min_row=manex_start_row, max_row=manex_end_row, min_col=1, max_col=20):
-            if ws_manex[f"{manex_partno}{str(r)}"].value not in manex_pn:
+            if ws_manex[f"{chr(manex_col_partno+65)}{str(r)}"].value not in manex_pn:
                 for cell in rows:
                     cell.font = Font(color="00FF1414")
-            if ws_manex[f"{manex_partno}{str(r)}"].value in duplicate:
+            if ws_manex[f"{chr(manex_col_partno+65)}{str(r)}"].value in duplicate:
                 for cell in rows:
                     cell.font = Font(color="000096FF")
             r += 1

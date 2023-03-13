@@ -177,10 +177,24 @@ def readfiles(Manex_File, Bom_File):
         ws_manex = wb_manex.worksheets[0]
         manex_end_row = int(ws_manex.max_row)
         manex_rows = list(ws_manex.rows)
+        header = []
+        for values in manex_rows[0]:
+            header.append(values.value)
+        try:
+            manex_col_des = header.index(manex_designator)
+            manex_col_qty = header.index(manex_quantity)
+            manex_col_partno = header.index(manex_partno)
+        except Exception as e:
+            messagebox.showerror(title=f"{e.__class__}", message="Can't locate RefDesg/QtEach/PART_NO in Manex BOM!!")
+            logging.error(f"{e.__class__} from line 184")
+            logging.error("Error while reading Manex BOM File!")
+            logging.error(f"{e}")
+            print(e, "\n Error while reading Manex BOM File!")
+            sys.exit(1)
         manex_data = []
-        manex_col_des = ord(manex_designator) - 65
-        manex_col_qty = ord(manex_quantity) - 65
-        manex_col_partno = ord(manex_partno) - 65
+        # manex_col_des = ord(manex_designator) - 65
+        # manex_col_qty = ord(manex_quantity) - 65
+        # manex_col_partno = ord(manex_partno) - 65
         tolerate = 0
         for row in manex_rows[int(manex_start_row)-1:int(manex_end_row)]:
             y = row[manex_col_des].value
@@ -410,10 +424,10 @@ def readfiles(Manex_File, Bom_File):
         logging.info("Writing to Manex BOM Excel...")
         r = manex_start_row
         for rows in ws_manex.iter_rows(min_row=manex_start_row, max_row=manex_end_row, min_col=1, max_col=20):
-            if ws_manex[f"{manex_partno}{str(r)}"].value not in manex_pn:
+            if ws_manex[f"{chr(manex_col_partno+65)}{str(r)}"].value not in manex_pn:
                 for cell in rows:
                     cell.font = Font(color="00FF1414")
-            if ws_manex[f"{manex_partno}{str(r)}"].value in duplicate:
+            if ws_manex[f"{chr(manex_col_partno+65)}{str(r)}"].value in duplicate:
                 for cell in rows:
                     cell.font = Font(color="000096FF")
             r += 1
