@@ -28,8 +28,7 @@ def getfile():
             sys.exit(1)
         else:
             logging.info("CSV File Selected!")
-
-        readfile(csv_file)
+        return csv_file
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -40,7 +39,7 @@ def getfile():
         sys.exit(1)
 
 
-def readfile(csv_file):
+def writefile(csv_file):
 
     try:
         logging.info("Creating mmd file...")
@@ -102,7 +101,8 @@ def readfile(csv_file):
 if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
-    getfile()
+    csv_file = getfile()
+    writefile(csv_file)
     logging.info("Successfully Executed!!!\n\n")
     print("Successfully Executed!!!")
     messagebox.showinfo(title="Status", message="Completed!!!")

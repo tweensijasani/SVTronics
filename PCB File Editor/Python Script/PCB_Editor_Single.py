@@ -58,7 +58,8 @@ def getfiles():
             sys.exit(1)
         else:
             logging.info("Customer BOM Excel Selected!")
-        modify(Bom_File, pcb_file)
+
+        return Bom_File, pcb_file
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -69,8 +70,7 @@ def getfiles():
         sys.exit(1)
 
 
-def modify(bomfile, pcb_file):
-
+def read_pcb(pcb_file):
     try:
         logging.info("Reading .pcb file...")
         pcbrefdes = []
@@ -81,6 +81,8 @@ def modify(bomfile, pcb_file):
             if match:
                 pcbrefdes.append([line.strip().split(" ").pop()])
         logging.info("Finished reading pcb file!")
+        pcb_textfile.close()
+        return pcbrefdes
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -90,6 +92,8 @@ def modify(bomfile, pcb_file):
         print(e, "\n Error while reading .pcb file!")
         sys.exit(1)
 
+
+def BOM_metadata():
     try:
         logging.info("Getting BOM column info...")
         text = "BOM File Details"
@@ -112,6 +116,23 @@ def modify(bomfile, pcb_file):
         bom_delimiter = output[4].strip()
         bom_separator = output[5].strip()
 
+        bom_dict = {"bom_designator": bom_designator, "bom_pn": bom_pn, "bom_start_row": bom_start_row, "bom_end_row": bom_end_row,
+                    "bom_delimiter": bom_delimiter, "bom_separator": bom_separator}
+        logging.info("Info populated!")
+
+        return bom_dict
+
+    except Exception as e:
+        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        logging.error(f"{e.__class__} from line 130")
+        logging.error("Error while getting BOM info!")
+        logging.error(f"{e}")
+        print(e, "\n Error while getting BOM info!")
+        sys.exit(1)
+
+
+def readBom(bomfile, bom_dict):
+    try:
         messagebox.showinfo(title="Permission",
                             message="Please close the BOM file if open. \nHit OK only when the file is closed!")
 
@@ -121,20 +142,20 @@ def modify(bomfile, pcb_file):
             wb_bom = xlrd.open_workbook(bomfile)
             ws_bom = wb_bom.sheet_by_index(0)
             bom_data = []
-            bom_col_des = ord(bom_designator) - 65
-            bom_col_pn = ord(bom_pn) - 65
-            for row in range(bom_start_row - 1, bom_end_row):
+            bom_col_des = ord(bom_dict["bom_designator"]) - 65
+            bom_col_pn = ord(bom_dict["bom_pn"]) - 65
+            for row in range(bom_dict["bom_start_row"]-1, bom_dict["bom_end_row"]):
                 var = ws_bom.row_values(row)
                 x = var[bom_col_des]
                 if bool(x):
-                    if bom_delimiter != '':
-                        x = (var[bom_col_des]).replace(" ", "").split(bom_delimiter)
+                    if bom_dict["bom_delimiter"] != '':
+                        x = (var[bom_col_des]).replace(" ", "").split(bom_dict["bom_delimiter"])
                         x = list(filter(None, x))
-                        if bom_separator != '':
+                        if bom_dict["bom_separator"] != '':
                             for item in x:
-                                if bom_separator in item:
+                                if bom_dict["bom_separator"] in item:
                                     res = []
-                                    stry = item.split(bom_separator)
+                                    stry = item.split(bom_dict["bom_separator"])
                                     str1 = stry[0]
                                     str2 = stry[1]
                                     base = ""
@@ -186,19 +207,19 @@ def modify(bomfile, pcb_file):
             ws_bom = wb_bom.worksheets[0]
             bom_rows = list(ws_bom.rows)
             bom_data = []
-            bom_col_des = ord(bom_designator) - 65
-            bom_col_pn = ord(bom_pn) - 65
-            for row in bom_rows[int(bom_start_row) - 1:int(bom_end_row)]:
+            bom_col_des = ord(bom_dict["bom_designator"]) - 65
+            bom_col_pn = ord(bom_dict["bom_pn"]) - 65
+            for row in bom_rows[int(bom_dict["bom_start_row"]) - 1:int(bom_dict["bom_end_row"])]:
                 x = row[bom_col_des].value
                 if bool(x):
-                    if bom_delimiter != '':
-                        x = (row[bom_col_des].value).replace(" ", "").split(bom_delimiter)
+                    if bom_dict["bom_delimiter"] != '':
+                        x = (row[bom_col_des].value).replace(" ", "").split(bom_dict["bom_delimiter"])
                         x = list(filter(None, x))
-                        if bom_separator != '':
+                        if bom_dict["bom_separator"] != '':
                             for item in x:
-                                if bom_separator in item:
+                                if bom_dict["bom_separator"] in item:
                                     res = []
-                                    stry = item.split(bom_separator)
+                                    stry = item.split(bom_dict["bom_separator"])
                                     str1 = stry[0]
                                     str2 = stry[1]
                                     base = ""
@@ -245,16 +266,20 @@ def modify(bomfile, pcb_file):
                     bom_data.append([x, y[0], 0])
                 else:
                     bom_data.append([x, y, 0])
+            wb_bom.close()
         logging.info("Finished reading BOM excel!")
+        return bom_data
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
-        logging.error(f"{e.__class__} from line 105")
+        logging.error(f"{e.__class__} from line 130")
         logging.error("Error while reading BOM Excel!")
         logging.error(f"{e}")
         print(e, "\n Error while reading BOM Excel!")
         sys.exit(1)
 
+
+def mapping(pcbrefdes, bom_data):
     try:
         logging.info("Mapping PCB RefDes to BOM excel...")
         pointer = 0
@@ -270,6 +295,7 @@ def modify(bomfile, pcb_file):
                 pcbrefdes[pointer].append("Not found")
             pointer += 1
         logging.info("Finished mapping!")
+        return pcbrefdes, bom_data
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -279,10 +305,14 @@ def modify(bomfile, pcb_file):
         print(e, "\n Error while mapping designators from .pcb file to excel file!")
         sys.exit(1)
 
+
+def Write_PCB(pcb_file, pcbrefdes):
     try:
         logging.info("Editing pcb content...")
         pointer = 0
         line_pointer = 0
+        pcb_textfile = open(pcb_file, 'r')
+        pcbfiledata = pcb_textfile.readlines()
         for line in pcbfiledata:
             match = re.match("^F8\s", line)
             if match:
@@ -329,8 +359,11 @@ def modify(bomfile, pcb_file):
         print(e, "\n Error while creating modified .pcb file!")
         sys.exit(1)
 
+
+def Write_Bom(bomfile, bom_data, pcbrefdes):
     try:
         logging.info("Writing to BOM excel...")
+        file_extension = pathlib.Path(bomfile).suffix
         if file_extension == ".xls" or file_extension == ".XLS":
             xlApp = client.Dispatch("Excel.Application")
             wkbk = xlApp.Workbooks.open(bomfile)
@@ -352,7 +385,6 @@ def modify(bomfile, pcb_file):
             wksht.Cells(row, 2).Value = "Missing values in BOM:"
             for item in pcbrefdes:
                 if item[1] == "Not found":
-                    # wksht.Cells(row, col).Font.Color = 30
                     wksht.Cells(row, col).Value = item[0]
                     row += 1
 
@@ -361,6 +393,8 @@ def modify(bomfile, pcb_file):
             xlApp.Quit()
 
         else:
+            wb_bom = openpyxl.load_workbook(bomfile)
+            ws_bom = wb_bom.worksheets[0]
             col = 5
             count = 0
             row = int(ws_bom.max_row) + 3
@@ -390,13 +424,28 @@ def modify(bomfile, pcb_file):
         logging.error("Error while writing to BOM excel file!")
         logging.error(f"{e}")
         print(e, "\n Error while writing to BOM excel file!")
+        if file_extension == ".xls" or file_extension == ".XLS":
+            if bool(wkbk):
+                wkbk.Close()
+                xlApp.Quit()
+        else:
+            if bool(wb_bom):
+                wb_bom.close()
         sys.exit(1)
 
 
 if __name__ == "__main__":
     logging.info("Execution Started...")
     print("Execution Started!!!")
-    getfiles()
+
+    Bom_File, pcb_file = getfiles()
+    pre_pcbrefdes = read_pcb(pcb_file)
+    bom_dict = BOM_metadata()
+    pre_bom_data = readBom(Bom_File, bom_dict)
+    post_pcbrefdes, post_bom_data = mapping(pre_pcbrefdes, pre_bom_data)
+    Write_PCB(pcb_file, post_pcbrefdes)
+    Write_Bom(Bom_File, post_bom_data, post_pcbrefdes)
+
     logging.info("Successfully Executed!!!\n\n")
     print("Successfully Executed!!!")
     messagebox.showinfo(title="Status", message="Completed!!!")
