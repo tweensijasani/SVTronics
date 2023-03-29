@@ -14,9 +14,9 @@ logging.basicConfig(level=logging.DEBUG, filename="Excel_logfile.txt", filemode=
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
-def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des):
+def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des, sep_dict, sep_position):
 
-    manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno = ManexInfo(manex_bom)
+    manex_data, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno = ManexInfo(manex_bom, sep_dict)
 
     try:
         logging.info("Mapping designators from Manex BOM to Customer BOM...")
@@ -24,7 +24,6 @@ def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row
         duplicate = []
         pcb = []
         for item in bom_data:
-            print(item)
             if bool(item[0]):
                 flag = 0
                 pn = []
@@ -71,7 +70,7 @@ def MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row
             else:
                 manex_pn.append(None)
         logging.info("Finished mapping")
-        cust = WriteCustBom(customer_bom, file_extension, start_row, end_row, manex_pn, duplicate, pcb, bom_col_des, bom_data)
+        cust = WriteCustBom(customer_bom, file_extension, start_row, end_row, manex_pn, duplicate, pcb, bom_col_des, bom_data, sep_position)
         man = WriteManexBom(manex_bom, manex_start_row, manex_end_row, ws_manex, wb_manex, manex_col_partno, manex_pn, duplicate)
         return cust and man
 
@@ -90,6 +89,7 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
         logging.info("Reading Customer BOM Excel...")
         bom_data = []
         sep_data = []
+        sep_position = []
         count = 0
         bom_col_des = ord(designator) - 65
         bom_col_qty = ord(quantity) - 65
@@ -107,12 +107,13 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
                             x = list(filter(None, x))
                             for item in x:
                                 if separator in item:
-                                    sep_data.append([item, count])
+                                    sep_data.append([item, count, 0])
+                                    sep_position.append([row, len(bom_data)])
                         if len(x) != var[bom_col_qty]:
                             qty = False
                     count += 1
                     bom_data.append([x, var[bom_col_qty], qty])
-                return [sep_data, bom_data, file_extension, bom_col_des]
+                return [sep_data, bom_data, file_extension, bom_col_des, sep_position]
             else:
                 for row in range(start_row-1, end_row):
                     var = ws_bom.row_values(row)
@@ -126,12 +127,13 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
                             qty = False
                     bom_data.append([x, var[bom_col_qty], qty])
                 logging.info("Finished reading")
-                return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des)
+                return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des, {}, [])
         else:
             wb_bom = openpyxl.load_workbook(customer_bom)
             ws_bom = wb_bom.worksheets[0]
             bom_rows = list(ws_bom.rows)
             if separator is not None:
+                count_pos = start_row
                 for row in bom_rows[int(start_row)-1:int(end_row)]:
                     x = row[bom_col_des].value
                     qty = True
@@ -141,13 +143,15 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
                             x = list(filter(None, x))
                             for item in x:
                                 if separator in item:
-                                    sep_data.append([item, count])
+                                    sep_data.append([item, count, 0])
+                                    sep_position.append([count_pos, len(bom_data)])
                         if len(x) != row[bom_col_qty].value:
                             qty = False
                     count += 1
                     bom_data.append([x, row[bom_col_qty].value, qty])
+                    count_pos += 1
                 wb_bom.close()
-                return [sep_data, bom_data, file_extension, bom_col_des]
+                return [sep_data, bom_data, file_extension, bom_col_des, sep_position]
             else:
                 for row in bom_rows[int(start_row)-1:int(end_row)]:
                     x = row[bom_col_des].value
@@ -161,7 +165,7 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
                     bom_data.append([x, row[bom_col_qty].value, qty])
                 wb_bom.close()
                 logging.info("Finished reading")
-                return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des)
+                return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des, {}, [])
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 85")
@@ -171,18 +175,19 @@ def ReadCustBom(customer_bom, manex_bom, designator, quantity, start_row, end_ro
         return False
 
 
-def CustBomInfo(sep_detail, bom_data, customer_bom, manex_bom, file_extension, start_row, end_row, bom_col_des):
+def CustBomInfo(sep_detail, bom_data, customer_bom, manex_bom, file_extension, start_row, end_row, bom_col_des, sep_dict, sep_position):
     for item in sep_detail:
-        x = bom_data[item[1]][0].index(item[0])
-        bom_data[item[1]][0].pop(x)
-        bom_data[item[1]][0].extend(item[2])
-        if bool(bom_data[item[1]][0]) and bool(bom_data[item[1]][1]) and len(bom_data[item[1]][0]) != int(bom_data[item[1]][1]):
-            bom_data[item[1]][2] = False
+        if item[2] == 1:
+            x = bom_data[item[1]][0].index(item[0])
+            bom_data[item[1]][0].pop(x)
+            bom_data[item[1]][0].extend(item[3])
+            if bool(bom_data[item[1]][0]) and bool(bom_data[item[1]][1]) and len(bom_data[item[1]][0]) != int(bom_data[item[1]][1]):
+                bom_data[item[1]][2] = False
     logging.info("Finished reading")
-    return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des)
+    return MapDes(customer_bom, manex_bom, bom_data, file_extension, start_row, end_row, bom_col_des, sep_dict, sep_position)
 
 
-def ManexInfo(manex_bom):
+def ManexInfo(manex_bom, sep_dict):
 
     try:
         logging.info("Reading setup.ini file...")
@@ -233,47 +238,51 @@ def ManexInfo(manex_bom):
                 new = []
                 for item in y:
                     if manex_separator in item:
-                        res = []
-                        stry = item.split(manex_separator)
-                        str1 = stry[0]
-                        str2 = stry[1]
-                        base = ""
-                        for i in range(len(str1) - 1):
-                            if str1[i] == str2[i]:
-                                base = f"{base}{str1[i]}"
-                            else:
-                                break
-                        if base == '':
-                            break
-                        count1 = 0
-                        count2 = 0
-                        for i in range(len(base) - 1):
-                            if str1[i] == base[i]:
-                                count1 += 1
-                            if str2[i] == base[i]:
-                                count2 += 1
-                        str1 = str1[count1 + 1:]
-                        str2 = str2[count2 + 1:]
-                        my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
-                        my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
-                        if len(my_list1) > 1:
-                            if my_list1[0].isalpha():
-                                for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                    for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                        res.append(f"{base}{chr(i)}{j}")
-                            else:
-                                for i in range(int(my_list1[0]), int(my_list2[0]) + 1):
-                                    for j in range(ord(my_list1[1]), ord(my_list2[1]) + 1):
-                                        res.append(f"{base}{i}{chr(j)}")
+                        if item in sep_dict:
+                            rem.append(item)
+                            new.extend(sep_dict[item])
                         else:
-                            if my_list1[0].isalpha():
-                                for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                    res.append(f"{base}{chr(i)}")
+                            res = []
+                            stry = item.split(manex_separator)
+                            str1 = stry[0]
+                            str2 = stry[1]
+                            base = ""
+                            for i in range(min(len(str1), len(str2))):
+                                if str1[i] == str2[i]:
+                                    base = f"{base}{str1[i]}"
+                                else:
+                                    break
+                            if base == '':
+                                break
+                            count1 = 0
+                            count2 = 0
+                            for i in range(len(base) - 1):
+                                if str1[i] == base[i]:
+                                    count1 += 1
+                                if str2[i] == base[i]:
+                                    count2 += 1
+                            str1 = str1[count1 + 1:]
+                            str2 = str2[count2 + 1:]
+                            my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
+                            my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
+                            if len(my_list1) > 1:
+                                if my_list1[0].isalpha():
+                                    for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                        for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                            res.append(f"{base}{chr(i)}{j}")
+                                else:
+                                    for i in range(int(my_list1[0]), int(my_list2[0]) + 1):
+                                        for j in range(ord(my_list1[1]), ord(my_list2[1]) + 1):
+                                            res.append(f"{base}{i}{chr(j)}")
                             else:
-                                for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
-                                    res.append(f"{base}{j}")
-                        rem.append(item)
-                        new.extend(res)
+                                if my_list1[0].isalpha():
+                                    for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                        res.append(f"{base}{chr(i)}")
+                                else:
+                                    for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
+                                        res.append(f"{base}{j}")
+                            rem.append(item)
+                            new.extend(res)
                 if bool(rem):
                     for obj in rem:
                         pointer = y.index(obj)
@@ -291,7 +300,7 @@ def ManexInfo(manex_bom):
         return False
 
 
-def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex_pn, duplicate, pcb, bom_col_des, bom_data):
+def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex_pn, duplicate, pcb, bom_col_des, bom_data, sep_position):
 
     try:
         logging.info("Writing to Customer Bom Excel...")
@@ -315,21 +324,21 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex
             # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
             string = f"Manex PN added on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
             wksht.Cells(bom_end_row + 2, 2).Value = string
-            if bool(pcb) and pcb[0] not in manex_pn:
-                wksht.Rows(bom_end_row + 1).EntireRow.Insert()
-                wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
-                wksht.Cells(bom_end_row + 1, bom_col_des + 3).Value = "PCB"
-                wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
+            # if bool(pcb) and pcb[0] not in manex_pn:
+            #     wksht.Rows(bom_end_row + 1).EntireRow.Insert()
+            #     wksht.Cells(bom_end_row + 1, 3).Interior.ColorIndex = 0
+            #     wksht.Cells(bom_end_row + 1, bom_col_des + 3).Value = "PCB"
+            #     wksht.Cells(bom_end_row + 1, 2).Value = pcb[0]
             pointer = 0
             for i in range(bom_start_row, bom_end_row+1):
                 if wksht.Cells(i, 2).Value == "Not in Manex":
                     wksht.Cells(i, 1).Value = "Check"
                     wksht.Cells(i, 1).Interior.ColorIndex = 6
                 elif wksht.Cells(i, 2).Value in duplicate:
-                    wksht.Cells(i, 1).Value = "Duplicate"
+                    wksht.Cells(i, 1).Value = "Duplicate RefDesgs in BOM"
                     wksht.Cells(i, 1).Interior.ColorIndex = 8
                 if not bool(bom_data[pointer][2]):
-                    wksht.Cells(i, 1).Value = "Quantity Mismatch"
+                    wksht.Cells(i, 1).Value = "Quantity Column and RefDesg Count does not match"
                 # elif wksht.Cells(i, 2).Value is None:
                 #     wksht.Cells(i, 1).Value = "Refdes Missing"
                 #     wksht.Cells(i, 1).Interior.ColorIndex = 6
@@ -337,6 +346,9 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex
                     for col in range(1, int(wksht.UsedRange.Columns.Count)):
                         wksht.Cells(i, col).Font.ColorIndex = 3
                 pointer += 1
+
+            for value in sep_position:
+                wksht.Cells(value[0]+1, bom_col_des+3).Value = ", ".join(bom_data[value[1]][0])
 
             wkbk.Save()
             wkbk.Close(True)
@@ -359,9 +371,9 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex
                     rows[0].value = "Check"
                 elif ws_bom[f"B{str(r)}"].value in duplicate:
                     rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
-                    rows[0].value = "Duplicate"
+                    rows[0].value = "Duplicate RefDesgs in BOM"
                 if not bool(bom_data[pointer][2]):
-                    rows[0].value = "Quantity Mismatch"
+                    rows[0].value = "Quantity Column and RefDesg Count does not match"
                 # elif ws_bom[f"B{str(r)}"].value is None:
                 #     rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
                 #     rows[0].value = "RefDes Missing"
@@ -374,10 +386,14 @@ def WriteCustBom(customer_bom, file_extension, bom_start_row, bom_end_row, manex
             ws_bom.insert_rows(bom_end_row + 1)
             # ws_bom.cell(row=bom_end_row + 2, column=2).value = "Last modified at"
             ws_bom.cell(row=bom_end_row + 2, column=2).value = f"Manex PN added on {str(datetime.datetime.now())}"
-            if bool(pcb) and pcb[0] not in manex_pn:
-                ws_bom.insert_rows(bom_end_row + 1)
-                ws_bom.cell(row=bom_end_row + 1, column=bom_col_des + 3).value = "PCB"
-                ws_bom.cell(row=bom_end_row + 1, column=2).value = pcb[0]
+            # if bool(pcb) and pcb[0] not in manex_pn:
+            #     ws_bom.insert_rows(bom_end_row + 1)
+            #     ws_bom.cell(row=bom_end_row + 1, column=bom_col_des + 3).value = "PCB"
+            #     ws_bom.cell(row=bom_end_row + 1, column=2).value = pcb[0]
+
+            for value in sep_position:
+                ws_bom.cell(row=value[0], column=bom_col_des+3).value = ", ".join(bom_data[value[1]][0])
+
             wb_bom.save(customer_bom)
         logging.info("Finished writing")
         return True

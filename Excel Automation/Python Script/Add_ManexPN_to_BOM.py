@@ -98,7 +98,7 @@ def manex_metadata():
         sys.exit(1)
 
 
-def Manex_data(Manex_File, manex_dict):
+def Manex_data(Manex_File, manex_dict, separator_dict):
     try:
         logging.info("Reading Manex BOM Excel...")
         wb_manex = openpyxl.load_workbook(Manex_File, data_only=True)
@@ -122,7 +122,7 @@ def Manex_data(Manex_File, manex_dict):
             print(e, "\n Error while reading Manex BOM File!")
             sys.exit(1)
         manex_data = []
-        tolerate = 0
+        # tolerate = 0
         for row in manex_rows[int(manex_dict["manex_start_row"])-1:int(manex_end_row)]:
             y = row[manex_col_des].value
             if bool(y):
@@ -133,60 +133,65 @@ def Manex_data(Manex_File, manex_dict):
                 new = []
                 for item in y:
                     if manex_dict["manex_separator"] in item:
-                        res = []
-                        stry = item.split(manex_dict["manex_separator"])
-                        str1 = stry[0]
-                        str2 = stry[1]
-                        base = ""
-                        for i in range(min(len(str1)-1, len(str2)-1)):
-                            if str1[i] == str2[i]:
-                                base = f"{base}{str1[i]}"
-                            else:
-                                break
-                        if base == '':
-                            break
-                        count1 = 0
-                        count2 = 0
-                        for i in range(len(base) - 1):
-                            if str1[i] == base[i]:
-                                count1 += 1
-                            if str2[i] == base[i]:
-                                count2 += 1
-                        str1 = str1[count1+1:]
-                        str2 = str2[count2+1:]
-                        my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
-                        my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
-                        if bool(my_list1) and bool(my_list2):
-                            if len(my_list1) > 1:
-                                if my_list1[0].isalpha():
-                                    for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                        for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                            res.append(f"{base}{chr(i)}{j}")
-                                else:
-                                    for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
-                                        for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                            res.append(f"{base}{i}{chr(j)}")
-                            else:
-                                if my_list1[0].isalpha():
-                                    for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
-                                        res.append(f"{base}{chr(i)}")
-                                else:
-                                    for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
-                                        res.append(f"{base}{j}")
+                        if item in separator_dict:
                             rem.append(item)
-                            new.extend(res)
+                            new.extend(separator_dict[item])
+                        else:
+                            res = []
+                            stry = item.split(manex_dict["manex_separator"])
+                            str1 = stry[0]
+                            str2 = stry[1]
+                            base = ""
+                            for i in range(min(len(str1), len(str2))):
+                                if str1[i] == str2[i]:
+                                    base = f"{base}{str1[i]}"
+                                else:
+                                    break
+                            if base == '':
+                                break
+                            count1 = 0
+                            count2 = 0
+                            for i in range(len(base) - 1):
+                                if str1[i] == base[i]:
+                                    count1 += 1
+                                if str2[i] == base[i]:
+                                    count2 += 1
+                            str1 = str1[count1+1:]
+                            str2 = str2[count2+1:]
+                            my_list1 = list(filter(None, re.split(r'(\d+)', str1)))
+                            my_list2 = list(filter(None, re.split(r'(\d+)', str2)))
+                            if bool(my_list1) and bool(my_list2):
+                                if len(my_list1) > 1:
+                                    if my_list1[0].isalpha():
+                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                            for j in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                                res.append(f"{base}{chr(i)}{j}")
+                                    else:
+                                        for i in range(int(my_list1[1]), int(my_list2[1]) + 1):
+                                            for j in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                                res.append(f"{base}{i}{chr(j)}")
+                                else:
+                                    if my_list1[0].isalpha():
+                                        for i in range(ord(my_list1[0]), ord(my_list2[0]) + 1):
+                                            res.append(f"{base}{chr(i)}")
+                                    else:
+                                        for j in range(int(my_list1[0]), int(my_list2[0]) + 1):
+                                            res.append(f"{base}{j}")
+                                rem.append(item)
+                                new.extend(res)
                 if bool(rem):
                     for obj in rem:
                         pointer = y.index(obj)
                         y.pop(pointer)
                     y.extend(new)
-                if row[manex_col_qty].value > 1 and len(y) < 2:
-                    tolerate += 1
-                if tolerate > 5:
-                    messagebox.showerror(title="Delimiter Undefined", message="No Delimiter Found!!! Check Web Manex BOM.....")
-                    logging.info("Delimiter missing in Manex\n\n")
-                    print("Program Terminated!!!")
-                    sys.exit(1)
+                # if row[manex_col_qty].value > 1 and len(y) < 2:
+                #     tolerate += 1
+                # if tolerate > 5:
+                    # messagebox.showerror(title="Delimiter Undefined", message="No Delimiter Found!!! Check Web Manex BOM.....")
+                    # logging.info("Delimiter missing in Manex\n\n")
+                    # logging.info("Quantity and RefDesg mismatch in Manex BOM\n\n")
+                    # print("Program Terminated!!!")
+                    # sys.exit(1)
             manex_data.append([y, row[manex_col_qty].value, row[manex_col_partno].value])
         logging.info("Finished reading")
         wb_manex.close()
@@ -246,17 +251,22 @@ def BOM_data(Bom_File, bom_dict):
     try:
         file_extension = pathlib.Path(Bom_File).suffix
         logging.info("Reading Customer BOM Excel...")
+        separator_dict = {}
+        separator_position = []
         if file_extension == ".xls" or file_extension == ".XLS":
             wb_bom = xlrd.open_workbook(Bom_File)
             ws_bom = wb_bom.sheet_by_index(0)
             bom_data = []
             bom_col_des = ord(bom_dict["bom_designator"]) - 65
+            bom_dict.update({"bom_col_des": bom_col_des})
             bom_col_qty = ord(bom_dict["bom_quantity"]) - 65
             for row in range(bom_dict["bom_start_row"] - 1, bom_dict["bom_end_row"]):
                 var = ws_bom.row_values(row)
                 x = var[bom_col_des]
-                print(x)
-                res = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
+                res, sep_dict = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
+                if bool(sep_dict):
+                    separator_dict.update(sep_dict)
+                    separator_position.append([row, len(bom_data)])
                 if bool(res) and bool(var[bom_col_qty]) and len(res) != int(var[bom_col_qty]):
                     qty = False
                 else:
@@ -268,18 +278,24 @@ def BOM_data(Bom_File, bom_dict):
             bom_rows = list(ws_bom.rows)
             bom_data = []
             bom_col_des = ord(bom_dict["bom_designator"]) - 65
+            bom_dict.update({"bom_col_des": bom_col_des})
             bom_col_qty = ord(bom_dict["bom_quantity"]) - 65
-            for row in bom_rows[int(bom_dict["bom_start_row"]) - 1:int(bom_dict["bom_end_row"])]:
+            count = bom_dict["bom_start_row"]
+            for row in bom_rows[bom_dict["bom_start_row"] - 1:bom_dict["bom_end_row"]]:
                 x = row[bom_col_des].value
-                res = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
+                res, sep_dict = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
+                if bool(sep_dict):
+                    separator_dict.update(sep_dict)
+                    separator_position.append([count, len(bom_data)])
                 if bool(res) and bool(row[bom_col_qty].value) and len(res) != int(row[bom_col_qty].value):
                     qty = False
                 else:
                     qty = True
                 bom_data.append([res, row[bom_col_qty].value, qty])
+                count += 1
             wb_bom.close()
         logging.info("Finished reading")
-        return bom_data
+        return bom_data, separator_dict, separator_position
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -291,6 +307,7 @@ def BOM_data(Bom_File, bom_dict):
 
 
 def readbom(x, bom_delimiter, bom_separator):
+    sep_dict = {}
     if bool(x):
         if bom_delimiter != '':
             x = x.replace(" ", "").split(bom_delimiter)
@@ -375,14 +392,16 @@ def readbom(x, bom_delimiter, bom_separator):
                             sep_check = tk.messagebox.askyesno(title="Verify", message=f"{item} = {res}")
                             if sep_check is False:
                                 messagebox.showwarning(title="Attention", message=f"Please check manually for {item}!")
-                                return x
+                                return x, sep_dict
                         rem.append(item)
                         new.extend(res)
+                        sep_dict.update({item: res})
             for obj in rem:
                 pointer = x.index(obj)
                 x.pop(pointer)
+
             x.extend(new)
-    return x
+    return x, sep_dict
 
 
 def Map_RefDes(bom_data, manex_data):
@@ -449,7 +468,7 @@ def Map_RefDes(bom_data, manex_data):
         sys.exit(1)
 
 
-def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, pcb):
+def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_position):
     try:
         logging.info("Writing to Customer Bom Excel...")
         file_extension = pathlib.Path(Bom_File).suffix
@@ -471,25 +490,28 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, pcb):
             # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
             string = f"Manex PN added on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
             wksht.Cells(bom_dict["bom_end_row"] + 2, 2).Value = string
-            if bool(pcb) and pcb[0] not in manex_pn:
-                wksht.Rows(bom_dict["bom_end_row"]+1).EntireRow.Insert()
-                wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
-                wksht.Cells(bom_dict["bom_end_row"] + 1, bom_dict["bom_col_des"]+3).Value = "PCB"
-                wksht.Cells(bom_dict["bom_end_row"] + 1, 2).Value = pcb[0]
+            # if bool(pcb) and pcb[0] not in manex_pn:
+            #     wksht.Rows(bom_dict["bom_end_row"]+1).EntireRow.Insert()
+            #     wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
+            #     wksht.Cells(bom_dict["bom_end_row"] + 1, bom_dict["bom_col_des"]+3).Value = "PCB"
+            #     wksht.Cells(bom_dict["bom_end_row"] + 1, 2).Value = pcb[0]
             pointer = 0
             for i in range(bom_dict["bom_start_row"], bom_dict["bom_end_row"]+1):
                 if wksht.Cells(i, 2).Value == "Not in Manex":
                     wksht.Cells(i, 1).Value = "Check"
                     wksht.Cells(i, 1).Interior.ColorIndex = 6
                 elif wksht.Cells(i, 2).Value in duplicate:
-                    wksht.Cells(i, 1).Value = "Duplicate"
+                    wksht.Cells(i, 1).Value = "Duplicate RefDesgs in BOM"
                     wksht.Cells(i, 1).Interior.ColorIndex = 8
                 if not bool(bom_data[pointer][2]):
-                    wksht.Cells(i, 1).Value = "Quantity Mismatch"
+                    wksht.Cells(i, 1).Value = "Quantity Column and RefDesg Count does not match"
                 if not bool(bom_data[pointer][1]):
                     for col in range(1, int(wksht.UsedRange.Columns.Count)):
                         wksht.Cells(i, col).Font.ColorIndex = 3
                 pointer += 1
+
+            for value in separator_position:
+                wksht.Cells(value[0]+1, bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
 
             wkbk.Save()
             wkbk.Close(True)
@@ -497,8 +519,8 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, pcb):
         else:
             wb_bom = openpyxl.load_workbook(Bom_File, data_only=True)
             ws_bom = wb_bom.worksheets[0]
-            for shape in ws_bom.legacy_drawing:
-                shape.left += 20
+            # for shape in ws_bom.legacy_drawing:
+            #     shape.left += 20
             ws_bom.insert_cols(0)
             i = 0
             for row_num in range(int(bom_dict["bom_start_row"]), int(bom_dict["bom_end_row"])+1):
@@ -514,23 +536,27 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, pcb):
                     rows[0].value = "Check"
                 elif ws_bom[f"B{str(r)}"].value in duplicate:
                     rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
-                    rows[0].value = "Duplicate"
+                    rows[0].value = "Duplicate RefDesgs in BOM"
                 if not bool(bom_data[pointer][2]):
-                    rows[0].value = "Quantity Mismatch"
+                    rows[0].value = "Quantity Column and RefDesg Count does not match"
                 if not bool(bom_data[pointer][1]):
                     for cell in rows:
                         cell.font = Font(color="00FF1414")
                 pointer += 1
                 r += 1
+
             ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
             ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
             ws_bom.cell(row=bom_dict["bom_end_row"]+2, column=2).value = f"Manex PN added on {str(datetime.datetime.now())}"
-            if bool(pcb) and pcb[0] not in manex_pn:
-                ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-                ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=bom_dict["bom_col_des"]+3).value = "PCB"
-                ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=2).value = pcb[0]
-            for shape in ws_bom.legacy_drawing:
-                shape.left -= 20
+            # if bool(pcb) and pcb[0] not in manex_pn:
+            #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
+            #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=bom_dict["bom_col_des"]+3).value = "PCB"
+            #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=2).value = pcb[0]
+            # for shape in ws_bom.legacy_drawing:
+            #     shape.left -= 20
+            for value in separator_position:
+                ws_bom.cell(row=value[0], column=bom_dict["bom_col_des"]+3).value = ", ".join(bom_data[value[1]][0])
+
             wb_bom.save(Bom_File)
 
         if bool(bom_dict["work_order"]):
@@ -593,12 +619,12 @@ if __name__ == "__main__":
     manex_dict = manex_metadata()
     bom_dict = BOM_metadata()
 
-    manex_data = Manex_data(Manex_File, manex_dict)
-    bom_data = BOM_data(Bom_File, bom_dict)
+    bom_data, separator_dict, separator_position = BOM_data(Bom_File, bom_dict)
+    manex_data = Manex_data(Manex_File, manex_dict, separator_dict)
 
     manex_pn, duplicate, pcb = Map_RefDes(bom_data, manex_data)
 
-    Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, pcb)
+    Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_position)
     Write_Manex(Manex_File, manex_dict, manex_pn, duplicate)
 
     logging.info("Successfully Executed!!!\n\n")

@@ -33,7 +33,7 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                             x = list(filter(None, x))
                             for item in x:
                                 if separator in item:
-                                    sep_data.append([item, count])
+                                    sep_data.append([item, count, 0])
                     count += 1
                     bom_data.append([x, var[bom_col_pn], 0])
                 return [sep_data, bom_data, file_extension, bom_col_des]
@@ -61,7 +61,7 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                             x = list(filter(None, x))
                             for item in x:
                                 if separator in item:
-                                    sep_data.append([item, count])
+                                    sep_data.append([item, count, 0])
                     count += 1
                     bom_data.append([x, row[bom_col_pn].value, 0])
                 wb_bom.close()
@@ -90,7 +90,7 @@ def CustBomInfo(sep_detail, bom_data, customer_bom, bot_pcb, top_pcb):
     for item in sep_detail:
         x = bom_data[item[1]][0].index(item[0])
         bom_data[item[1]][0].pop(x)
-        bom_data[item[1]][0].extend(item[2])
+        bom_data[item[1]][0].extend(item[3])
     logging.info("Finished reading")
     return modify(customer_bom, bot_pcb, top_pcb, bom_data)
 

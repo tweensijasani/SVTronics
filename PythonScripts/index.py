@@ -67,13 +67,15 @@ def processing():
             session['end_row'] = int(end_row)
             session['sep_count'] = 0
             session['sep_len'] = len(result[0])
+            session['sep_dict'] = {}
             session['sep_detail'] = result[0]
+            session['sep_position'] = result[4]
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
                 result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
-                                                  session['end_row'], session['bom_col_des'])
+                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])
@@ -105,7 +107,7 @@ def check():
         return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
     else:
         if session["task"] == 1:
-            result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'])
+            result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
             if result is True:
                 return render_template('output.html', customer_bom=session['CustomerBom'], manex_bom=session['ManexBom'])
             else:
@@ -123,7 +125,9 @@ def check():
 def sep_verify():
     positive = request.form.get("yes")
     if positive is not None:
+        session["sep_dict"].update({session['sep_detail'][session['sep_count']][0]: session['result']})
         session['sep_detail'][session['sep_count']].append(session['result'])
+        session['sep_detail'][session['sep_count']][2] = 1
         if session['sep_count'] + 1 < session['sep_len']:
             session['sep_count'] += 1
             return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
@@ -131,7 +135,7 @@ def sep_verify():
             if session["task"] == 1:
                 result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
-                                                  session['end_row'], session['bom_col_des'])
+                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])
@@ -295,6 +299,7 @@ def mmd_editor():
             session['sep_count'] = 0
             session['sep_len'] = len(result[0])
             session['sep_detail'] = result[0]
+            session['sep_dict'] = {}
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
@@ -510,6 +515,7 @@ def pcb_editor():
             session['sep_count'] = 0
             session['sep_len'] = len(result[0])
             session['sep_detail'] = result[0]
+            session['sep_position'] = {}
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
