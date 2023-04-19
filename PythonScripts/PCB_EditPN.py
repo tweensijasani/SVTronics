@@ -7,7 +7,7 @@ import openpyxl
 import pythoncom
 from win32com import client
 
-logging.basicConfig(level=logging.DEBUG, filename="PCB_both_logfile.txt", filemode="a+",
+logging.basicConfig(level=logging.DEBUG, filename="PCB_edit_logfile.txt", filemode="a+",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
@@ -36,7 +36,7 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                                     sep_data.append([item, count, 0])
                     count += 1
                     bom_data.append([x, var[bom_col_pn], 0])
-                return [sep_data, bom_data, file_extension, bom_col_des]
+                return [sep_data, bom_data, file_extension, bom_col_des], None
             else:
                 for row in range(start_row - 1, end_row):
                     var = ws_bom.row_values(row)
@@ -47,7 +47,10 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                             x = list(filter(None, x))
                     bom_data.append([x, var[bom_col_pn], 0])
                 logging.info("Finished reading")
-                return modify(customer_bom, bot_pcb, top_pcb, bom_data)
+                result, error = modify(customer_bom, bot_pcb, top_pcb, bom_data)
+                if result is not True:
+                    return False, error
+                return True, None
         else:
             wb_bom = openpyxl.load_workbook(customer_bom)
             ws_bom = wb_bom.worksheets[0]
@@ -65,7 +68,7 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                     count += 1
                     bom_data.append([x, row[bom_col_pn].value, 0])
                 wb_bom.close()
-                return [sep_data, bom_data, file_extension, bom_col_des]
+                return [sep_data, bom_data, file_extension, bom_col_des], None
             else:
                 for row in bom_rows[int(start_row) - 1:int(end_row)]:
                     x = row[bom_col_des].value
@@ -76,14 +79,17 @@ def ReadBom(customer_bom, designator, pn, start_row, end_row, delimiter, separat
                     bom_data.append([x, row[bom_col_pn].value, 0])
                 wb_bom.close()
                 logging.info("Finished reading")
-                return modify(customer_bom, bot_pcb, top_pcb, bom_data)
+                result, error = modify(customer_bom, bot_pcb, top_pcb, bom_data)
+                if result is not True:
+                    return False, error
+                return True, None
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 85")
         logging.error("Error while reading Customer BOM File!")
         logging.error(f"{e}")
         print(e, "\n Error while reading Customer BOM File!")
-        return False
+        return False, f"Error while reading Customer BOM File!\n{e.__class__}\n{e}"
 
 
 def CustBomInfo(sep_detail, bom_data, customer_bom, bot_pcb, top_pcb):
@@ -92,7 +98,10 @@ def CustBomInfo(sep_detail, bom_data, customer_bom, bot_pcb, top_pcb):
         bom_data[item[1]][0].pop(x)
         bom_data[item[1]][0].extend(item[3])
     logging.info("Finished reading")
-    return modify(customer_bom, bot_pcb, top_pcb, bom_data)
+    result, error = modify(customer_bom, bot_pcb, top_pcb, bom_data)
+    if result is not True:
+        return False, error
+    return True, None
 
 
 def modify(bomfile, bot_file, top_file, bom_data):
@@ -126,7 +135,7 @@ def modify(bomfile, bot_file, top_file, bom_data):
         logging.error("Error while reading .pcb files!")
         logging.error(f"{e}")
         print(e, "\n Error while reading .pcb files!")
-        return False
+        return False, f"Error while eading .pcb files!\n{e.__class__}\n{e}"
 
     try:
         logging.info("Mapping pcb RefDes to BOM excel...")
@@ -164,7 +173,7 @@ def modify(bomfile, bot_file, top_file, bom_data):
         logging.error("Error while mapping designators from .pcb files to excel file!")
         logging.error(f"{e}")
         print(e, "\n Error while mapping designators from .pcb files to excel file!")
-        return False
+        return False, f"Error while mapping designators from .pcb files to excel file!\n{e.__class__}\n{e}"
 
     try:
         logging.info("Writing modified pcb file...")
@@ -222,16 +231,22 @@ def modify(bomfile, bot_file, top_file, bom_data):
 
         logging.info("Finished writing!")
         if bool(top_file):
-            return WriteBom(bomfile, bot_bom_data, top_bom_data, botrefdes, toprefdes)
+            result, error = WriteBom(bomfile, bot_bom_data, top_bom_data, botrefdes, toprefdes)
+            if result is not True:
+                return False, error
+            return True, None
         else:
-            return SingleBom(bomfile, bot_bom_data, botrefdes)
+            result, error = SingleBom(bomfile, bot_bom_data, botrefdes)
+            if result is not True:
+                return False, error
+            return True, None
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 272")
         logging.error("Error while creating modified .pcb files!")
         logging.error(f"{e}")
         print(e, "\n Error while creating modified .pcb files!")
-        return False
+        return False, f"Error while creating modified .pcb files!\n{e.__class__}\n{e}"
 
 
 def WriteBom(bomfile, bot_bom_data, top_bom_data, botrefdes, toprefdes):
@@ -352,14 +367,14 @@ def WriteBom(bomfile, bot_bom_data, top_bom_data, botrefdes, toprefdes):
 
             wb_bom.save(bomfile)
         logging.info("Finished writing!")
-        return True
+        return True, None
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 309")
         logging.error("Error while writing to BOM excel file!")
         logging.error(f"{e}")
         print(e, "\n Error while writing to BOM excel file!")
-        return False
+        return False, f"Error while writing to BOM excel file!\n{e.__class__}\n{e}"
 
 
 def SingleBom(bomfile, bom_data, pcbrefdes):
@@ -423,14 +438,14 @@ def SingleBom(bomfile, bom_data, pcbrefdes):
                     row += 1
             wb_bom.save(bomfile)
         logging.info("Finished writing!")
-        return True
+        return True, None
 
     except Exception as e:
         logging.error(f"{e.__class__} from line 239")
         logging.error("Error while writing to BOM excel file!")
         logging.error(f"{e}")
         print(e, "\n Error while writing to BOM excel file!")
-        return False
+        return False, f"Error while writing to BOM excel file!\n{e.__class__}\n{e}"
 
 
 if __name__ == "__main__":

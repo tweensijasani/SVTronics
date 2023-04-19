@@ -203,7 +203,7 @@
   {% if error=="notsafe" %}
   <script>
     alert("Something Went Wrong!! Please try again....");
-    window.location = ('{{ url_for('edit_PN_in_pcb') }}')
+    window.location = ('{{ url_for('error_tab') }}')
   </script>
   {% endif %}
 

@@ -32,7 +32,7 @@
 {% if error=="notsafe" %}
   <script>
     alert("Something Went Wrong!! Please try again....");
-    window.location = ('{{ url_for('add_manexpn') }}')
+    window.location = ('{{ url_for('error_tab') }}')
   </script>
 {% endif %}
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <title> AOI Reports </title>
+<!--    <meta http-equiv="refresh" content="10">-->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+  <div>
+    <div class="container">
+        <form action="/reports_output" method="post" enctype="multipart/form-data">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+          <div class="front">
+            <img src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
+            <div class="text">
+              <span class="text-1">Complete miles of journey <br> with one step</span>
+              <span class="text-2">Let's get started!</span>
+            </div>
+          </div>
+          <div class="back">
+            <img class="backImg" src="{{ url_for('static', filename='/frontImg.jpg') }}" alt="">
+            <div class="text">
+              <span class="text-1">Complete miles of journey <br> with one step</span>
+              <span class="text-2">Let's get started!</span>
+            </div>
+          </div>
+        </div>
+        <div class="forms">
+            <div class="form-content" style="width:33em">
+              <div class="login-form">
+                <div class="title">File Name Info</div><br>
+                  <div class="input-box">
+                    <i class="fa fa-server"></i> &nbsp;&nbsp;&nbsp;&nbsp; Format: &nbsp;&nbsp;
+                    <select id="batch" name="batch" onchange="ShowInterval('batch', 'time_div')">
+                        <option value="single">Single Batch</option>
+                        <option value="batchwise">Multiple Batches</option>
+                    </select>
+                  </div>
+                    <div class="input-boxes" id="time_div" style="display:none;">
+                      <i class="fa fa-clock" style="color:#7d2ae8;"></i>&nbsp;Time Interval:
+                      <input value="00:00:00" type="time" step="1" id="time" name="time" style="width:8em; padding-left:3px;">
+                    </div>
+
+                <div class="input-boxes">
+                    <i class="fa fa-tags" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Serial No.:
+                    <input type="text" id="serial" name="serial" style="height:2em; font-size:16px; font-weight:bold; width:13em; padding-left:3px;" required>
+                    <br><br>
+                    <i class="fa fa-list" style="color:#7d2ae8;"></i>&nbsp;&nbsp;No. of Copies:
+                    <input type="number" id="copies" name="copies" style="height:2em; font-size:16px; font-weight:bold; width:13em; padding-left:3px;" required>
+                  <br><br>
+                  <div class="text sign-up-text">After Entering Naming Details <label for="flip">Click here!</label></div><br>
+                </div>
+<!--                  <div class="text" style="padding-left:55px;">Go to <a href="{{ url_for('index') }}"><button>&nbsp;Main Menu&nbsp;</button></a></div>-->
+          </div>
+            <div class="signup-form">
+              <div class="title">Report Details</div>
+                <div class="input-boxes">
+                    <i class="fa fa-tags" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Model ID:<br>
+                    <input type="text" id="model" name="model" style="height:2em; font-size:16px; font-weight:bold; width:13em; padding-left:3px;" required>
+                    <br>
+                    <i class="fa fa-window-restore" aria-hidden="true" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Board S/N:<br>
+                    <input type="number" id="boardsn" name="boardsn" style="height:2em; font-size:16px; font-weight:bold; width:13em; padding-left:3px;" required>
+                    <br><br>
+                    <i class="fa fa-calendar" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Date & Time: &nbsp;<br>
+                    <input type="datetime-local" value="mm-dd-yyyyT00:00:00" step="1" id="date" name="date" style="" required>
+                    <br>
+                    <i class="fa fa-clock" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Time Interval: &nbsp;<br>
+                    <input value="00:00:00" type="time" step="1" id="time_int" name="time_int" style="width:8em; padding-left:3px;" required>
+                    <br><br>
+                    <i class="fa fa-eraser" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Mounting Count:<br>
+                    <input type="number" id="mount" name="mount" style="font-size:16px; width:8em; padding-left:3px;" required>
+                    <br>
+                    <i class="fa fa-eraser" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Solder Count:<br>
+                    <input type="number" id="solder" name="solder" style="font-size:16px; width:8em; padding-left:3px;" required>
+                    <br>
+                    <i class="fa fa-eraser" style="color:#7d2ae8;"></i>&nbsp;&nbsp;IC Count:<br>
+                    <input type="number" id="ic_count" name="ic_count" style="font-size:16px; width:8em; padding-left:3px;" required>
+                    <br>
+                    <i class="fa fa-eraser" style="color:#7d2ae8;"></i>&nbsp;&nbsp;Total Count:<br>
+                    <input type="number" id="total" name="total" style="font-size:16px; width:8em; padding-left:3px;" required>
+                    <div class="button input-box">
+                        <input type="submit" name="submit" value="Submit" onClick="Submit(this.form)">
+                    </div>
+                  <div class="text sign-up-text">Did not enter file naming info? <br><label for="flip">Click here!</label></div>
+                </div>
+        </div>
+        </div>
+        </div>
+        </form>
+        <div class="text" style="padding-left:50px;">Go to <a href="{{ url_for('index') }}"><button>&nbsp;Main Menu&nbsp;</button></a></div>
+        </div>
+    </div>
+  </body>
+  <script>
+
+    function ShowInterval(section, div) {
+        var x = document.getElementById(section);
+        var y = document.getElementById(div);
+        if (x.value == "batchwise"){
+            y.style.display = "block";
+        } else {
+            y.style.display = 'none';
+        }
+    }
+
+
+  </script>
+
+  {% if error=="notsafe" %}
+  <script>
+    alert("Something Went Wrong!! Please try again....");
+    window.location = ('{{ url_for('error_tab') }}')
+  </script>
+  {% endif %}
+
+</html>

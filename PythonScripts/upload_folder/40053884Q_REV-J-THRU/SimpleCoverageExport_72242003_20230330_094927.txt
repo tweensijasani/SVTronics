@@ -1,0 +1,8 @@
+Model ID : 40053884Q_REV-J-THRU
+Board S/N :112286060, DateTime : 03/2022/17 13:17:48, User : master
+Machine : Local, Side : Top, Work Order :
+  Summary Statistics : Mounting            Solder              IC                  Total
+   Inspection Counts : 200                 337                 36                  765
+         Fail Counts : 0                   0                   0                   0
+              Yields : 100.00 %            100.00 %            100.00 %            100.00 %
+Inspection Result    : T

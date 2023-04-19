@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+      <div class="forms">
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">Error Message</div><br>
+              </div>
+            </div>
+          <div class="text">
+              {{error}}<br><br>
+          </div>
+          <div class="text">
+              <h4>Possible Reasons</h4>
+              <ul>
+                  {% for x in possibilities%}
+                  <li>{{x}}</li>
+                  {% endfor %}
+              </ul>
+              <br>
+          </div>
+          <div class="text" style="font-family:'Times New Roman',Times,serif; font-size:20px; text-shadow: 2px 2px 5px #0096FF; text-align:center;">
+              Please check all the requirements carefully and rerun!!<br>
+          </div>
+          <div class="text"><a href="{{ url_for('index') }}"><button class="button-19" role="button">Start New</button></a></div>
+      </div>
+  </div>
+</body>
+</html>

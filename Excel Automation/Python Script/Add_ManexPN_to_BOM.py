@@ -409,16 +409,16 @@ def Map_RefDes(bom_data, manex_data):
         logging.info("Mapping designators from Manex BOM to Customer BOM...")
         manex_pn = []
         duplicate = []
-        pcb = []
+        # pcb = []
         for item in bom_data:
             if bool(item[0]):
                 flag = 0
                 pn = []
                 for obj in manex_data:
                     if bool(obj[0]):
-                        if set("PCB").issubset(set(obj[0][0])):
-                            if not bool(pcb):
-                                pcb.append(obj[2])
+                        # if set("PCB").issubset(set(obj[0][0])):
+                        #     if not bool(pcb):
+                        #         pcb.append(obj[2])
                         if set(item[0]).issubset(set(obj[0])) or set(obj[0]).issubset(set(item[0])):
                             if obj[1] != 0:
                                 if flag == 0:
@@ -439,17 +439,17 @@ def Map_RefDes(bom_data, manex_data):
                                             pn.append(obj[2])
                                             flag += 1
                                 obj[0].append(rem)
-                if flag == 0:
-                    if set('PCB').issubset(set(item[0][0])):
-                        for obj in manex_data:
-                            if bool(obj[0]) and len(obj[0]) == 1:
-                                if set('PCB').issubset(set(obj[0][0])):
-                                    if obj[1] != 0:
-                                        if flag == 0:
-                                            manex_pn.append(obj[2])
-                                        if obj[2] not in pn:
-                                            pn.append(obj[2])
-                                            flag += 1
+                # if flag == 0:
+                #     if set('PCB').issubset(set(item[0][0])):
+                #         for obj in manex_data:
+                #             if bool(obj[0]) and len(obj[0]) == 1:
+                #                 if set('PCB').issubset(set(obj[0][0])):
+                #                     if obj[1] != 0:
+                #                         if flag == 0:
+                #                             manex_pn.append(obj[2])
+                #                         if obj[2] not in pn:
+                #                             pn.append(obj[2])
+                #                             flag += 1
                 if flag == 0:
                     manex_pn.append('Not in Manex')
                 if flag > 1:
@@ -457,7 +457,7 @@ def Map_RefDes(bom_data, manex_data):
             else:
                 manex_pn.append(None)
         logging.info("Finished mapping")
-        return manex_pn, duplicate, pcb
+        return manex_pn, duplicate
 
     except Exception as e:
         messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
@@ -471,93 +471,93 @@ def Map_RefDes(bom_data, manex_data):
 def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_position):
     try:
         logging.info("Writing to Customer Bom Excel...")
-        file_extension = pathlib.Path(Bom_File).suffix
-        if file_extension == ".xls" or file_extension == ".XLS":
-            xlApp = client.Dispatch("Excel.Application")
-            wkbk = xlApp.Workbooks.open(Bom_File)
-            wksht = wkbk.Worksheets(1)
-            wksht.Columns("A").EntireColumn.Insert()
+        # file_extension = pathlib.Path(Bom_File).suffix
+        # if file_extension == ".xls" or file_extension == ".XLS":
+        xlApp = client.Dispatch("Excel.Application")
+        wkbk = xlApp.Workbooks.open(Bom_File)
+        wksht = wkbk.Worksheets(1)
+        wksht.Columns("A").EntireColumn.Insert()
 
-            j = 0
-            for i in range(bom_dict["bom_start_row"], bom_dict["bom_end_row"]+1):
-                wksht.Cells(i, 1).Value = manex_pn[j]
-                j += 1
-            wksht.Columns("A").EntireColumn.Insert()
-            wksht.Rows(bom_dict["bom_end_row"] + 1).EntireRow.Insert()
-            wksht.Rows(bom_dict["bom_end_row"] + 1).EntireRow.Insert()
-            wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
-            wksht.Cells(bom_dict["bom_end_row"] + 2, 3).Interior.ColorIndex = 0
-            # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
-            string = f"Manex PN added on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
-            wksht.Cells(bom_dict["bom_end_row"] + 2, 2).Value = string
-            # if bool(pcb) and pcb[0] not in manex_pn:
-            #     wksht.Rows(bom_dict["bom_end_row"]+1).EntireRow.Insert()
-            #     wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
-            #     wksht.Cells(bom_dict["bom_end_row"] + 1, bom_dict["bom_col_des"]+3).Value = "PCB"
-            #     wksht.Cells(bom_dict["bom_end_row"] + 1, 2).Value = pcb[0]
-            pointer = 0
-            for i in range(bom_dict["bom_start_row"], bom_dict["bom_end_row"]+1):
-                if wksht.Cells(i, 2).Value == "Not in Manex":
-                    wksht.Cells(i, 1).Value = "Check"
-                    wksht.Cells(i, 1).Interior.ColorIndex = 6
-                elif wksht.Cells(i, 2).Value in duplicate:
-                    wksht.Cells(i, 1).Value = "Duplicate RefDesgs in BOM"
-                    wksht.Cells(i, 1).Interior.ColorIndex = 8
-                if not bool(bom_data[pointer][2]):
-                    wksht.Cells(i, 1).Value = "Quantity Column and RefDesg Count does not match"
-                if not bool(bom_data[pointer][1]):
-                    for col in range(1, int(wksht.UsedRange.Columns.Count)):
-                        wksht.Cells(i, col).Font.ColorIndex = 3
-                pointer += 1
+        j = 0
+        for i in range(bom_dict["bom_start_row"], bom_dict["bom_end_row"]+1):
+            wksht.Cells(i, 1).Value = manex_pn[j]
+            j += 1
+        wksht.Columns("A").EntireColumn.Insert()
+        wksht.Rows(bom_dict["bom_end_row"] + 1).EntireRow.Insert()
+        wksht.Rows(bom_dict["bom_end_row"] + 1).EntireRow.Insert()
+        wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
+        wksht.Cells(bom_dict["bom_end_row"] + 2, 3).Interior.ColorIndex = 0
+        # wksht.Cells(bom_end_row + 2, 2).Value = "Last modified at"
+        string = f"Manex PN added on {datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')}"
+        wksht.Cells(bom_dict["bom_end_row"] + 2, 2).Value = string
+        # if bool(pcb) and pcb[0] not in manex_pn:
+        #     wksht.Rows(bom_dict["bom_end_row"]+1).EntireRow.Insert()
+        #     wksht.Cells(bom_dict["bom_end_row"] + 1, 3).Interior.ColorIndex = 0
+        #     wksht.Cells(bom_dict["bom_end_row"] + 1, bom_dict["bom_col_des"]+3).Value = "PCB"
+        #     wksht.Cells(bom_dict["bom_end_row"] + 1, 2).Value = pcb[0]
+        pointer = 0
+        for i in range(bom_dict["bom_start_row"], bom_dict["bom_end_row"]+1):
+            if wksht.Cells(i, 2).Value == "Not in Manex":
+                wksht.Cells(i, 1).Value = "Check"
+                wksht.Cells(i, 1).Interior.ColorIndex = 6
+            elif wksht.Cells(i, 2).Value in duplicate:
+                wksht.Cells(i, 1).Value = "Duplicate RefDesgs in BOM"
+                wksht.Cells(i, 1).Interior.ColorIndex = 8
+            if not bool(bom_data[pointer][2]):
+                wksht.Cells(i, 1).Value = "Quantity Column and RefDesg Count does not match"
+            if not bool(bom_data[pointer][1]):
+                for col in range(1, int(wksht.UsedRange.Columns.Count)):
+                    wksht.Cells(i, col).Font.ColorIndex = 3
+            pointer += 1
 
-            for value in separator_position:
-                wksht.Cells(value[0]+1, bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
+        for value in separator_position:
+            wksht.Cells(value[0]+1, bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
 
-            wkbk.Save()
-            wkbk.Close(True)
-            xlApp.Quit()
-        else:
-            wb_bom = openpyxl.load_workbook(Bom_File, data_only=True)
-            ws_bom = wb_bom.worksheets[0]
-            # for shape in ws_bom.legacy_drawing:
-            #     shape.left += 20
-            ws_bom.insert_cols(0)
-            i = 0
-            for row_num in range(int(bom_dict["bom_start_row"]), int(bom_dict["bom_end_row"])+1):
-                ws_bom.cell(row=row_num, column=1).value = manex_pn[i]
-                i += 1
-
-            ws_bom.insert_cols(0)
-            r = bom_dict["bom_start_row"]
-            pointer = 0
-            for rows in ws_bom.iter_rows(min_row=bom_dict["bom_start_row"], max_row=bom_dict["bom_end_row"], min_col=1, max_col=20):
-                if ws_bom[f"B{str(r)}"].value == "Not in Manex":
-                    rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
-                    rows[0].value = "Check"
-                elif ws_bom[f"B{str(r)}"].value in duplicate:
-                    rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
-                    rows[0].value = "Duplicate RefDesgs in BOM"
-                if not bool(bom_data[pointer][2]):
-                    rows[0].value = "Quantity Column and RefDesg Count does not match"
-                if not bool(bom_data[pointer][1]):
-                    for cell in rows:
-                        cell.font = Font(color="00FF1414")
-                pointer += 1
-                r += 1
-
-            ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-            ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-            ws_bom.cell(row=bom_dict["bom_end_row"]+2, column=2).value = f"Manex PN added on {str(datetime.datetime.now())}"
-            # if bool(pcb) and pcb[0] not in manex_pn:
-            #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-            #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=bom_dict["bom_col_des"]+3).value = "PCB"
-            #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=2).value = pcb[0]
-            # for shape in ws_bom.legacy_drawing:
-            #     shape.left -= 20
-            for value in separator_position:
-                ws_bom.cell(row=value[0], column=bom_dict["bom_col_des"]+3).value = ", ".join(bom_data[value[1]][0])
-
-            wb_bom.save(Bom_File)
+        wkbk.Save()
+        wkbk.Close(True)
+        xlApp.Quit()
+        # else:
+        #     wb_bom = openpyxl.load_workbook(Bom_File, data_only=True)
+        #     ws_bom = wb_bom.worksheets[0]
+        #     # for shape in ws_bom.legacy_drawing:
+        #     #     shape.left += 20
+        #     ws_bom.insert_cols(0)
+        #     i = 0
+        #     for row_num in range(int(bom_dict["bom_start_row"]), int(bom_dict["bom_end_row"])+1):
+        #         ws_bom.cell(row=row_num, column=1).value = manex_pn[i]
+        #         i += 1
+        #
+        #     ws_bom.insert_cols(0)
+        #     r = bom_dict["bom_start_row"]
+        #     pointer = 0
+        #     for rows in ws_bom.iter_rows(min_row=bom_dict["bom_start_row"], max_row=bom_dict["bom_end_row"], min_col=1, max_col=20):
+        #         if ws_bom[f"B{str(r)}"].value == "Not in Manex":
+        #             rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
+        #             rows[0].value = "Check"
+        #         elif ws_bom[f"B{str(r)}"].value in duplicate:
+        #             rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
+        #             rows[0].value = "Duplicate RefDesgs in BOM"
+        #         if not bool(bom_data[pointer][2]):
+        #             rows[0].value = "Quantity Column and RefDesg Count does not match"
+        #         if not bool(bom_data[pointer][1]):
+        #             for cell in rows:
+        #                 cell.font = Font(color="00FF1414")
+        #         pointer += 1
+        #         r += 1
+        #
+        #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
+        #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
+        #     ws_bom.cell(row=bom_dict["bom_end_row"]+2, column=2).value = f"Manex PN added on {str(datetime.datetime.now())}"
+        #     # if bool(pcb) and pcb[0] not in manex_pn:
+        #     #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
+        #     #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=bom_dict["bom_col_des"]+3).value = "PCB"
+        #     #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=2).value = pcb[0]
+        #     # for shape in ws_bom.legacy_drawing:
+        #     #     shape.left -= 20
+        #     for value in separator_position:
+        #         ws_bom.cell(row=value[0], column=bom_dict["bom_col_des"]+3).value = ", ".join(bom_data[value[1]][0])
+        #
+        #     wb_bom.save(Bom_File)
 
         if bool(bom_dict["work_order"]):
             name = Bom_File.split("/")
@@ -573,13 +573,13 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_posit
         logging.error("Error while writing Customer BOM!")
         logging.error(f"{e}")
         print(e, "\n Error while writing Customer BOM!")
-        if file_extension == ".xls" or file_extension == ".XLS":
-            if bool(wkbk):
-                wkbk.Close()
-                xlApp.Quit()
-        else:
-            if bool(wb_bom):
-                wb_bom.close()
+        # if file_extension == ".xls" or file_extension == ".XLS":
+        if bool(wkbk):
+            wkbk.Close()
+            xlApp.Quit()
+        # else:
+        #     if bool(wb_bom):
+        #         wb_bom.close()
         sys.exit(1)
 
 
@@ -590,12 +590,12 @@ def Write_Manex(Manex_File, manex_dict, manex_pn, duplicate):
         ws_manex = wb_manex.worksheets[0]
         r = manex_dict["manex_start_row"]
         for rows in ws_manex.iter_rows(min_row=manex_dict["manex_start_row"], max_row=manex_dict["manex_end_row"], min_col=1, max_col=20):
-            if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value not in manex_pn:
-                for cell in rows:
-                    cell.font = Font(color="00FF1414")
             if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value in duplicate:
                 for cell in rows:
                     cell.font = Font(color="000096FF")
+            if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value not in manex_pn:
+                for cell in rows:
+                    cell.font = Font(color="00FF1414")
             r += 1
         logging.info("Finished writing")
         wb_manex.save(Manex_File)
@@ -622,7 +622,7 @@ if __name__ == "__main__":
     bom_data, separator_dict, separator_position = BOM_data(Bom_File, bom_dict)
     manex_data = Manex_data(Manex_File, manex_dict, separator_dict)
 
-    manex_pn, duplicate, pcb = Map_RefDes(bom_data, manex_data)
+    manex_pn, duplicate = Map_RefDes(bom_data, manex_data)
 
     Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_position)
     Write_Manex(Manex_File, manex_dict, manex_pn, duplicate)

@@ -2,7 +2,10 @@ import Add_manex_pn
 import MMD_EditPN
 import PCB_EditPN
 import csv_to_mmd_converter
+import report_generator
 import re
+import os
+import shutil
 import logging
 from flask_session import Session
 from flask import Flask, render_template, request, send_from_directory, session
@@ -26,6 +29,11 @@ def add_manexpn():
     return render_template('add_manexpn.html', error="no")
 
 
+@app.route('/error_tab', methods=["GET", "POST"])
+def error_tab():
+    return render_template('error_tab.html', error=session["error"], possibilities=session["possibilities"])
+
+
 @app.route('/user_manual', methods=["GET", "POST"])
 def user_manual():
     return render_template('user_manual.html')
@@ -33,6 +41,13 @@ def user_manual():
 
 @app.route('/processing', methods=["GET", "POST"])
 def processing():
+    possible_errors = ["Make sure that the BOM is the first sheet of the workbook",
+                       "Check if the file extension is either .xls or .xlsx",
+                       "The RefDes is recommended to be comma separated",
+                       "The column names in Web Manex BOM should consists RefDesg, QtyEach and PART_NO",
+                       "Start row in Manex BOM should be 2",
+                       "Make sure you enter correct Customer BOM details"]
+    session["possibilities"] = possible_errors
     if request.form.get("submit"):
         session["task"] = 1
         customer_bom = request.files['customer_bom']
@@ -54,7 +69,7 @@ def processing():
         separator = sep.get(request.form.get("separator"))
         session['CustomerBom'] = customer_bom.filename
         session['ManexBom'] = manex_bom.filename
-        result = Add_manex_pn.ReadCustBom(cust_file_path, man_file_path, designator, quantity, int(start_row), int(end_row), delimiter, separator)
+        result, error = Add_manex_pn.ReadCustBom(cust_file_path, man_file_path, designator, quantity, int(start_row), int(end_row), delimiter, separator)
         if result is True:
             return render_template('output.html', customer_bom=customer_bom.filename, manex_bom=manex_bom.filename)
         elif bool(result):
@@ -73,15 +88,17 @@ def processing():
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
-                result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
                                                   session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])
                 else:
+                    session["error"] = error
                     return render_template('add_manexpn.html', error="notsafe")
         else:
+            session["error"] = error
             return render_template('add_manexpn.html', error="notsafe")
     else:
         return index()
@@ -107,18 +124,29 @@ def check():
         return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
     else:
         if session["task"] == 1:
-            result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
+            result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
             if result is True:
                 return render_template('output.html', customer_bom=session['CustomerBom'], manex_bom=session['ManexBom'])
             else:
+                session["error"] = error
                 return render_template('add_manexpn.html', error="notsafe")
         elif session["task"] == 2:
-            result = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["bot_mmd"], session["top_mmd"])
+            result, error = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["bot_mmd"], session["top_mmd"])
             if result is True:
                 return render_template('mmd_output.html', customer_bom=session['CustomerBom'],
                                        mmd_file1=session["botmmd"], mmd_file2=session["topmmd"])
             else:
+                session["error"] = error
                 return render_template('add_manexpn_to_mmd.html', error="notsafe")
+        elif session["task"] == 3:
+            result, error = PCB_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                                                session["bot_pcb"], session["top_pcb"])
+            if result is True:
+                return render_template('pcb_output.html', customer_bom=session['CustomerBom'],
+                                       pcb_file1=session["botpcb"], pcb_file2=session["toppcb"])
+            else:
+                session["error"] = error
+                return render_template('edit_PN_in_pcb.html', error="notsafe")
 
 
 @app.route('/sep_verify', methods=["GET", "POST"])
@@ -133,22 +161,34 @@ def sep_verify():
             return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
         else:
             if session["task"] == 1:
-                result = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
                                                   session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])
                 else:
+                    session["error"] = error
                     return render_template('add_manexpn.html', error="notsafe")
             elif session["task"] == 2:
-                result = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                result, error = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                 session["bot_mmd"], session["top_mmd"])
                 if result is True:
                     return render_template('mmd_output.html', customer_bom=session['CustomerBom'],
                                            mmd_file1=session["botmmd"], mmd_file2=session["topmmd"])
                 else:
+                    session["error"] = error
                     return render_template('add_manexpn_to_mmd.html', error="notsafe")
+            elif session["task"] == 3:
+                result, error = PCB_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'],
+                                                       session["customer_bom"],
+                                                       session["bot_pcb"], session["top_pcb"])
+                if result is True:
+                    return render_template('pcb_output.html', customer_bom=session['CustomerBom'],
+                                           pcb_file1=session["botpcb"], pcb_file2=session["toppcb"])
+                else:
+                    session["error"] = error
+                    return render_template('edit_PN_in_pcb.html', error="notsafe")
     else:
         return render_template("separator_info.html", item=session['sep_detail'][session['sep_count']][0])
 
@@ -197,6 +237,17 @@ def sep_detail():
 @app.route('/download/<path:filename>', methods=['GET'])
 def download(filename):
     path = "upload_folder"
+    # file = {
+    #     "customer": session["CustomerBom"],
+    #     "manex": session["ManexBom"],
+    #     "mmd_file": session["MmdFile"],
+    #     "mmdfile1": session["botmmd"],
+    #     "mmdfile2": session["topmmd"],
+    #     "cad_file": session["cadfile"],
+    #     "asc_file": session["ascfile"],
+    #     "pcbfile1": session["botpcb"],
+    #     "pcbfile2": session["toppcb"],
+    # }
     if filename == "customer":
         filename = session["CustomerBom"]
     elif filename == "manex":
@@ -215,6 +266,15 @@ def download(filename):
         filename = session["botpcb"]
     elif filename == "pcbfile2":
         filename = session["toppcb"]
+    elif filename == "model":
+        path = f"{path}/{session['model']}"
+        if os.path.exists(f'{path}.zip'):
+            os.remove(f'{path}.zip')
+        shutil.make_archive(f'upload_folder/{session["model"]}', 'zip', path)
+        path = 'upload_folder'
+        filename = f'{session["model"]}.zip'
+    # else:
+    #     filename = file[filename]
     return send_from_directory(path, filename, as_attachment=True)
 
 
@@ -225,14 +285,20 @@ def csv_to_mmd():
 
 @app.route('/mmd_creator', methods=["GET", "POST"])
 def mmd_creator():
+    possible_errors = ["Make sure you are using the right csv format",
+                       "Actaul data should start from row 2",
+                       "Column B should have internal part numbers whereas Column C should have RefDes",
+                       "X-axis, Y-axis and Rotation Angle must on column H, I and J, respectively"]
+    session["possibilities"] = possible_errors
     csv_file = request.files['csv_file']
     csv_file_path = f"upload_folder/{csv_file.filename}"
     csv_file.save(csv_file_path)
-    result, mmd_file = csv_to_mmd_converter.convert(csv_file_path)
+    result, mmd_file, error = csv_to_mmd_converter.convert(csv_file_path)
     session['MmdFile'] = mmd_file
     if result is True:
         return render_template('csv_to_mmd_output.html', mmd_file=mmd_file)
     else:
+        session["error"] = error
         return render_template('csv_to_mmd.html', error="notsafe")
 
 
@@ -243,6 +309,11 @@ def add_manexpn_to_mmd():
 
 @app.route('/mmd_editor', methods=["GET", "POST"])
 def mmd_editor():
+    possible_errors = ["Make sure that the format of mmd file has not changed",
+                       "Make sure the Customer BOM is the first sheet of the workbook",
+                       "The RefDes is recommended to be comma separated in Customer BOM",
+                       "Verify the correctness of the inputs about the BOM"]
+    session["possibilities"] = possible_errors
     if request.form.get("submit"):
         session["task"] = 2
         customer_bom = request.files['customer_bom']
@@ -266,10 +337,13 @@ def mmd_editor():
             session['botmmd'] = mmd_file.filename
             session['botmmd'] = session['botmmd'].replace(".mmd", "_Svt_PartNo.mmd")
             session['botmmd'] = session['botmmd'].replace(".MMD", "_Svt_PartNo.mmd")
-            result = MMD_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, mmd_file_path, False)
+            result, error = MMD_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, mmd_file_path, False)
             if result is True:
                 return render_template('mmd_output.html', customer_bom=customer_bom.filename, mmd_file1=session['botmmd'],
                                        mmd_file2=False)
+            if error is not None:
+                session["error"] = error
+                return render_template('add_manexpn_to_mmd.html', error="notsafe")
         else:
             top_mmd_path = f"upload_folder/{top_mmd.filename}"
             top_mmd.save(top_mmd_path)
@@ -281,9 +355,12 @@ def mmd_editor():
             session['botmmd'] = session['botmmd'].replace(".MMD", "_Svt_PartNo.mmd")
             session['topmmd'] = session['topmmd'].replace(".mmd", "_Svt_PartNo.mmd")
             session['topmmd'] = session['topmmd'].replace(".MMD", "_Svt_PartNo.mmd")
-            result = MMD_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, bot_mmd_path, top_mmd_path)
+            result, error = MMD_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, bot_mmd_path, top_mmd_path)
             if result is True:
                 return render_template('mmd_output.html', customer_bom=customer_bom.filename, mmd_file1=session['botmmd'], mmd_file2=session['topmmd'])
+            if error is not None:
+                session["error"] = error
+                return render_template('add_manexpn_to_mmd.html', error="notsafe")
         if bool(result):
             session["customer_bom"] = cust_file_path
             if bool(mmd_file):
@@ -303,15 +380,14 @@ def mmd_editor():
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
-                result = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                result, error = MMD_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                 session["bot_mmd"], session["top_mmd"])
                 if result is True:
                     return render_template('mmd_output.html', customer_bom=session['CustomerBom'],
                                            mmd_file1=session["botmmd"], mmd_file2=session["topmmd"])
                 else:
+                    session["error"] = error
                     return render_template('add_manexpn_to_mmd.html', error="notsafe")
-        else:
-            return render_template('add_manexpn_to_mmd.html', error="notsafe")
     else:
         return index()
 
@@ -328,6 +404,8 @@ def gencad_editor():
 
 @app.route('/gencad_output', methods=["GET", "POST"])
 def gencad_output():
+    possible_errors = ["Check if there are any format changes"]
+    session["possibilities"] = possible_errors
     cad_file = request.files['cad_file']
     cad_file_path = f"upload_folder/{cad_file.filename}"
     cad_file.save(cad_file_path)
@@ -376,8 +454,8 @@ def gencad_output():
         logging.error(f"{e}")
         result = False
 
-    session['cadfile'] = new_file_name
     if result is True:
+        session['cadfile'] = new_file_name
         return render_template('gencad_output.html', gencad=session['cadfile'], count=change_count)
     else:
         return render_template('gencad_editor.html', error="notsafe")
@@ -390,6 +468,8 @@ def ascii_editor():
 
 @app.route('/ascii_output', methods=["GET", "POST"])
 def ascii_output():
+    possible_errors = ["Check if there are any format changes"]
+    session["possibilities"] = possible_errors
     ascii_file = request.files['ascii_file']
     ascii_file_path = f"upload_folder/{ascii_file.filename}"
     ascii_file.save(ascii_file_path)
@@ -444,9 +524,10 @@ def ascii_output():
         logging.error("Error while editing .ASC file!")
         logging.error(f"{e}")
         result = False
+        session["error"] = f"Error while editing .ASC file\n{e.__class__}\n{e}"
 
-    session['ascfile'] = new_file_name
     if result is True:
+        session['ascfile'] = new_file_name
         return render_template('ascii_output.html', ascii=session['ascfile'], count=change_count)
     else:
         return render_template('ascii_editor.html', error="notsafe")
@@ -459,6 +540,11 @@ def edit_PN_in_pcb():
 
 @app.route('/pcb_editor', methods=["GET", "POST"])
 def pcb_editor():
+    possible_errors = ["Make sure that the format of pcb file has not changed",
+                       "Make sure the Customer BOM is the first sheet of the workbook",
+                       "The RefDes is recommended to be comma separated in Customer BOM",
+                       "Verify the correctness of the inputs about the BOM"]
+    session["possibilities"] = possible_errors
     if request.form.get("submit"):
         session["task"] = 3
         customer_bom = request.files['customer_bom']
@@ -482,10 +568,13 @@ def pcb_editor():
             session['botpcb'] = pcb_file.filename
             session['botpcb'] = session['botpcb'].replace(".pcb", "_modified.pcb")
             session['botpcb'] = session['botpcb'].replace(".PCB", "_modified.pcb")
-            result = PCB_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, pcb_file_path, False)
+            result, error = PCB_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, pcb_file_path, False)
             if result is True:
                 return render_template('pcb_output.html', customer_bom=customer_bom.filename, pcb_file1=session['botpcb'],
                                        pcb_file2=False)
+            if error is not None:
+                session["error"] = error
+                return render_template('edit_PN_in_pcb.html', error="notsafe")
         else:
             top_pcb_path = f"upload_folder/{top_pcb.filename}"
             top_pcb.save(top_pcb_path)
@@ -497,9 +586,12 @@ def pcb_editor():
             session['botpcb'] = session['botpcb'].replace(".PCB", "_modified.pcb")
             session['toppcb'] = session['toppcb'].replace(".pcb", "_modified.pcb")
             session['toppcb'] = session['toppcb'].replace(".PCB", "_modified.pcb")
-            result = PCB_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, bot_pcb_path, top_pcb_path)
+            result, error = PCB_EditPN.ReadBom(cust_file_path, designator, pn, int(start_row), int(end_row), delimiter, separator, bot_pcb_path, top_pcb_path)
             if result is True:
                 return render_template('pcb_output.html', customer_bom=customer_bom.filename, pcb_file1=session['botpcb'], pcb_file2=session['toppcb'])
+            if error is not None:
+                session['error'] = error
+                return render_template('edit_PN_in_pcb.html', error="notsafe")
         if bool(result):
             session["customer_bom"] = cust_file_path
             if bool(pcb_file):
@@ -519,15 +611,14 @@ def pcb_editor():
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
-                result = PCB_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
+                result, error = PCB_EditPN.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                 session["bot_pcb"], session["top_pcb"])
                 if result is True:
                     return render_template('pcb_output.html', customer_bom=session['CustomerBom'],
                                            pcb_file1=session["botpcb"], pcb_file2=session["toppcb"])
                 else:
+                    session["error"] = error
                     return render_template('edit_PN_in_pcb.html', error="notsafe")
-        else:
-            return render_template('edit_PN_in_pcb.html', error="notsafe")
     else:
         return index()
 
@@ -535,6 +626,57 @@ def pcb_editor():
 @app.route('/pcb_output', methods=["GET", "POST"])
 def pcb_output():
     return render_template('pcb_output.html')
+
+
+@app.route('/aoi_report_generator', methods=["GET", "POST"])
+def aoi_report_generator():
+    return render_template('aoi_report_generator.html')
+
+
+@app.route('/reports_output', methods=["GET", "POST"])
+def reports_output():
+    possible_errors = ["Check all your inputs for correctness", "Verify that the inputs are as per the required formats", "Time interval format is HH:MM:SS", "Date format is MM/DD/YYYY"]
+    session["possibilities"] = possible_errors
+    if request.form.get("submit"):
+        batch = request.form.get("batch")
+        time = request.form.get("time")
+        serial = int(request.form.get("serial"))
+        copies = int(request.form.get("copies"))
+        model = request.form.get("model")
+        boardsn = int(request.form.get("boardsn"))
+        date = request.form.get("date")
+        time_int = request.form.get("time_int")
+        mount = int(request.form.get("mount"))
+        solder = int(request.form.get("solder"))
+        ic_count = int(request.form.get("ic_count"))
+        total = int(request.form.get("total"))
+
+        date = date.split("T")
+        ddate = date[0].split("-")
+        ddate = f"{ddate[1]}/{ddate[0]}/{ddate[2]}"
+        dtime = date[1]
+
+        parent_dir = "upload_folder/"
+        directory = f"{model}"
+        path = os.path.join(parent_dir, directory)
+        if os.path.exists(path):
+            shutil.rmtree(path)
+        os.mkdir(path)
+        session["model"] = model
+        session['copies'] = copies
+
+        if batch == "single":
+            result, error = report_generator.single_batch(serial, copies, model, boardsn, ddate, dtime, time_int, mount, solder, ic_count, total)
+        else:
+            result, error = report_generator.batchwise(serial, copies, time, model, boardsn, ddate, dtime, time_int, mount, solder, ic_count, total)
+
+        if result is True:
+            return render_template('reports_output.html', model_id=model)
+        else:
+            session["error"] = error
+            return render_template('aoi_report_generator.html', error="notsafe")
+    else:
+        return index()
 
 
 if __name__ == '__main__':

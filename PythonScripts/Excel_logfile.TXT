@@ -723,3 +723,1222 @@
 2023-03-28 17:00:56,402 INFO     127.0.0.1 - - [28/Mar/2023 17:00:56] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
 2023-03-28 17:01:00,239 INFO     127.0.0.1 - - [28/Mar/2023 17:01:00] "GET / HTTP/1.1" 200 -
 2023-03-28 17:01:00,302 INFO     127.0.0.1 - - [28/Mar/2023 17:01:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:21:09,861 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 10:21:09,862 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 10:21:09,875 INFO      * Restarting with stat
+2023-03-29 10:21:12,249 WARNING   * Debugger is active!
+2023-03-29 10:21:12,452 INFO      * Debugger PIN: 688-926-557
+2023-03-29 10:21:21,957 INFO     127.0.0.1 - - [29/Mar/2023 10:21:21] "GET / HTTP/1.1" 200 -
+2023-03-29 10:21:21,953 INFO     127.0.0.1 - - [29/Mar/2023 10:21:21] "GET / HTTP/1.1" 200 -
+2023-03-29 10:21:22,399 INFO     127.0.0.1 - - [29/Mar/2023 10:21:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:21:22,562 INFO     127.0.0.1 - - [29/Mar/2023 10:21:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-03-29 10:21:34,094 INFO     127.0.0.1 - - [29/Mar/2023 10:21:34] "GET / HTTP/1.1" 200 -
+2023-03-29 10:21:34,530 INFO     127.0.0.1 - - [29/Mar/2023 10:21:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:29:34,251 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 10:29:34,526 INFO      * Restarting with stat
+2023-03-29 10:29:36,259 WARNING   * Debugger is active!
+2023-03-29 10:29:36,269 INFO      * Debugger PIN: 688-926-557
+2023-03-29 10:31:48,305 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 10:31:48,390 INFO      * Restarting with stat
+2023-03-29 10:31:50,819 WARNING   * Debugger is active!
+2023-03-29 10:31:50,834 INFO      * Debugger PIN: 688-926-557
+2023-03-29 10:43:13,408 INFO     127.0.0.1 - - [29/Mar/2023 10:43:13] "GET / HTTP/1.1" 200 -
+2023-03-29 10:43:13,432 INFO     127.0.0.1 - - [29/Mar/2023 10:43:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:43:15,474 INFO     127.0.0.1 - - [29/Mar/2023 10:43:15] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:43:15,710 INFO     127.0.0.1 - - [29/Mar/2023 10:43:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:43:15,712 INFO     127.0.0.1 - - [29/Mar/2023 10:43:15] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:43:45,313 INFO     127.0.0.1 - - [29/Mar/2023 10:43:45] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:43:45,343 INFO     127.0.0.1 - - [29/Mar/2023 10:43:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:43:45,344 INFO     127.0.0.1 - - [29/Mar/2023 10:43:45] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:45:14,923 INFO     127.0.0.1 - - [29/Mar/2023 10:45:14] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:45:14,951 INFO     127.0.0.1 - - [29/Mar/2023 10:45:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:45:14,953 INFO     127.0.0.1 - - [29/Mar/2023 10:45:14] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:47:13,021 INFO     127.0.0.1 - - [29/Mar/2023 10:47:13] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:47:13,055 INFO     127.0.0.1 - - [29/Mar/2023 10:47:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:47:13,056 INFO     127.0.0.1 - - [29/Mar/2023 10:47:13] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:47:31,836 INFO     127.0.0.1 - - [29/Mar/2023 10:47:31] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:47:31,868 INFO     127.0.0.1 - - [29/Mar/2023 10:47:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:47:31,870 INFO     127.0.0.1 - - [29/Mar/2023 10:47:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:47:43,025 INFO     127.0.0.1 - - [29/Mar/2023 10:47:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:47:43,047 INFO     127.0.0.1 - - [29/Mar/2023 10:47:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:47:43,048 INFO     127.0.0.1 - - [29/Mar/2023 10:47:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:48:15,526 INFO     127.0.0.1 - - [29/Mar/2023 10:48:15] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:48:15,549 INFO     127.0.0.1 - - [29/Mar/2023 10:48:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:48:15,550 INFO     127.0.0.1 - - [29/Mar/2023 10:48:15] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:48:28,295 INFO     127.0.0.1 - - [29/Mar/2023 10:48:28] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:48:28,330 INFO     127.0.0.1 - - [29/Mar/2023 10:48:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:48:28,335 INFO     127.0.0.1 - - [29/Mar/2023 10:48:28] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:48:54,193 INFO     127.0.0.1 - - [29/Mar/2023 10:48:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:48:54,217 INFO     127.0.0.1 - - [29/Mar/2023 10:48:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:48:54,218 INFO     127.0.0.1 - - [29/Mar/2023 10:48:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:49:16,202 INFO     127.0.0.1 - - [29/Mar/2023 10:49:16] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:49:16,225 INFO     127.0.0.1 - - [29/Mar/2023 10:49:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:49:16,226 INFO     127.0.0.1 - - [29/Mar/2023 10:49:16] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:49:38,829 INFO     127.0.0.1 - - [29/Mar/2023 10:49:38] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:49:38,863 INFO     127.0.0.1 - - [29/Mar/2023 10:49:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:49:38,864 INFO     127.0.0.1 - - [29/Mar/2023 10:49:38] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:49:54,464 INFO     127.0.0.1 - - [29/Mar/2023 10:49:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:49:54,487 INFO     127.0.0.1 - - [29/Mar/2023 10:49:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:49:54,488 INFO     127.0.0.1 - - [29/Mar/2023 10:49:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:50:14,038 INFO     127.0.0.1 - - [29/Mar/2023 10:50:14] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:50:14,067 INFO     127.0.0.1 - - [29/Mar/2023 10:50:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:50:14,068 INFO     127.0.0.1 - - [29/Mar/2023 10:50:14] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:51:58,692 INFO     127.0.0.1 - - [29/Mar/2023 10:51:58] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:51:58,725 INFO     127.0.0.1 - - [29/Mar/2023 10:51:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:51:58,726 INFO     127.0.0.1 - - [29/Mar/2023 10:51:58] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:52:25,098 INFO     127.0.0.1 - - [29/Mar/2023 10:52:25] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:52:25,121 INFO     127.0.0.1 - - [29/Mar/2023 10:52:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:52:25,121 INFO     127.0.0.1 - - [29/Mar/2023 10:52:25] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:52:31,714 INFO     127.0.0.1 - - [29/Mar/2023 10:52:31] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:52:31,741 INFO     127.0.0.1 - - [29/Mar/2023 10:52:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:52:31,744 INFO     127.0.0.1 - - [29/Mar/2023 10:52:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:56:32,763 INFO     127.0.0.1 - - [29/Mar/2023 10:56:32] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:56:32,793 INFO     127.0.0.1 - - [29/Mar/2023 10:56:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:56:32,794 INFO     127.0.0.1 - - [29/Mar/2023 10:56:32] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:56:48,280 INFO     127.0.0.1 - - [29/Mar/2023 10:56:48] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:56:48,309 INFO     127.0.0.1 - - [29/Mar/2023 10:56:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:56:48,310 INFO     127.0.0.1 - - [29/Mar/2023 10:56:48] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:57:02,712 INFO     127.0.0.1 - - [29/Mar/2023 10:57:02] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:57:02,733 INFO     127.0.0.1 - - [29/Mar/2023 10:57:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:57:02,734 INFO     127.0.0.1 - - [29/Mar/2023 10:57:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:57:28,354 INFO     127.0.0.1 - - [29/Mar/2023 10:57:28] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:57:28,379 INFO     127.0.0.1 - - [29/Mar/2023 10:57:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:57:28,380 INFO     127.0.0.1 - - [29/Mar/2023 10:57:28] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:57:34,846 INFO     127.0.0.1 - - [29/Mar/2023 10:57:34] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:57:34,873 INFO     127.0.0.1 - - [29/Mar/2023 10:57:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:57:34,874 INFO     127.0.0.1 - - [29/Mar/2023 10:57:34] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:57:56,095 INFO     127.0.0.1 - - [29/Mar/2023 10:57:56] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:57:56,119 INFO     127.0.0.1 - - [29/Mar/2023 10:57:56] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:57:56,121 INFO     127.0.0.1 - - [29/Mar/2023 10:57:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:58:07,031 INFO     127.0.0.1 - - [29/Mar/2023 10:58:07] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:58:07,054 INFO     127.0.0.1 - - [29/Mar/2023 10:58:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:58:07,056 INFO     127.0.0.1 - - [29/Mar/2023 10:58:07] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:58:18,468 INFO     127.0.0.1 - - [29/Mar/2023 10:58:18] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:58:18,492 INFO     127.0.0.1 - - [29/Mar/2023 10:58:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:58:18,493 INFO     127.0.0.1 - - [29/Mar/2023 10:58:18] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:58:26,536 INFO     127.0.0.1 - - [29/Mar/2023 10:58:26] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:58:26,561 INFO     127.0.0.1 - - [29/Mar/2023 10:58:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:58:26,563 INFO     127.0.0.1 - - [29/Mar/2023 10:58:26] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:59:23,592 INFO     127.0.0.1 - - [29/Mar/2023 10:59:23] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:59:23,619 INFO     127.0.0.1 - - [29/Mar/2023 10:59:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:59:23,620 INFO     127.0.0.1 - - [29/Mar/2023 10:59:23] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 10:59:59,254 INFO     127.0.0.1 - - [29/Mar/2023 10:59:59] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 10:59:59,279 INFO     127.0.0.1 - - [29/Mar/2023 10:59:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 10:59:59,280 INFO     127.0.0.1 - - [29/Mar/2023 10:59:59] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:04:43,647 INFO     127.0.0.1 - - [29/Mar/2023 11:04:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:04:43,691 INFO     127.0.0.1 - - [29/Mar/2023 11:04:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:04:43,696 INFO     127.0.0.1 - - [29/Mar/2023 11:04:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:07:25,117 INFO     127.0.0.1 - - [29/Mar/2023 11:07:25] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:07:25,140 INFO     127.0.0.1 - - [29/Mar/2023 11:07:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:07:25,145 INFO     127.0.0.1 - - [29/Mar/2023 11:07:25] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:07:46,685 INFO     127.0.0.1 - - [29/Mar/2023 11:07:46] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:07:46,715 INFO     127.0.0.1 - - [29/Mar/2023 11:07:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:07:46,716 INFO     127.0.0.1 - - [29/Mar/2023 11:07:46] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:07:50,445 INFO     127.0.0.1 - - [29/Mar/2023 11:07:50] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:07:50,474 INFO     127.0.0.1 - - [29/Mar/2023 11:07:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:07:50,475 INFO     127.0.0.1 - - [29/Mar/2023 11:07:50] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:08:04,507 INFO     127.0.0.1 - - [29/Mar/2023 11:08:04] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:08:04,533 INFO     127.0.0.1 - - [29/Mar/2023 11:08:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:08:04,535 INFO     127.0.0.1 - - [29/Mar/2023 11:08:04] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:09:06,015 INFO     127.0.0.1 - - [29/Mar/2023 11:09:06] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:09:06,067 INFO     127.0.0.1 - - [29/Mar/2023 11:09:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:09:06,075 INFO     127.0.0.1 - - [29/Mar/2023 11:09:06] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:16:39,978 INFO     127.0.0.1 - - [29/Mar/2023 11:16:39] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:16:40,009 INFO     127.0.0.1 - - [29/Mar/2023 11:16:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:16:40,011 INFO     127.0.0.1 - - [29/Mar/2023 11:16:40] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:16:52,369 INFO     127.0.0.1 - - [29/Mar/2023 11:16:52] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:16:52,398 INFO     127.0.0.1 - - [29/Mar/2023 11:16:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:16:52,399 INFO     127.0.0.1 - - [29/Mar/2023 11:16:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:17:02,009 INFO     127.0.0.1 - - [29/Mar/2023 11:17:02] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:17:02,035 INFO     127.0.0.1 - - [29/Mar/2023 11:17:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:17:02,037 INFO     127.0.0.1 - - [29/Mar/2023 11:17:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:22:02,241 INFO     127.0.0.1 - - [29/Mar/2023 11:22:02] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:22:02,266 INFO     127.0.0.1 - - [29/Mar/2023 11:22:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:22:02,267 INFO     127.0.0.1 - - [29/Mar/2023 11:22:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:22:39,370 INFO     127.0.0.1 - - [29/Mar/2023 11:22:39] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:22:39,398 INFO     127.0.0.1 - - [29/Mar/2023 11:22:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:22:39,403 INFO     127.0.0.1 - - [29/Mar/2023 11:22:39] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:22:47,433 INFO     127.0.0.1 - - [29/Mar/2023 11:22:47] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:22:47,458 INFO     127.0.0.1 - - [29/Mar/2023 11:22:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:22:47,459 INFO     127.0.0.1 - - [29/Mar/2023 11:22:47] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:22:54,601 INFO     127.0.0.1 - - [29/Mar/2023 11:22:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:22:54,629 INFO     127.0.0.1 - - [29/Mar/2023 11:22:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:22:54,630 INFO     127.0.0.1 - - [29/Mar/2023 11:22:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:23:16,943 INFO     127.0.0.1 - - [29/Mar/2023 11:23:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:23:40,365 INFO     127.0.0.1 - - [29/Mar/2023 11:23:40] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:23:40,393 INFO     127.0.0.1 - - [29/Mar/2023 11:23:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:23:40,394 INFO     127.0.0.1 - - [29/Mar/2023 11:23:40] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:23:52,017 INFO     127.0.0.1 - - [29/Mar/2023 11:23:52] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:23:52,040 INFO     127.0.0.1 - - [29/Mar/2023 11:23:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:23:52,040 INFO     127.0.0.1 - - [29/Mar/2023 11:23:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:24:01,093 INFO     127.0.0.1 - - [29/Mar/2023 11:24:01] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:24:01,114 INFO     127.0.0.1 - - [29/Mar/2023 11:24:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:24:01,117 INFO     127.0.0.1 - - [29/Mar/2023 11:24:01] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:24:05,459 INFO     127.0.0.1 - - [29/Mar/2023 11:24:05] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:24:05,485 INFO     127.0.0.1 - - [29/Mar/2023 11:24:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:24:05,486 INFO     127.0.0.1 - - [29/Mar/2023 11:24:05] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:24:33,346 INFO     127.0.0.1 - - [29/Mar/2023 11:24:33] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:24:33,370 INFO     127.0.0.1 - - [29/Mar/2023 11:24:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:24:33,370 INFO     127.0.0.1 - - [29/Mar/2023 11:24:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:24:42,465 INFO     127.0.0.1 - - [29/Mar/2023 11:24:42] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:24:42,490 INFO     127.0.0.1 - - [29/Mar/2023 11:24:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:24:42,491 INFO     127.0.0.1 - - [29/Mar/2023 11:24:42] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:26:43,051 INFO     127.0.0.1 - - [29/Mar/2023 11:26:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:26:43,136 INFO     127.0.0.1 - - [29/Mar/2023 11:26:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:26:43,140 INFO     127.0.0.1 - - [29/Mar/2023 11:26:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:26:55,277 INFO     127.0.0.1 - - [29/Mar/2023 11:26:55] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:26:55,357 INFO     127.0.0.1 - - [29/Mar/2023 11:26:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:26:55,362 INFO     127.0.0.1 - - [29/Mar/2023 11:26:55] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:27:02,533 INFO     127.0.0.1 - - [29/Mar/2023 11:27:02] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:27:02,592 INFO     127.0.0.1 - - [29/Mar/2023 11:27:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:27:02,592 INFO     127.0.0.1 - - [29/Mar/2023 11:27:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:27:34,430 INFO     127.0.0.1 - - [29/Mar/2023 11:27:34] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:27:34,507 INFO     127.0.0.1 - - [29/Mar/2023 11:27:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:27:34,510 INFO     127.0.0.1 - - [29/Mar/2023 11:27:34] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:27:51,999 INFO     127.0.0.1 - - [29/Mar/2023 11:27:51] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:27:52,075 INFO     127.0.0.1 - - [29/Mar/2023 11:27:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:27:52,076 INFO     127.0.0.1 - - [29/Mar/2023 11:27:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:28:49,159 INFO     127.0.0.1 - - [29/Mar/2023 11:28:49] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:28:49,235 INFO     127.0.0.1 - - [29/Mar/2023 11:28:49] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:28:49,235 INFO     127.0.0.1 - - [29/Mar/2023 11:28:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:29:02,157 INFO     127.0.0.1 - - [29/Mar/2023 11:29:02] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:29:02,191 INFO     127.0.0.1 - - [29/Mar/2023 11:29:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:29:02,194 INFO     127.0.0.1 - - [29/Mar/2023 11:29:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:29:54,701 INFO     127.0.0.1 - - [29/Mar/2023 11:29:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:29:54,789 INFO     127.0.0.1 - - [29/Mar/2023 11:29:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:29:54,792 INFO     127.0.0.1 - - [29/Mar/2023 11:29:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:31:11,956 INFO     127.0.0.1 - - [29/Mar/2023 11:31:11] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:31:12,004 INFO     127.0.0.1 - - [29/Mar/2023 11:31:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:31:12,008 INFO     127.0.0.1 - - [29/Mar/2023 11:31:12] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:32:05,041 INFO     127.0.0.1 - - [29/Mar/2023 11:32:05] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:32:05,070 INFO     127.0.0.1 - - [29/Mar/2023 11:32:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:32:05,070 INFO     127.0.0.1 - - [29/Mar/2023 11:32:05] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:32:48,558 INFO     127.0.0.1 - - [29/Mar/2023 11:32:48] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:32:48,600 INFO     127.0.0.1 - - [29/Mar/2023 11:32:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:32:48,601 INFO     127.0.0.1 - - [29/Mar/2023 11:32:48] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:33:00,253 INFO     127.0.0.1 - - [29/Mar/2023 11:33:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:33:36,216 INFO     127.0.0.1 - - [29/Mar/2023 11:33:36] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:33:36,275 INFO     127.0.0.1 - - [29/Mar/2023 11:33:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:33:36,278 INFO     127.0.0.1 - - [29/Mar/2023 11:33:36] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:34:01,933 INFO     127.0.0.1 - - [29/Mar/2023 11:34:01] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:34:02,002 INFO     127.0.0.1 - - [29/Mar/2023 11:34:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:34:02,008 INFO     127.0.0.1 - - [29/Mar/2023 11:34:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:34:29,305 INFO     127.0.0.1 - - [29/Mar/2023 11:34:29] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:34:29,352 INFO     127.0.0.1 - - [29/Mar/2023 11:34:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:34:29,357 INFO     127.0.0.1 - - [29/Mar/2023 11:34:29] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:34:35,634 INFO     127.0.0.1 - - [29/Mar/2023 11:34:35] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:34:35,677 INFO     127.0.0.1 - - [29/Mar/2023 11:34:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:34:35,678 INFO     127.0.0.1 - - [29/Mar/2023 11:34:35] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:34:49,837 INFO     127.0.0.1 - - [29/Mar/2023 11:34:49] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:34:49,876 INFO     127.0.0.1 - - [29/Mar/2023 11:34:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:34:49,879 INFO     127.0.0.1 - - [29/Mar/2023 11:34:49] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:35:08,737 INFO     127.0.0.1 - - [29/Mar/2023 11:35:08] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:35:08,772 INFO     127.0.0.1 - - [29/Mar/2023 11:35:08] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:35:08,773 INFO     127.0.0.1 - - [29/Mar/2023 11:35:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:35:33,960 INFO     127.0.0.1 - - [29/Mar/2023 11:35:33] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:35:33,991 INFO     127.0.0.1 - - [29/Mar/2023 11:35:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:35:33,993 INFO     127.0.0.1 - - [29/Mar/2023 11:35:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:35:50,163 INFO     127.0.0.1 - - [29/Mar/2023 11:35:50] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:35:50,254 INFO     127.0.0.1 - - [29/Mar/2023 11:35:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:35:50,267 INFO     127.0.0.1 - - [29/Mar/2023 11:35:50] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:35:58,949 INFO     127.0.0.1 - - [29/Mar/2023 11:35:58] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:35:59,009 INFO     127.0.0.1 - - [29/Mar/2023 11:35:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:35:59,011 INFO     127.0.0.1 - - [29/Mar/2023 11:35:59] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:36:38,016 INFO     127.0.0.1 - - [29/Mar/2023 11:36:38] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:36:38,059 INFO     127.0.0.1 - - [29/Mar/2023 11:36:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:36:38,068 INFO     127.0.0.1 - - [29/Mar/2023 11:36:38] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:36:47,862 INFO     127.0.0.1 - - [29/Mar/2023 11:36:47] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:36:47,905 INFO     127.0.0.1 - - [29/Mar/2023 11:36:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:36:47,909 INFO     127.0.0.1 - - [29/Mar/2023 11:36:47] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:36:54,719 INFO     127.0.0.1 - - [29/Mar/2023 11:36:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:36:54,765 INFO     127.0.0.1 - - [29/Mar/2023 11:36:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:36:54,765 INFO     127.0.0.1 - - [29/Mar/2023 11:36:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:37:12,678 INFO     127.0.0.1 - - [29/Mar/2023 11:37:12] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:37:12,717 INFO     127.0.0.1 - - [29/Mar/2023 11:37:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:37:12,723 INFO     127.0.0.1 - - [29/Mar/2023 11:37:12] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:38:14,007 INFO     127.0.0.1 - - [29/Mar/2023 11:38:14] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:38:14,066 INFO     127.0.0.1 - - [29/Mar/2023 11:38:14] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:38:14,067 INFO     127.0.0.1 - - [29/Mar/2023 11:38:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:38:31,455 INFO     127.0.0.1 - - [29/Mar/2023 11:38:31] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:38:31,506 INFO     127.0.0.1 - - [29/Mar/2023 11:38:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:38:31,513 INFO     127.0.0.1 - - [29/Mar/2023 11:38:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:38:58,751 INFO     127.0.0.1 - - [29/Mar/2023 11:38:58] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:38:58,791 INFO     127.0.0.1 - - [29/Mar/2023 11:38:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:38:58,795 INFO     127.0.0.1 - - [29/Mar/2023 11:38:58] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:39:03,834 INFO     127.0.0.1 - - [29/Mar/2023 11:39:03] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:39:03,937 INFO     127.0.0.1 - - [29/Mar/2023 11:39:03] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:39:03,938 INFO     127.0.0.1 - - [29/Mar/2023 11:39:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:39:08,910 INFO     127.0.0.1 - - [29/Mar/2023 11:39:08] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:39:08,963 INFO     127.0.0.1 - - [29/Mar/2023 11:39:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:39:08,966 INFO     127.0.0.1 - - [29/Mar/2023 11:39:08] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:39:34,927 INFO     127.0.0.1 - - [29/Mar/2023 11:39:34] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:39:35,025 INFO     127.0.0.1 - - [29/Mar/2023 11:39:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:39:35,030 INFO     127.0.0.1 - - [29/Mar/2023 11:39:35] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:40:23,901 INFO     127.0.0.1 - - [29/Mar/2023 11:40:23] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:40:23,985 INFO     127.0.0.1 - - [29/Mar/2023 11:40:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:40:23,989 INFO     127.0.0.1 - - [29/Mar/2023 11:40:23] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:40:48,096 INFO     127.0.0.1 - - [29/Mar/2023 11:40:48] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:40:48,131 INFO     127.0.0.1 - - [29/Mar/2023 11:40:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:40:48,137 INFO     127.0.0.1 - - [29/Mar/2023 11:40:48] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:42:04,576 INFO     127.0.0.1 - - [29/Mar/2023 11:42:04] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:42:04,659 INFO     127.0.0.1 - - [29/Mar/2023 11:42:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:42:04,663 INFO     127.0.0.1 - - [29/Mar/2023 11:42:04] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:42:26,688 INFO     127.0.0.1 - - [29/Mar/2023 11:42:26] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:42:26,754 INFO     127.0.0.1 - - [29/Mar/2023 11:42:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:42:26,756 INFO     127.0.0.1 - - [29/Mar/2023 11:42:26] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:42:51,692 INFO     127.0.0.1 - - [29/Mar/2023 11:42:51] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:42:51,737 INFO     127.0.0.1 - - [29/Mar/2023 11:42:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:42:51,739 INFO     127.0.0.1 - - [29/Mar/2023 11:42:51] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:56:33,422 INFO     127.0.0.1 - - [29/Mar/2023 11:56:33] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:56:33,477 INFO     127.0.0.1 - - [29/Mar/2023 11:56:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:56:33,486 INFO     127.0.0.1 - - [29/Mar/2023 11:56:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:57:16,805 INFO     127.0.0.1 - - [29/Mar/2023 11:57:16] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:57:16,866 INFO     127.0.0.1 - - [29/Mar/2023 11:57:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:57:16,866 INFO     127.0.0.1 - - [29/Mar/2023 11:57:16] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:57:37,921 INFO     127.0.0.1 - - [29/Mar/2023 11:57:37] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:57:37,977 INFO     127.0.0.1 - - [29/Mar/2023 11:57:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:57:37,981 INFO     127.0.0.1 - - [29/Mar/2023 11:57:37] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:58:09,762 INFO     127.0.0.1 - - [29/Mar/2023 11:58:09] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:58:09,870 INFO     127.0.0.1 - - [29/Mar/2023 11:58:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:58:09,873 INFO     127.0.0.1 - - [29/Mar/2023 11:58:09] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 11:58:32,959 INFO     127.0.0.1 - - [29/Mar/2023 11:58:32] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 11:58:33,014 INFO     127.0.0.1 - - [29/Mar/2023 11:58:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 11:58:33,015 INFO     127.0.0.1 - - [29/Mar/2023 11:58:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:00:03,575 INFO     127.0.0.1 - - [29/Mar/2023 12:00:03] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:00:03,621 INFO     127.0.0.1 - - [29/Mar/2023 12:00:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:00:03,621 INFO     127.0.0.1 - - [29/Mar/2023 12:00:03] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:00:28,108 INFO     127.0.0.1 - - [29/Mar/2023 12:00:28] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:00:28,159 INFO     127.0.0.1 - - [29/Mar/2023 12:00:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:00:28,161 INFO     127.0.0.1 - - [29/Mar/2023 12:00:28] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:01:32,280 INFO     127.0.0.1 - - [29/Mar/2023 12:01:32] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:01:32,344 INFO     127.0.0.1 - - [29/Mar/2023 12:01:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:01:32,347 INFO     127.0.0.1 - - [29/Mar/2023 12:01:32] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:02:10,008 INFO     127.0.0.1 - - [29/Mar/2023 12:02:10] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:02:10,097 INFO     127.0.0.1 - - [29/Mar/2023 12:02:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:02:10,104 INFO     127.0.0.1 - - [29/Mar/2023 12:02:10] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:03:43,565 INFO     127.0.0.1 - - [29/Mar/2023 12:03:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:03:43,654 INFO     127.0.0.1 - - [29/Mar/2023 12:03:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:03:43,657 INFO     127.0.0.1 - - [29/Mar/2023 12:03:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:04:04,766 INFO     127.0.0.1 - - [29/Mar/2023 12:04:04] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:04:04,847 INFO     127.0.0.1 - - [29/Mar/2023 12:04:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:04:04,856 INFO     127.0.0.1 - - [29/Mar/2023 12:04:04] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:04:47,535 INFO     127.0.0.1 - - [29/Mar/2023 12:04:47] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:04:47,636 INFO     127.0.0.1 - - [29/Mar/2023 12:04:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:04:47,636 INFO     127.0.0.1 - - [29/Mar/2023 12:04:47] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:05:56,852 INFO     127.0.0.1 - - [29/Mar/2023 12:05:56] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:05:56,890 INFO     127.0.0.1 - - [29/Mar/2023 12:05:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:05:56,893 INFO     127.0.0.1 - - [29/Mar/2023 12:05:56] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:06:17,347 INFO     127.0.0.1 - - [29/Mar/2023 12:06:17] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:06:17,397 INFO     127.0.0.1 - - [29/Mar/2023 12:06:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:06:17,400 INFO     127.0.0.1 - - [29/Mar/2023 12:06:17] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:07:18,742 INFO     127.0.0.1 - - [29/Mar/2023 12:07:18] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:07:18,820 INFO     127.0.0.1 - - [29/Mar/2023 12:07:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:07:18,823 INFO     127.0.0.1 - - [29/Mar/2023 12:07:18] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:09:46,320 INFO     127.0.0.1 - - [29/Mar/2023 12:09:46] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:09:46,392 INFO     127.0.0.1 - - [29/Mar/2023 12:09:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:09:46,399 INFO     127.0.0.1 - - [29/Mar/2023 12:09:46] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:12:07,151 INFO     127.0.0.1 - - [29/Mar/2023 12:12:07] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:12:07,228 INFO     127.0.0.1 - - [29/Mar/2023 12:12:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:12:07,245 INFO     127.0.0.1 - - [29/Mar/2023 12:12:07] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:13:03,443 INFO     127.0.0.1 - - [29/Mar/2023 12:13:03] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:13:03,514 INFO     127.0.0.1 - - [29/Mar/2023 12:13:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:13:03,519 INFO     127.0.0.1 - - [29/Mar/2023 12:13:03] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:13:43,255 INFO     127.0.0.1 - - [29/Mar/2023 12:13:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:13:43,333 INFO     127.0.0.1 - - [29/Mar/2023 12:13:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:13:43,338 INFO     127.0.0.1 - - [29/Mar/2023 12:13:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:14:44,559 INFO     127.0.0.1 - - [29/Mar/2023 12:14:44] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:14:44,627 INFO     127.0.0.1 - - [29/Mar/2023 12:14:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:14:44,638 INFO     127.0.0.1 - - [29/Mar/2023 12:14:44] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:14:57,504 INFO     127.0.0.1 - - [29/Mar/2023 12:14:57] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:14:57,577 INFO     127.0.0.1 - - [29/Mar/2023 12:14:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:14:57,580 INFO     127.0.0.1 - - [29/Mar/2023 12:14:57] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:15:29,557 INFO     127.0.0.1 - - [29/Mar/2023 12:15:29] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:15:29,591 INFO     127.0.0.1 - - [29/Mar/2023 12:15:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:15:29,595 INFO     127.0.0.1 - - [29/Mar/2023 12:15:29] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:15:39,911 INFO     127.0.0.1 - - [29/Mar/2023 12:15:39] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:15:39,972 INFO     127.0.0.1 - - [29/Mar/2023 12:15:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:15:39,980 INFO     127.0.0.1 - - [29/Mar/2023 12:15:39] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:15:49,763 INFO     127.0.0.1 - - [29/Mar/2023 12:15:49] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:15:49,813 INFO     127.0.0.1 - - [29/Mar/2023 12:15:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:15:49,816 INFO     127.0.0.1 - - [29/Mar/2023 12:15:49] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:15:56,265 INFO     127.0.0.1 - - [29/Mar/2023 12:15:56] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:15:56,298 INFO     127.0.0.1 - - [29/Mar/2023 12:15:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:15:56,299 INFO     127.0.0.1 - - [29/Mar/2023 12:15:56] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:16:12,382 INFO     127.0.0.1 - - [29/Mar/2023 12:16:12] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:16:12,425 INFO     127.0.0.1 - - [29/Mar/2023 12:16:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:16:12,431 INFO     127.0.0.1 - - [29/Mar/2023 12:16:12] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:17:07,107 INFO     127.0.0.1 - - [29/Mar/2023 12:17:07] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:17:07,186 INFO     127.0.0.1 - - [29/Mar/2023 12:17:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:17:07,191 INFO     127.0.0.1 - - [29/Mar/2023 12:17:07] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:17:23,271 INFO     127.0.0.1 - - [29/Mar/2023 12:17:23] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:17:23,331 INFO     127.0.0.1 - - [29/Mar/2023 12:17:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:17:23,333 INFO     127.0.0.1 - - [29/Mar/2023 12:17:23] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:17:51,227 INFO     127.0.0.1 - - [29/Mar/2023 12:17:51] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:17:51,274 INFO     127.0.0.1 - - [29/Mar/2023 12:17:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:17:51,278 INFO     127.0.0.1 - - [29/Mar/2023 12:17:51] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:18:11,521 INFO     127.0.0.1 - - [29/Mar/2023 12:18:11] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:18:11,575 INFO     127.0.0.1 - - [29/Mar/2023 12:18:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:18:11,576 INFO     127.0.0.1 - - [29/Mar/2023 12:18:11] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:18:31,252 INFO     127.0.0.1 - - [29/Mar/2023 12:18:31] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:18:31,338 INFO     127.0.0.1 - - [29/Mar/2023 12:18:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:18:31,341 INFO     127.0.0.1 - - [29/Mar/2023 12:18:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:18:54,107 INFO     127.0.0.1 - - [29/Mar/2023 12:18:54] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:18:54,150 INFO     127.0.0.1 - - [29/Mar/2023 12:18:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:18:54,153 INFO     127.0.0.1 - - [29/Mar/2023 12:18:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 12:22:07,990 INFO     127.0.0.1 - - [29/Mar/2023 12:22:07] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 12:22:08,044 INFO     127.0.0.1 - - [29/Mar/2023 12:22:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 12:22:08,047 INFO     127.0.0.1 - - [29/Mar/2023 12:22:08] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:03:32,825 INFO     127.0.0.1 - - [29/Mar/2023 13:03:32] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:03:32,859 INFO     127.0.0.1 - - [29/Mar/2023 13:03:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:03:32,866 INFO     127.0.0.1 - - [29/Mar/2023 13:03:32] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:04:18,081 INFO     127.0.0.1 - - [29/Mar/2023 13:04:18] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:04:18,126 INFO     127.0.0.1 - - [29/Mar/2023 13:04:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:04:18,138 INFO     127.0.0.1 - - [29/Mar/2023 13:04:18] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:04:40,596 INFO     127.0.0.1 - - [29/Mar/2023 13:04:40] "GET / HTTP/1.1" 200 -
+2023-03-29 13:04:40,658 INFO     127.0.0.1 - - [29/Mar/2023 13:04:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:04:43,370 INFO     127.0.0.1 - - [29/Mar/2023 13:04:43] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:04:43,415 INFO     127.0.0.1 - - [29/Mar/2023 13:04:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:04:43,418 INFO     127.0.0.1 - - [29/Mar/2023 13:04:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:04:57,257 INFO     127.0.0.1 - - [29/Mar/2023 13:04:57] "GET / HTTP/1.1" 200 -
+2023-03-29 13:04:57,297 INFO     127.0.0.1 - - [29/Mar/2023 13:04:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:05:51,949 INFO     127.0.0.1 - - [29/Mar/2023 13:05:51] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:05:52,009 INFO     127.0.0.1 - - [29/Mar/2023 13:05:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:05:52,017 INFO     127.0.0.1 - - [29/Mar/2023 13:05:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:06:15,506 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 13:06:16,281 INFO      * Restarting with stat
+2023-03-29 13:06:23,166 WARNING   * Debugger is active!
+2023-03-29 13:06:23,212 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:13:17,610 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 13:13:17,612 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 13:13:17,630 INFO      * Restarting with stat
+2023-03-29 13:13:22,054 WARNING   * Debugger is active!
+2023-03-29 13:13:22,078 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:13:24,774 INFO     127.0.0.1 - - [29/Mar/2023 13:13:24] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:13:24,852 INFO     127.0.0.1 - - [29/Mar/2023 13:13:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:13:24,862 INFO     127.0.0.1 - - [29/Mar/2023 13:13:24] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:14:31,488 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 13:14:31,663 INFO      * Restarting with stat
+2023-03-29 13:14:35,807 WARNING   * Debugger is active!
+2023-03-29 13:14:35,869 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:17:01,791 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 13:17:01,793 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 13:17:01,794 INFO      * Restarting with stat
+2023-03-29 13:17:07,956 WARNING   * Debugger is active!
+2023-03-29 13:17:08,004 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:17:12,669 INFO     127.0.0.1 - - [29/Mar/2023 13:17:12] "GET / HTTP/1.1" 200 -
+2023-03-29 13:17:12,757 INFO     127.0.0.1 - - [29/Mar/2023 13:17:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:17:14,659 INFO     127.0.0.1 - - [29/Mar/2023 13:17:14] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:17:14,723 INFO     127.0.0.1 - - [29/Mar/2023 13:17:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:17:14,726 INFO     127.0.0.1 - - [29/Mar/2023 13:17:14] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 13:18:14,581 INFO     127.0.0.1 - - [29/Mar/2023 13:18:14] "[35m[1mPOST /reports_output HTTP/1.1[0m" 500 -
+2023-03-29 13:18:14,680 INFO     127.0.0.1 - - [29/Mar/2023 13:18:14] "GET /reports_output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-03-29 13:18:14,708 INFO     127.0.0.1 - - [29/Mar/2023 13:18:14] "GET /reports_output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-03-29 13:18:14,731 INFO     127.0.0.1 - - [29/Mar/2023 13:18:14] "GET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-03-29 13:18:14,888 INFO     127.0.0.1 - - [29/Mar/2023 13:18:14] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-29 13:18:37,559 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 13:18:37,848 INFO      * Restarting with stat
+2023-03-29 13:18:43,678 WARNING   * Debugger is active!
+2023-03-29 13:18:43,704 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:18:51,499 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 13:18:51,499 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 13:18:51,506 INFO      * Restarting with stat
+2023-03-29 13:18:57,122 WARNING   * Debugger is active!
+2023-03-29 13:18:57,164 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:20:21,236 INFO     127.0.0.1 - - [29/Mar/2023 13:20:21] "POST /reports_output HTTP/1.1" 200 -
+2023-03-29 13:20:25,459 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 13:20:25,625 INFO      * Restarting with stat
+2023-03-29 13:20:30,435 WARNING   * Debugger is active!
+2023-03-29 13:20:30,462 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:29:16,517 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 13:29:16,664 INFO      * Restarting with stat
+2023-03-29 13:29:20,978 WARNING   * Debugger is active!
+2023-03-29 13:29:21,004 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:43:34,033 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\aoi_report_generator.py', reloading
+2023-03-29 13:43:34,306 INFO      * Restarting with stat
+2023-03-29 13:43:38,879 WARNING   * Debugger is active!
+2023-03-29 13:43:38,906 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:59:04,696 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 13:59:04,696 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 13:59:04,697 INFO      * Restarting with stat
+2023-03-29 13:59:07,398 WARNING   * Debugger is active!
+2023-03-29 13:59:07,424 INFO      * Debugger PIN: 688-926-557
+2023-03-29 13:59:48,081 INFO     127.0.0.1 - - [29/Mar/2023 13:59:48] "GET / HTTP/1.1" 200 -
+2023-03-29 13:59:48,123 INFO     127.0.0.1 - - [29/Mar/2023 13:59:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:59:50,166 INFO     127.0.0.1 - - [29/Mar/2023 13:59:50] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 13:59:50,209 INFO     127.0.0.1 - - [29/Mar/2023 13:59:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 13:59:50,214 INFO     127.0.0.1 - - [29/Mar/2023 13:59:50] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:04:45,711 INFO     127.0.0.1 - - [29/Mar/2023 14:04:45] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:04:45,793 INFO     127.0.0.1 - - [29/Mar/2023 14:04:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:04:45,797 INFO     127.0.0.1 - - [29/Mar/2023 14:04:45] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:05:35,319 INFO     127.0.0.1 - - [29/Mar/2023 14:05:35] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:05:35,380 INFO     127.0.0.1 - - [29/Mar/2023 14:05:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:05:35,385 INFO     127.0.0.1 - - [29/Mar/2023 14:05:35] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:05:57,917 INFO     127.0.0.1 - - [29/Mar/2023 14:05:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:11:00,004 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 14:11:00,641 INFO      * Restarting with stat
+2023-03-29 14:11:48,253 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 14:11:48,254 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 14:11:48,259 INFO      * Restarting with stat
+2023-03-29 14:11:50,602 WARNING   * Debugger is active!
+2023-03-29 14:11:50,896 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:11:52,090 INFO     127.0.0.1 - - [29/Mar/2023 14:11:52] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:11:52,123 INFO     127.0.0.1 - - [29/Mar/2023 14:11:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:11:52,132 INFO     127.0.0.1 - - [29/Mar/2023 14:11:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:13:22,256 INFO     127.0.0.1 - - [29/Mar/2023 14:13:22] "[35m[1mPOST /reports_output HTTP/1.1[0m" 500 -
+2023-03-29 14:13:22,302 INFO     127.0.0.1 - - [29/Mar/2023 14:13:22] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:13:22,316 INFO     127.0.0.1 - - [29/Mar/2023 14:13:22] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-29 14:13:22,342 INFO     127.0.0.1 - - [29/Mar/2023 14:13:22] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-29 14:13:22,488 INFO     127.0.0.1 - - [29/Mar/2023 14:13:22] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-29 14:13:50,439 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 14:13:50,442 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 14:13:50,451 INFO      * Restarting with stat
+2023-03-29 14:13:56,918 WARNING   * Debugger is active!
+2023-03-29 14:13:56,960 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:14:23,828 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 14:14:24,034 INFO      * Restarting with stat
+2023-03-29 14:14:28,762 WARNING   * Debugger is active!
+2023-03-29 14:14:28,788 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:15:21,333 INFO     127.0.0.1 - - [29/Mar/2023 14:15:21] "[35m[1mPOST /reports_output HTTP/1.1[0m" 500 -
+2023-03-29 14:15:21,379 INFO     127.0.0.1 - - [29/Mar/2023 14:15:21] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:15:21,382 INFO     127.0.0.1 - - [29/Mar/2023 14:15:21] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-29 14:15:21,415 INFO     127.0.0.1 - - [29/Mar/2023 14:15:21] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-29 14:16:34,781 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 14:16:34,781 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 14:16:34,784 INFO      * Restarting with stat
+2023-03-29 14:16:37,234 WARNING   * Debugger is active!
+2023-03-29 14:16:37,250 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:16:44,007 INFO     Creating report files...
+2023-03-29 14:16:44,008 ERROR    <class 'TypeError'>
+2023-03-29 14:16:44,008 ERROR    Error while creating reports!
+2023-03-29 14:16:44,008 ERROR    'str' object cannot be interpreted as an integer
+2023-03-29 14:16:44,024 INFO     127.0.0.1 - - [29/Mar/2023 14:16:44] "POST /reports_output HTTP/1.1" 200 -
+2023-03-29 14:16:44,081 INFO     127.0.0.1 - - [29/Mar/2023 14:16:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:16:44,085 INFO     127.0.0.1 - - [29/Mar/2023 14:16:44] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:16:45,937 INFO     127.0.0.1 - - [29/Mar/2023 14:16:45] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:16:46,016 INFO     127.0.0.1 - - [29/Mar/2023 14:16:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:16:46,022 INFO     127.0.0.1 - - [29/Mar/2023 14:16:46] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:18:31,484 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-29 14:18:31,586 INFO      * Restarting with stat
+2023-03-29 14:18:34,026 WARNING   * Debugger is active!
+2023-03-29 14:18:34,038 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:20:45,781 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\report_generator.py', reloading
+2023-03-29 14:20:45,881 INFO      * Restarting with stat
+2023-03-29 14:20:48,628 WARNING   * Debugger is active!
+2023-03-29 14:20:48,642 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:20:58,294 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-29 14:20:58,294 INFO     [33mPress CTRL+C to quit[0m
+2023-03-29 14:20:58,295 INFO      * Restarting with stat
+2023-03-29 14:21:01,154 WARNING   * Debugger is active!
+2023-03-29 14:21:01,209 INFO      * Debugger PIN: 688-926-557
+2023-03-29 14:21:07,381 INFO     Creating report files...
+2023-03-29 14:21:07,383 ERROR    <class 'FileNotFoundError'>
+2023-03-29 14:21:07,383 ERROR    Error while creating reports!
+2023-03-29 14:21:07,383 ERROR    [Errno 2] No such file or directory: 'upload_folder/35390802-REV-E/SimpleCoverageExport_75624004_20230329_142107.txt'
+2023-03-29 14:21:07,400 INFO     127.0.0.1 - - [29/Mar/2023 14:21:07] "POST /reports_output HTTP/1.1" 200 -
+2023-03-29 14:21:07,457 INFO     127.0.0.1 - - [29/Mar/2023 14:21:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:21:07,465 INFO     127.0.0.1 - - [29/Mar/2023 14:21:07] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:21:09,709 INFO     127.0.0.1 - - [29/Mar/2023 14:21:09] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:21:09,779 INFO     127.0.0.1 - - [29/Mar/2023 14:21:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:21:09,786 INFO     127.0.0.1 - - [29/Mar/2023 14:21:09] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:35:01,114 INFO     127.0.0.1 - - [29/Mar/2023 14:35:01] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:35:01,156 INFO     127.0.0.1 - - [29/Mar/2023 14:35:01] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:35:01,159 INFO     127.0.0.1 - - [29/Mar/2023 14:35:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:36:00,866 INFO     127.0.0.1 - - [29/Mar/2023 14:36:00] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:36:00,952 INFO     127.0.0.1 - - [29/Mar/2023 14:36:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:36:00,973 INFO     127.0.0.1 - - [29/Mar/2023 14:36:00] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:36:07,985 INFO     127.0.0.1 - - [29/Mar/2023 14:36:07] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:36:08,043 INFO     127.0.0.1 - - [29/Mar/2023 14:36:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:36:08,051 INFO     127.0.0.1 - - [29/Mar/2023 14:36:08] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:36:26,823 INFO     127.0.0.1 - - [29/Mar/2023 14:36:26] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:36:26,890 INFO     127.0.0.1 - - [29/Mar/2023 14:36:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:36:26,895 INFO     127.0.0.1 - - [29/Mar/2023 14:36:26] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:37:25,194 INFO     127.0.0.1 - - [29/Mar/2023 14:37:25] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:37:25,251 INFO     127.0.0.1 - - [29/Mar/2023 14:37:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:37:25,257 INFO     127.0.0.1 - - [29/Mar/2023 14:37:25] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:37:51,688 INFO     127.0.0.1 - - [29/Mar/2023 14:37:51] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:37:51,762 INFO     127.0.0.1 - - [29/Mar/2023 14:37:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:37:51,774 INFO     127.0.0.1 - - [29/Mar/2023 14:37:51] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:38:19,505 INFO     127.0.0.1 - - [29/Mar/2023 14:38:19] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:38:19,550 INFO     127.0.0.1 - - [29/Mar/2023 14:38:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:38:19,556 INFO     127.0.0.1 - - [29/Mar/2023 14:38:19] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:39:01,237 INFO     127.0.0.1 - - [29/Mar/2023 14:39:01] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:39:01,286 INFO     127.0.0.1 - - [29/Mar/2023 14:39:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:39:01,289 INFO     127.0.0.1 - - [29/Mar/2023 14:39:01] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:40:13,496 INFO     127.0.0.1 - - [29/Mar/2023 14:40:13] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:40:13,550 INFO     127.0.0.1 - - [29/Mar/2023 14:40:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:40:13,553 INFO     127.0.0.1 - - [29/Mar/2023 14:40:13] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:41:09,047 INFO     127.0.0.1 - - [29/Mar/2023 14:41:09] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:41:09,128 INFO     127.0.0.1 - - [29/Mar/2023 14:41:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:41:09,132 INFO     127.0.0.1 - - [29/Mar/2023 14:41:09] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-29 14:41:34,188 INFO     127.0.0.1 - - [29/Mar/2023 14:41:34] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-29 14:41:34,236 INFO     127.0.0.1 - - [29/Mar/2023 14:41:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-29 14:41:34,237 INFO     127.0.0.1 - - [29/Mar/2023 14:41:34] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-30 08:42:55,195 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 08:42:55,196 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 08:42:55,207 INFO      * Restarting with stat
+2023-03-30 08:42:57,560 WARNING   * Debugger is active!
+2023-03-30 08:42:57,722 INFO      * Debugger PIN: 688-926-557
+2023-03-30 08:43:39,611 INFO     127.0.0.1 - - [30/Mar/2023 08:43:39] "GET / HTTP/1.1" 200 -
+2023-03-30 08:43:39,697 INFO     127.0.0.1 - - [30/Mar/2023 08:43:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 08:43:41,981 INFO     127.0.0.1 - - [30/Mar/2023 08:43:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-03-30 08:43:44,377 INFO     127.0.0.1 - - [30/Mar/2023 08:43:44] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-30 08:43:44,417 INFO     127.0.0.1 - - [30/Mar/2023 08:43:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 08:43:44,423 INFO     127.0.0.1 - - [30/Mar/2023 08:43:44] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-30 08:45:38,501 INFO     Creating report files...
+2023-03-30 08:45:38,559 INFO     Finished writing reports!!
+2023-03-30 08:45:38,572 INFO     127.0.0.1 - - [30/Mar/2023 08:45:38] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 08:50:49,412 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 08:50:49,558 INFO      * Restarting with stat
+2023-03-30 08:50:52,652 WARNING   * Debugger is active!
+2023-03-30 08:50:52,668 INFO      * Debugger PIN: 688-926-557
+2023-03-30 08:50:54,382 INFO     127.0.0.1 - - [30/Mar/2023 08:50:54] "GET /reports_output HTTP/1.1" 200 -
+2023-03-30 08:50:54,410 INFO     127.0.0.1 - - [30/Mar/2023 08:50:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 08:50:56,485 INFO     127.0.0.1 - - [30/Mar/2023 08:50:56] "GET /reports_output HTTP/1.1" 200 -
+2023-03-30 08:50:56,510 INFO     127.0.0.1 - - [30/Mar/2023 08:50:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 08:58:33,683 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 08:58:33,752 INFO      * Restarting with stat
+2023-03-30 08:58:35,898 WARNING   * Debugger is active!
+2023-03-30 08:58:35,919 INFO      * Debugger PIN: 688-926-557
+2023-03-30 08:59:43,487 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 08:59:44,827 INFO      * Restarting with stat
+2023-03-30 08:59:50,311 WARNING   * Debugger is active!
+2023-03-30 08:59:50,335 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:03:50,400 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:03:50,401 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:03:50,403 INFO      * Restarting with stat
+2023-03-30 09:03:51,901 WARNING   * Debugger is active!
+2023-03-30 09:03:51,910 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:04:07,799 INFO     127.0.0.1 - - [30/Mar/2023 09:04:07] "GET / HTTP/1.1" 200 -
+2023-03-30 09:04:08,768 INFO     127.0.0.1 - - [30/Mar/2023 09:04:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:04:22,878 INFO     127.0.0.1 - - [30/Mar/2023 09:04:22] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-03-30 09:04:22,912 INFO     127.0.0.1 - - [30/Mar/2023 09:04:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:04:22,915 INFO     127.0.0.1 - - [30/Mar/2023 09:04:22] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-30 09:05:34,848 INFO     127.0.0.1 - - [30/Mar/2023 09:05:34] "[35m[1mPOST /reports_output HTTP/1.1[0m" 500 -
+2023-03-30 09:05:34,900 INFO     127.0.0.1 - - [30/Mar/2023 09:05:34] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:05:34,926 INFO     127.0.0.1 - - [30/Mar/2023 09:05:34] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-30 09:05:34,999 INFO     127.0.0.1 - - [30/Mar/2023 09:05:34] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-30 09:05:35,104 INFO     127.0.0.1 - - [30/Mar/2023 09:05:35] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-30 09:06:28,295 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:06:29,053 INFO      * Restarting with stat
+2023-03-30 09:08:11,600 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:08:11,601 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:08:11,603 INFO      * Restarting with stat
+2023-03-30 09:08:12,934 WARNING   * Debugger is active!
+2023-03-30 09:08:13,064 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:08:31,941 INFO     127.0.0.1 - - [30/Mar/2023 09:08:31] "[35m[1mPOST /reports_output HTTP/1.1[0m" 500 -
+2023-03-30 09:08:31,975 INFO     127.0.0.1 - - [30/Mar/2023 09:08:31] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:08:31,983 INFO     127.0.0.1 - - [30/Mar/2023 09:08:31] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-30 09:08:32,001 INFO     127.0.0.1 - - [30/Mar/2023 09:08:32] "[36mGET /reports_output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-30 09:11:06,537 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:11:06,840 INFO      * Restarting with stat
+2023-03-30 09:11:10,011 WARNING   * Debugger is active!
+2023-03-30 09:11:10,023 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:11:25,164 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:11:25,489 INFO      * Restarting with stat
+2023-03-30 09:11:29,358 WARNING   * Debugger is active!
+2023-03-30 09:11:29,367 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:11:38,457 INFO     Creating report files...
+2023-03-30 09:11:38,502 INFO     Finished writing reports!!
+2023-03-30 09:11:38,525 INFO     127.0.0.1 - - [30/Mar/2023 09:11:38] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:11:38,593 INFO     127.0.0.1 - - [30/Mar/2023 09:11:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:11:41,865 INFO     127.0.0.1 - - [30/Mar/2023 09:11:41] "GET /download/model HTTP/1.1" 200 -
+2023-03-30 09:15:50,516 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:15:50,634 INFO      * Restarting with stat
+2023-03-30 09:15:55,125 WARNING   * Debugger is active!
+2023-03-30 09:15:55,140 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:16:50,771 INFO     Creating report files...
+2023-03-30 09:16:50,811 INFO     Finished writing reports!!
+2023-03-30 09:16:50,827 INFO     127.0.0.1 - - [30/Mar/2023 09:16:50] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:16:50,892 INFO     127.0.0.1 - - [30/Mar/2023 09:16:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:16:53,645 INFO     127.0.0.1 - - [30/Mar/2023 09:16:53] "[35m[1mGET /download/model HTTP/1.1[0m" 500 -
+2023-03-30 09:17:38,457 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:17:38,458 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:17:38,464 INFO      * Restarting with stat
+2023-03-30 09:17:42,250 WARNING   * Debugger is active!
+2023-03-30 09:17:42,264 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:18:15,828 INFO     Creating report files...
+2023-03-30 09:18:15,893 INFO     Finished writing reports!!
+2023-03-30 09:18:15,931 INFO     127.0.0.1 - - [30/Mar/2023 09:18:15] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:18:16,008 INFO     127.0.0.1 - - [30/Mar/2023 09:18:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:18:18,615 INFO     127.0.0.1 - - [30/Mar/2023 09:18:18] "[35m[1mGET /download/model HTTP/1.1[0m" 500 -
+2023-03-30 09:26:41,107 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:26:41,351 INFO      * Restarting with stat
+2023-03-30 09:26:45,868 WARNING   * Debugger is active!
+2023-03-30 09:26:45,883 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:29:16,256 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:29:16,257 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:29:16,262 INFO      * Restarting with stat
+2023-03-30 09:29:19,906 WARNING   * Debugger is active!
+2023-03-30 09:29:19,927 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:29:26,361 INFO     Creating report files...
+2023-03-30 09:29:26,468 INFO     Finished writing reports!!
+2023-03-30 09:29:26,546 INFO     127.0.0.1 - - [30/Mar/2023 09:29:26] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:29:26,654 INFO     127.0.0.1 - - [30/Mar/2023 09:29:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:39:20,405 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:39:20,406 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:39:20,411 INFO      * Restarting with stat
+2023-03-30 09:39:29,632 WARNING   * Debugger is active!
+2023-03-30 09:39:29,682 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:39:37,358 INFO     Creating report files...
+2023-03-30 09:39:37,447 INFO     Finished writing reports!!
+2023-03-30 09:39:37,488 INFO     127.0.0.1 - - [30/Mar/2023 09:39:37] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:39:37,593 INFO     127.0.0.1 - - [30/Mar/2023 09:39:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:44:48,317 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:44:48,317 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:44:48,320 INFO      * Restarting with stat
+2023-03-30 09:44:49,817 WARNING   * Debugger is active!
+2023-03-30 09:44:49,829 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:44:58,468 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:44:58,554 INFO      * Restarting with stat
+2023-03-30 09:45:00,986 WARNING   * Debugger is active!
+2023-03-30 09:45:01,007 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:45:07,564 INFO     Creating report files...
+2023-03-30 09:45:07,615 INFO     Finished writing reports!!
+2023-03-30 09:45:07,637 INFO     127.0.0.1 - - [30/Mar/2023 09:45:07] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:45:07,704 INFO     127.0.0.1 - - [30/Mar/2023 09:45:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:45:10,505 INFO     127.0.0.1 - - [30/Mar/2023 09:45:10] "GET /download/model HTTP/1.1" 200 -
+2023-03-30 09:47:12,470 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:47:12,620 INFO      * Restarting with stat
+2023-03-30 09:47:15,097 WARNING   * Debugger is active!
+2023-03-30 09:47:15,107 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:47:15,826 INFO     127.0.0.1 - - [30/Mar/2023 09:47:15] "[35m[1mGET /download/model HTTP/1.1[0m" 500 -
+2023-03-30 09:48:19,340 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:48:19,418 INFO      * Restarting with stat
+2023-03-30 09:48:22,479 WARNING   * Debugger is active!
+2023-03-30 09:48:22,489 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:48:23,207 INFO     127.0.0.1 - - [30/Mar/2023 09:48:23] "[33mGET /download/model HTTP/1.1[0m" 404 -
+2023-03-30 09:49:14,101 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.98:5000
+2023-03-30 09:49:14,101 INFO     [33mPress CTRL+C to quit[0m
+2023-03-30 09:49:14,116 INFO      * Restarting with stat
+2023-03-30 09:49:16,796 WARNING   * Debugger is active!
+2023-03-30 09:49:16,814 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:49:27,775 INFO     Creating report files...
+2023-03-30 09:49:27,833 INFO     Finished writing reports!!
+2023-03-30 09:49:27,881 INFO     127.0.0.1 - - [30/Mar/2023 09:49:27] "POST /reports_output HTTP/1.1" 200 -
+2023-03-30 09:49:27,974 INFO     127.0.0.1 - - [30/Mar/2023 09:49:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-03-30 09:49:58,080 INFO     127.0.0.1 - - [30/Mar/2023 09:49:58] "[33mGET /download/model HTTP/1.1[0m" 404 -
+2023-03-30 09:51:28,550 INFO      * Detected change in 'C:\\Users\\Tweensi Jasani\\Desktop\\PythonScripts\\index.py', reloading
+2023-03-30 09:51:28,697 INFO      * Restarting with stat
+2023-03-30 09:51:32,362 WARNING   * Debugger is active!
+2023-03-30 09:51:32,383 INFO      * Debugger PIN: 688-926-557
+2023-03-30 09:51:34,696 INFO     127.0.0.1 - - [30/Mar/2023 09:51:34] "GET /download/model HTTP/1.1" 200 -
+2023-03-30 16:20:37,883 INFO     127.0.0.1 - - [30/Mar/2023 16:20:37] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-03-30 16:20:37,884 INFO     127.0.0.1 - - [30/Mar/2023 16:20:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-04 13:11:36,609 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.159:5000
+2023-04-04 13:11:36,609 INFO     [33mPress CTRL+C to quit[0m
+2023-04-04 13:11:36,612 INFO      * Restarting with stat
+2023-04-04 13:11:37,631 WARNING   * Debugger is active!
+2023-04-04 13:11:37,634 INFO      * Debugger PIN: 125-135-454
+2023-04-04 13:12:19,738 INFO     127.0.0.1 - - [04/Apr/2023 13:12:19] "GET / HTTP/1.1" 200 -
+2023-04-04 13:12:19,763 INFO     127.0.0.1 - - [04/Apr/2023 13:12:19] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-04-04 13:12:19,781 INFO     127.0.0.1 - - [04/Apr/2023 13:12:19] "GET /static/style.css HTTP/1.1" 200 -
+2023-04-04 13:12:21,047 INFO     127.0.0.1 - - [04/Apr/2023 13:12:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-04 13:12:25,890 INFO     127.0.0.1 - - [04/Apr/2023 13:12:25] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-04 13:12:25,942 INFO     127.0.0.1 - - [04/Apr/2023 13:12:25] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:25,978 INFO     127.0.0.1 - - [04/Apr/2023 13:12:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-04 13:12:26,002 INFO     127.0.0.1 - - [04/Apr/2023 13:12:26] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:29,179 INFO     127.0.0.1 - - [04/Apr/2023 13:12:29] "GET / HTTP/1.1" 200 -
+2023-04-04 13:12:29,261 INFO     127.0.0.1 - - [04/Apr/2023 13:12:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-04 13:12:30,965 INFO     127.0.0.1 - - [04/Apr/2023 13:12:30] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-04 13:12:31,066 INFO     127.0.0.1 - - [04/Apr/2023 13:12:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-04 13:12:31,068 INFO     127.0.0.1 - - [04/Apr/2023 13:12:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-04 13:12:37,803 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "GET /user_manual HTTP/1.1" 200 -
+2023-04-04 13:12:37,901 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//logo.png HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,909 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//features.png HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,938 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "GET /static/features.png HTTP/1.1" 200 -
+2023-04-04 13:12:37,938 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "GET /static/logo.png HTTP/1.1" 200 -
+2023-04-04 13:12:37,950 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//configuration.png HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,953 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//workflow.png HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,955 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//excel_compatibility.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,958 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//sheet.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,961 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//sheet_proper.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,963 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "[32mGET /static//unmodified_CB.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:37,994 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "GET /static/sheet.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:37,995 INFO     127.0.0.1 - - [04/Apr/2023 13:12:37] "GET /static/excel_compatibility.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,001 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/workflow.png HTTP/1.1" 200 -
+2023-04-04 13:12:38,004 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/configuration.png HTTP/1.1" 200 -
+2023-04-04 13:12:38,006 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/sheet_proper.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,016 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//unmodified_MB.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,019 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//select_bom.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,021 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/unmodified_CB.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,023 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//bom_info.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,029 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//sep_check.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,035 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//sep_info.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,043 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//output.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,151 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/sep_check.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,154 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/select_bom.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,157 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/bom_info.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,159 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/unmodified_MB.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,182 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//modified_cb1.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,182 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/sep_info.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,184 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//modified_cb2.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,190 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//modified_cb3.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,192 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "[32mGET /static//modified_mb.jpg HTTP/1.1[0m" 308 -
+2023-04-04 13:12:38,193 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/output.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,229 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/modified_cb2.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,230 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/modified_cb1.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,241 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/modified_cb3.jpg HTTP/1.1" 200 -
+2023-04-04 13:12:38,247 INFO     127.0.0.1 - - [04/Apr/2023 13:12:38] "GET /static/modified_mb.jpg HTTP/1.1" 200 -
+2023-04-06 08:48:30,133 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.159:5000
+2023-04-06 08:48:30,134 INFO     [33mPress CTRL+C to quit[0m
+2023-04-06 08:48:30,136 INFO      * Restarting with stat
+2023-04-06 08:48:31,054 WARNING   * Debugger is active!
+2023-04-06 08:48:31,065 INFO      * Debugger PIN: 116-136-821
+2023-04-06 08:48:35,844 INFO     127.0.0.1 - - [06/Apr/2023 08:48:35] "GET / HTTP/1.1" 200 -
+2023-04-06 08:48:35,902 INFO     127.0.0.1 - - [06/Apr/2023 08:48:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:48:36,049 INFO     127.0.0.1 - - [06/Apr/2023 08:48:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-06 08:48:37,894 INFO     127.0.0.1 - - [06/Apr/2023 08:48:37] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-06 08:48:37,947 INFO     127.0.0.1 - - [06/Apr/2023 08:48:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:48:37,969 INFO     127.0.0.1 - - [06/Apr/2023 08:48:37] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-06 08:49:28,098 INFO     Reading Customer BOM Excel...
+2023-04-06 08:49:28,236 INFO     127.0.0.1 - - [06/Apr/2023 08:49:28] "POST /processing HTTP/1.1" 200 -
+2023-04-06 08:49:28,308 INFO     127.0.0.1 - - [06/Apr/2023 08:49:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:49:30,486 INFO     127.0.0.1 - - [06/Apr/2023 08:49:30] "POST /check HTTP/1.1" 200 -
+2023-04-06 08:49:30,540 INFO     127.0.0.1 - - [06/Apr/2023 08:49:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:49:39,978 INFO     127.0.0.1 - - [06/Apr/2023 08:49:39] "POST /sep_detail HTTP/1.1" 200 -
+2023-04-06 08:49:40,058 INFO     127.0.0.1 - - [06/Apr/2023 08:49:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:49:42,230 INFO     Finished reading
+2023-04-06 08:49:42,230 INFO     Reading setup.ini file...
+2023-04-06 08:49:42,232 INFO     Info populated
+2023-04-06 08:49:42,232 INFO     Reading Manex BOM Excel...
+2023-04-06 08:49:42,267 INFO     Finished reading
+2023-04-06 08:49:42,267 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-04-06 08:49:42,272 INFO     Finished mapping
+2023-04-06 08:49:42,272 INFO     Writing to Customer Bom Excel...
+2023-04-06 08:49:42,362 INFO     Finished writing
+2023-04-06 08:49:42,362 INFO     Writing to Manex BOM Excel...
+2023-04-06 08:49:42,378 INFO     Finished writing
+2023-04-06 08:49:42,433 INFO     127.0.0.1 - - [06/Apr/2023 08:49:42] "POST /sep_verify HTTP/1.1" 200 -
+2023-04-06 08:49:42,470 INFO     127.0.0.1 - - [06/Apr/2023 08:49:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 08:49:44,611 INFO     127.0.0.1 - - [06/Apr/2023 08:49:44] "GET /download/customer HTTP/1.1" 200 -
+2023-04-06 10:59:02,150 INFO     127.0.0.1 - - [06/Apr/2023 10:59:02] "GET / HTTP/1.1" 200 -
+2023-04-06 10:59:02,203 INFO     127.0.0.1 - - [06/Apr/2023 10:59:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:03,717 INFO     127.0.0.1 - - [06/Apr/2023 10:59:03] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-06 10:59:03,758 INFO     127.0.0.1 - - [06/Apr/2023 10:59:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:03,775 INFO     127.0.0.1 - - [06/Apr/2023 10:59:03] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-06 10:59:36,814 INFO     Reading Customer BOM Excel...
+2023-04-06 10:59:36,844 INFO     127.0.0.1 - - [06/Apr/2023 10:59:36] "POST /processing HTTP/1.1" 200 -
+2023-04-06 10:59:36,881 INFO     127.0.0.1 - - [06/Apr/2023 10:59:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:40,433 INFO     127.0.0.1 - - [06/Apr/2023 10:59:40] "POST /check HTTP/1.1" 200 -
+2023-04-06 10:59:40,474 INFO     127.0.0.1 - - [06/Apr/2023 10:59:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:48,694 INFO     127.0.0.1 - - [06/Apr/2023 10:59:48] "POST /sep_detail HTTP/1.1" 200 -
+2023-04-06 10:59:48,727 INFO     127.0.0.1 - - [06/Apr/2023 10:59:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:51,749 INFO     Finished reading
+2023-04-06 10:59:51,749 INFO     Reading setup.ini file...
+2023-04-06 10:59:51,752 INFO     Info populated
+2023-04-06 10:59:51,752 INFO     Reading Manex BOM Excel...
+2023-04-06 10:59:51,789 INFO     Finished reading
+2023-04-06 10:59:51,789 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-04-06 10:59:51,792 INFO     Finished mapping
+2023-04-06 10:59:51,792 INFO     Writing to Customer Bom Excel...
+2023-04-06 10:59:51,793 ERROR    <class 'pywintypes.com_error'> from line 220
+2023-04-06 10:59:51,793 ERROR    Error while writing Customer BOM excel!
+2023-04-06 10:59:51,794 ERROR    (-2147221005, 'Invalid class string', None, None)
+2023-04-06 10:59:51,794 INFO     Writing to Manex BOM Excel...
+2023-04-06 10:59:51,806 INFO     Finished writing
+2023-04-06 10:59:51,845 INFO     127.0.0.1 - - [06/Apr/2023 10:59:51] "POST /sep_verify HTTP/1.1" 200 -
+2023-04-06 10:59:51,883 INFO     127.0.0.1 - - [06/Apr/2023 10:59:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:51,888 INFO     127.0.0.1 - - [06/Apr/2023 10:59:51] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-06 10:59:54,547 INFO     127.0.0.1 - - [06/Apr/2023 10:59:54] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-06 10:59:54,594 INFO     127.0.0.1 - - [06/Apr/2023 10:59:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-06 10:59:54,600 INFO     127.0.0.1 - - [06/Apr/2023 10:59:54] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-12 11:19:24,114 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.50.120.4:5000
+2023-04-12 11:19:24,115 INFO     [33mPress CTRL+C to quit[0m
+2023-04-12 11:19:24,131 INFO      * Restarting with stat
+2023-04-12 11:19:25,057 WARNING   * Debugger is active!
+2023-04-12 11:19:25,068 INFO      * Debugger PIN: 116-136-821
+2023-04-12 11:22:21,943 INFO     127.0.0.1 - - [12/Apr/2023 11:22:21] "GET / HTTP/1.1" 200 -
+2023-04-12 11:22:21,965 INFO     127.0.0.1 - - [12/Apr/2023 11:22:21] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-04-12 11:22:22,000 INFO     127.0.0.1 - - [12/Apr/2023 11:22:22] "GET /static/style.css HTTP/1.1" 200 -
+2023-04-12 11:22:22,186 INFO     127.0.0.1 - - [12/Apr/2023 11:22:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-12 11:22:23,984 INFO     127.0.0.1 - - [12/Apr/2023 11:22:23] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-12 11:22:24,035 INFO     127.0.0.1 - - [12/Apr/2023 11:22:24] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-04-12 11:22:24,047 INFO     127.0.0.1 - - [12/Apr/2023 11:22:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:22:24,071 INFO     127.0.0.1 - - [12/Apr/2023 11:22:24] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-04-12 11:23:00,620 INFO     Reading Customer BOM Excel...
+2023-04-12 11:23:00,674 ERROR    <class 'AttributeError'> from line 85
+2023-04-12 11:23:00,674 ERROR    Error while reading Customer BOM File!
+2023-04-12 11:23:00,674 ERROR    'int' object has no attribute 'replace'
+2023-04-12 11:23:00,687 INFO     127.0.0.1 - - [12/Apr/2023 11:23:00] "POST /processing HTTP/1.1" 200 -
+2023-04-12 11:23:00,736 INFO     127.0.0.1 - - [12/Apr/2023 11:23:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:23:00,739 INFO     127.0.0.1 - - [12/Apr/2023 11:23:00] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-12 11:23:02,885 INFO     127.0.0.1 - - [12/Apr/2023 11:23:02] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:23:02,946 INFO     127.0.0.1 - - [12/Apr/2023 11:23:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:23:33,059 INFO     127.0.0.1 - - [12/Apr/2023 11:23:33] "GET / HTTP/1.1" 200 -
+2023-04-12 11:23:33,098 INFO     127.0.0.1 - - [12/Apr/2023 11:23:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:27:34,843 INFO     127.0.0.1 - - [12/Apr/2023 11:27:34] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:27:34,883 INFO     127.0.0.1 - - [12/Apr/2023 11:27:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:28:02,773 INFO     127.0.0.1 - - [12/Apr/2023 11:28:02] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:28:02,804 INFO     127.0.0.1 - - [12/Apr/2023 11:28:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:28:12,218 INFO     127.0.0.1 - - [12/Apr/2023 11:28:12] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:28:12,251 INFO     127.0.0.1 - - [12/Apr/2023 11:28:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:29:01,433 INFO     127.0.0.1 - - [12/Apr/2023 11:29:01] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:29:01,473 INFO     127.0.0.1 - - [12/Apr/2023 11:29:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:29:08,752 INFO     127.0.0.1 - - [12/Apr/2023 11:29:08] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:29:08,814 INFO     127.0.0.1 - - [12/Apr/2023 11:29:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:29:15,465 INFO     127.0.0.1 - - [12/Apr/2023 11:29:15] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:29:15,515 INFO     127.0.0.1 - - [12/Apr/2023 11:29:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:29:25,581 INFO     127.0.0.1 - - [12/Apr/2023 11:29:25] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:29:25,624 INFO     127.0.0.1 - - [12/Apr/2023 11:29:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:29:44,558 INFO     127.0.0.1 - - [12/Apr/2023 11:29:44] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:29:44,657 INFO     127.0.0.1 - - [12/Apr/2023 11:29:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:30:36,398 INFO     127.0.0.1 - - [12/Apr/2023 11:30:36] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:30:36,437 INFO     127.0.0.1 - - [12/Apr/2023 11:30:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:30:43,638 INFO     127.0.0.1 - - [12/Apr/2023 11:30:43] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:30:43,673 INFO     127.0.0.1 - - [12/Apr/2023 11:30:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:30:49,702 INFO     127.0.0.1 - - [12/Apr/2023 11:30:49] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:30:49,781 INFO     127.0.0.1 - - [12/Apr/2023 11:30:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:31:25,385 INFO     127.0.0.1 - - [12/Apr/2023 11:31:25] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:31:25,465 INFO     127.0.0.1 - - [12/Apr/2023 11:31:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:31:39,619 INFO     127.0.0.1 - - [12/Apr/2023 11:31:39] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:31:39,715 INFO     127.0.0.1 - - [12/Apr/2023 11:31:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:40:24,303 INFO     127.0.0.1 - - [12/Apr/2023 11:40:24] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:40:24,345 INFO     127.0.0.1 - - [12/Apr/2023 11:40:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:41:14,426 INFO     127.0.0.1 - - [12/Apr/2023 11:41:14] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:41:14,476 INFO     127.0.0.1 - - [12/Apr/2023 11:41:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:41:24,103 INFO     127.0.0.1 - - [12/Apr/2023 11:41:24] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:41:24,152 INFO     127.0.0.1 - - [12/Apr/2023 11:41:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:42:23,204 INFO     127.0.0.1 - - [12/Apr/2023 11:42:23] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:42:23,251 INFO     127.0.0.1 - - [12/Apr/2023 11:42:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:43:24,636 INFO     127.0.0.1 - - [12/Apr/2023 11:43:24] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:43:24,706 INFO     127.0.0.1 - - [12/Apr/2023 11:43:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:43:27,936 INFO     127.0.0.1 - - [12/Apr/2023 11:43:27] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:43:28,017 INFO     127.0.0.1 - - [12/Apr/2023 11:43:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:43:49,873 INFO     127.0.0.1 - - [12/Apr/2023 11:43:49] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:43:49,942 INFO     127.0.0.1 - - [12/Apr/2023 11:43:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:44:52,792 INFO     127.0.0.1 - - [12/Apr/2023 11:44:52] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:44:52,836 INFO     127.0.0.1 - - [12/Apr/2023 11:44:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:45:29,348 INFO     127.0.0.1 - - [12/Apr/2023 11:45:29] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:45:29,419 INFO     127.0.0.1 - - [12/Apr/2023 11:45:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:45:50,717 INFO     127.0.0.1 - - [12/Apr/2023 11:45:50] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:45:50,805 INFO     127.0.0.1 - - [12/Apr/2023 11:45:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:45:57,538 INFO     127.0.0.1 - - [12/Apr/2023 11:45:57] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:45:57,581 INFO     127.0.0.1 - - [12/Apr/2023 11:45:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:46:17,114 INFO     127.0.0.1 - - [12/Apr/2023 11:46:17] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:46:17,148 INFO     127.0.0.1 - - [12/Apr/2023 11:46:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 11:46:32,057 INFO     127.0.0.1 - - [12/Apr/2023 11:46:32] "GET /error_tab HTTP/1.1" 200 -
+2023-04-12 11:46:32,133 INFO     127.0.0.1 - - [12/Apr/2023 11:46:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-12 13:14:36,180 INFO     127.0.0.1 - - [12/Apr/2023 13:14:36] "GET / HTTP/1.1" 200 -
+2023-04-12 13:14:36,224 INFO     127.0.0.1 - - [12/Apr/2023 13:14:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:31:41,388 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.75:5000
+2023-04-13 14:31:41,388 INFO     [33mPress CTRL+C to quit[0m
+2023-04-13 14:31:41,392 INFO      * Restarting with stat
+2023-04-13 14:31:42,602 WARNING   * Debugger is active!
+2023-04-13 14:31:42,609 INFO      * Debugger PIN: 116-136-821
+2023-04-13 14:31:46,461 INFO     127.0.0.1 - - [13/Apr/2023 14:31:46] "GET / HTTP/1.1" 200 -
+2023-04-13 14:31:46,502 INFO     127.0.0.1 - - [13/Apr/2023 14:31:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:31:54,484 INFO     127.0.0.1 - - [13/Apr/2023 14:31:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-13 14:32:06,419 INFO     127.0.0.1 - - [13/Apr/2023 14:32:06] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-13 14:32:06,469 INFO     127.0.0.1 - - [13/Apr/2023 14:32:06] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-04-13 14:32:06,497 INFO     127.0.0.1 - - [13/Apr/2023 14:32:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:32:06,519 INFO     127.0.0.1 - - [13/Apr/2023 14:32:06] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-04-13 14:32:55,024 INFO     127.0.0.1 - - [13/Apr/2023 14:32:55] "GET / HTTP/1.1" 200 -
+2023-04-13 14:32:55,084 INFO     127.0.0.1 - - [13/Apr/2023 14:32:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:01,825 INFO     127.0.0.1 - - [13/Apr/2023 14:33:01] "GET /edit_PN_in_pcb HTTP/1.1" 200 -
+2023-04-13 14:33:01,855 INFO     127.0.0.1 - - [13/Apr/2023 14:33:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:01,856 INFO     127.0.0.1 - - [13/Apr/2023 14:33:01] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-13 14:33:18,145 INFO     127.0.0.1 - - [13/Apr/2023 14:33:18] "GET / HTTP/1.1" 200 -
+2023-04-13 14:33:18,175 INFO     127.0.0.1 - - [13/Apr/2023 14:33:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:39,197 INFO     127.0.0.1 - - [13/Apr/2023 14:33:39] "GET /gencad_editor HTTP/1.1" 200 -
+2023-04-13 14:33:39,228 INFO     127.0.0.1 - - [13/Apr/2023 14:33:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:44,178 INFO     127.0.0.1 - - [13/Apr/2023 14:33:44] "GET / HTTP/1.1" 200 -
+2023-04-13 14:33:44,264 INFO     127.0.0.1 - - [13/Apr/2023 14:33:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:45,666 INFO     127.0.0.1 - - [13/Apr/2023 14:33:45] "GET /ascii_editor HTTP/1.1" 200 -
+2023-04-13 14:33:45,735 INFO     127.0.0.1 - - [13/Apr/2023 14:33:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:50,039 INFO     127.0.0.1 - - [13/Apr/2023 14:33:50] "GET / HTTP/1.1" 200 -
+2023-04-13 14:33:50,074 INFO     127.0.0.1 - - [13/Apr/2023 14:33:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:53,375 INFO     127.0.0.1 - - [13/Apr/2023 14:33:53] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-04-13 14:33:53,401 INFO     127.0.0.1 - - [13/Apr/2023 14:33:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:33:53,404 INFO     127.0.0.1 - - [13/Apr/2023 14:33:53] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-13 14:49:18,999 INFO     127.0.0.1 - - [13/Apr/2023 14:49:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:52:01,862 INFO     127.0.0.1 - - [13/Apr/2023 14:52:01] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-04-13 14:52:01,905 INFO     127.0.0.1 - - [13/Apr/2023 14:52:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 14:52:01,910 INFO     127.0.0.1 - - [13/Apr/2023 14:52:01] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-13 17:20:30,112 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-04-13 17:20:30,346 INFO      * Restarting with stat
+2023-04-13 17:20:31,937 WARNING   * Debugger is active!
+2023-04-13 17:20:31,944 INFO      * Debugger PIN: 116-136-821
+2023-04-13 17:26:32,748 INFO     127.0.0.1 - - [13/Apr/2023 17:26:32] "GET / HTTP/1.1" 200 -
+2023-04-13 17:26:32,782 INFO     127.0.0.1 - - [13/Apr/2023 17:26:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 17:26:37,204 INFO     127.0.0.1 - - [13/Apr/2023 17:26:37] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-13 17:26:37,234 INFO     127.0.0.1 - - [13/Apr/2023 17:26:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-13 17:26:37,252 INFO     127.0.0.1 - - [13/Apr/2023 17:26:37] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-13 17:26:42,955 INFO     127.0.0.1 - - [13/Apr/2023 17:26:42] "GET /user_manual HTTP/1.1" 200 -
+2023-04-13 17:26:43,054 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//logo.png HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,073 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//features.png HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,083 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//configuration.png HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,086 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//workflow.png HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,089 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//excel_compatibility.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,093 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//sheet.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,095 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/logo.png HTTP/1.1" 200 -
+2023-04-13 17:26:43,100 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//sheet_proper.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,111 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/features.png HTTP/1.1" 200 -
+2023-04-13 17:26:43,119 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/configuration.png HTTP/1.1" 200 -
+2023-04-13 17:26:43,122 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/workflow.png HTTP/1.1" 200 -
+2023-04-13 17:26:43,129 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//unmodified_CB.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,133 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//unmodified_MB.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,134 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/excel_compatibility.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,137 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//select_bom.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,144 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//bom_info.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,222 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/sheet.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,241 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/sheet_proper.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,252 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/unmodified_MB.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,263 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/unmodified_CB.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,274 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/select_bom.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,277 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//sep_check.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,282 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/bom_info.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,294 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//sep_info.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,299 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//output.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,302 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//modified_cb1.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,308 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//modified_cb2.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,310 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//modified_cb3.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,325 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/sep_check.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,327 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/sep_info.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,331 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/modified_cb2.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,332 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/modified_cb1.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,332 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/output.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,341 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "[32mGET /static//modified_mb.jpg HTTP/1.1[0m" 308 -
+2023-04-13 17:26:43,344 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/modified_cb3.jpg HTTP/1.1" 200 -
+2023-04-13 17:26:43,371 INFO     127.0.0.1 - - [13/Apr/2023 17:26:43] "GET /static/modified_mb.jpg HTTP/1.1" 200 -
+2023-04-17 12:16:55,904 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-04-17 12:16:55,904 INFO     [33mPress CTRL+C to quit[0m
+2023-04-17 12:16:55,908 INFO      * Restarting with stat
+2023-04-17 12:16:56,848 WARNING   * Debugger is active!
+2023-04-17 12:16:56,852 INFO      * Debugger PIN: 216-535-958
+2023-04-17 12:17:03,633 INFO     127.0.0.1 - - [17/Apr/2023 12:17:03] "GET / HTTP/1.1" 200 -
+2023-04-17 12:17:03,689 INFO     127.0.0.1 - - [17/Apr/2023 12:17:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 12:17:03,986 INFO     127.0.0.1 - - [17/Apr/2023 12:17:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-17 12:17:05,805 INFO     127.0.0.1 - - [17/Apr/2023 12:17:05] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-17 12:17:05,855 INFO     127.0.0.1 - - [17/Apr/2023 12:17:05] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-04-17 12:17:05,893 INFO     127.0.0.1 - - [17/Apr/2023 12:17:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 12:17:05,916 INFO     127.0.0.1 - - [17/Apr/2023 12:17:05] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-04-17 12:17:52,485 INFO     Reading Customer BOM Excel...
+2023-04-17 12:17:52,589 ERROR    <class 'AttributeError'> from line 85
+2023-04-17 12:17:52,589 ERROR    Error while reading Customer BOM File!
+2023-04-17 12:17:52,589 ERROR    'int' object has no attribute 'replace'
+2023-04-17 12:17:52,602 INFO     127.0.0.1 - - [17/Apr/2023 12:17:52] "POST /processing HTTP/1.1" 200 -
+2023-04-17 12:17:52,654 INFO     127.0.0.1 - - [17/Apr/2023 12:17:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 12:17:52,656 INFO     127.0.0.1 - - [17/Apr/2023 12:17:52] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-17 12:17:54,828 INFO     127.0.0.1 - - [17/Apr/2023 12:17:54] "GET /error_tab HTTP/1.1" 200 -
+2023-04-17 12:17:54,883 INFO     127.0.0.1 - - [17/Apr/2023 12:17:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:28:55,204 INFO     127.0.0.1 - - [17/Apr/2023 13:28:55] "GET / HTTP/1.1" 200 -
+2023-04-17 13:28:55,248 INFO     127.0.0.1 - - [17/Apr/2023 13:28:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:28:57,743 INFO     127.0.0.1 - - [17/Apr/2023 13:28:57] "GET /ascii_editor HTTP/1.1" 200 -
+2023-04-17 13:28:57,779 INFO     127.0.0.1 - - [17/Apr/2023 13:28:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:35:43,582 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:35:43,650 INFO      * Restarting with stat
+2023-04-17 13:35:44,958 WARNING   * Debugger is active!
+2023-04-17 13:35:44,962 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:35:47,545 INFO     127.0.0.1 - - [17/Apr/2023 13:35:47] "GET / HTTP/1.1" 200 -
+2023-04-17 13:35:47,623 INFO     127.0.0.1 - - [17/Apr/2023 13:35:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:36:30,821 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:36:30,877 INFO      * Restarting with stat
+2023-04-17 13:36:32,115 WARNING   * Debugger is active!
+2023-04-17 13:36:32,119 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:37:15,262 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:37:15,378 INFO      * Restarting with stat
+2023-04-17 13:37:16,414 WARNING   * Debugger is active!
+2023-04-17 13:37:16,418 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:37:19,140 INFO     127.0.0.1 - - [17/Apr/2023 13:37:19] "GET /aoi_report_generator HTTP/1.1" 200 -
+2023-04-17 13:37:19,198 INFO     127.0.0.1 - - [17/Apr/2023 13:37:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:37:19,202 INFO     127.0.0.1 - - [17/Apr/2023 13:37:19] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-17 13:37:54,514 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:37:54,594 INFO      * Restarting with stat
+2023-04-17 13:37:55,992 WARNING   * Debugger is active!
+2023-04-17 13:37:55,996 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:38:01,156 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:38:01,242 INFO      * Restarting with stat
+2023-04-17 13:38:02,530 WARNING   * Debugger is active!
+2023-04-17 13:38:02,534 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:38:40,725 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 13:38:40,811 INFO      * Restarting with stat
+2023-04-17 13:38:41,876 WARNING   * Debugger is active!
+2023-04-17 13:38:41,879 INFO      * Debugger PIN: 216-535-958
+2023-04-17 13:39:08,048 INFO     127.0.0.1 - - [17/Apr/2023 13:39:08] "GET / HTTP/1.1" 200 -
+2023-04-17 13:39:08,122 INFO     127.0.0.1 - - [17/Apr/2023 13:39:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 13:50:51,503 INFO     127.0.0.1 - - [17/Apr/2023 13:50:51] "GET /error_tab HTTP/1.1" 200 -
+2023-04-17 13:50:51,555 INFO     127.0.0.1 - - [17/Apr/2023 13:50:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:01:45,968 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 14:01:46,038 INFO      * Restarting with stat
+2023-04-17 14:01:47,606 WARNING   * Debugger is active!
+2023-04-17 14:01:47,610 INFO      * Debugger PIN: 216-535-958
+2023-04-17 14:02:42,158 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 14:02:42,219 INFO      * Restarting with stat
+2023-04-17 14:02:42,994 WARNING   * Debugger is active!
+2023-04-17 14:02:42,997 INFO      * Debugger PIN: 216-535-958
+2023-04-17 14:05:08,252 INFO     127.0.0.1 - - [17/Apr/2023 14:05:08] "GET /error_tab HTTP/1.1" 200 -
+2023-04-17 14:05:08,292 INFO     127.0.0.1 - - [17/Apr/2023 14:05:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:05:10,648 INFO     127.0.0.1 - - [17/Apr/2023 14:05:10] "GET /error_tab HTTP/1.1" 200 -
+2023-04-17 14:05:10,682 INFO     127.0.0.1 - - [17/Apr/2023 14:05:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:05:16,280 INFO     127.0.0.1 - - [17/Apr/2023 14:05:16] "GET / HTTP/1.1" 200 -
+2023-04-17 14:05:16,321 INFO     127.0.0.1 - - [17/Apr/2023 14:05:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:05:17,400 INFO     127.0.0.1 - - [17/Apr/2023 14:05:17] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-17 14:05:17,434 INFO     127.0.0.1 - - [17/Apr/2023 14:05:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:05:17,444 INFO     127.0.0.1 - - [17/Apr/2023 14:05:17] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-17 14:05:55,997 INFO     Reading Customer BOM Excel...
+2023-04-17 14:05:56,043 ERROR    <class 'AttributeError'> from line 85
+2023-04-17 14:05:56,043 ERROR    Error while reading Customer BOM File!
+2023-04-17 14:05:56,043 ERROR    'int' object has no attribute 'replace'
+2023-04-17 14:05:56,045 INFO     127.0.0.1 - - [17/Apr/2023 14:05:56] "POST /processing HTTP/1.1" 200 -
+2023-04-17 14:05:56,084 INFO     127.0.0.1 - - [17/Apr/2023 14:05:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:05:56,086 INFO     127.0.0.1 - - [17/Apr/2023 14:05:56] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-17 14:05:58,252 INFO     127.0.0.1 - - [17/Apr/2023 14:05:58] "GET /error_tab HTTP/1.1" 200 -
+2023-04-17 14:05:58,295 INFO     127.0.0.1 - - [17/Apr/2023 14:05:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-17 14:13:21,833 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 14:13:21,921 INFO      * Restarting with stat
+2023-04-17 14:13:24,135 WARNING   * Debugger is active!
+2023-04-17 14:13:24,140 INFO      * Debugger PIN: 216-535-958
+2023-04-17 14:16:35,863 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-17 14:16:36,171 INFO      * Restarting with stat
+2023-04-17 14:16:37,531 WARNING   * Debugger is active!
+2023-04-17 14:16:37,534 INFO      * Debugger PIN: 216-535-958
+2023-04-19 12:04:29,803 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-04-19 12:04:29,804 INFO     [33mPress CTRL+C to quit[0m
+2023-04-19 12:04:29,808 INFO      * Restarting with stat
+2023-04-19 12:04:31,688 WARNING   * Debugger is active!
+2023-04-19 12:04:31,702 INFO      * Debugger PIN: 216-535-958
+2023-04-19 12:04:48,564 INFO     127.0.0.1 - - [19/Apr/2023 12:04:48] "GET / HTTP/1.1" 200 -
+2023-04-19 12:04:48,729 INFO     127.0.0.1 - - [19/Apr/2023 12:04:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:04:50,614 INFO     127.0.0.1 - - [19/Apr/2023 12:04:50] "GET /add_manexpn HTTP/1.1" 200 -
+2023-04-19 12:04:50,650 INFO     127.0.0.1 - - [19/Apr/2023 12:04:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:04:50,684 INFO     127.0.0.1 - - [19/Apr/2023 12:04:50] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-19 12:05:19,345 INFO     Reading Customer BOM Excel...
+2023-04-19 12:05:19,458 INFO     Finished reading
+2023-04-19 12:05:19,459 INFO     Reading setup.ini file...
+2023-04-19 12:05:19,460 INFO     Info populated
+2023-04-19 12:05:19,460 INFO     Reading Manex BOM Excel...
+2023-04-19 12:05:19,597 INFO     Finished reading
+2023-04-19 12:05:19,597 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-04-19 12:05:19,601 INFO     Finished mapping
+2023-04-19 12:05:19,601 INFO     Writing to Customer Bom Excel...
+2023-04-19 12:05:22,419 ERROR    <class 'pywintypes.com_error'> from line 220
+2023-04-19 12:05:22,420 ERROR    Error while writing Customer BOM excel!
+2023-04-19 12:05:22,420 ERROR    (-2147352567, 'Exception occurred.', (0, 'Microsoft Excel', "Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.", 'xlmain11.chm', 0, -2146827284), None)
+2023-04-19 12:05:22,427 INFO     Writing to Manex BOM Excel...
+2023-04-19 12:05:22,487 INFO     Finished writing
+2023-04-19 12:05:22,661 INFO     127.0.0.1 - - [19/Apr/2023 12:05:22] "POST /processing HTTP/1.1" 200 -
+2023-04-19 12:05:22,798 INFO     127.0.0.1 - - [19/Apr/2023 12:05:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:05:22,808 INFO     127.0.0.1 - - [19/Apr/2023 12:05:22] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-04-19 12:05:24,701 INFO     127.0.0.1 - - [19/Apr/2023 12:05:24] "GET /error_tab HTTP/1.1" 200 -
+2023-04-19 12:05:24,761 INFO     127.0.0.1 - - [19/Apr/2023 12:05:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:22:21,991 INFO     Reading Customer BOM Excel...
+2023-04-19 12:22:22,092 INFO     127.0.0.1 - - [19/Apr/2023 12:22:22] "POST /processing HTTP/1.1" 200 -
+2023-04-19 12:22:22,144 INFO     127.0.0.1 - - [19/Apr/2023 12:22:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:22:24,003 INFO     127.0.0.1 - - [19/Apr/2023 12:22:24] "POST /check HTTP/1.1" 200 -
+2023-04-19 12:22:24,085 INFO     127.0.0.1 - - [19/Apr/2023 12:22:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:22:33,144 INFO     127.0.0.1 - - [19/Apr/2023 12:22:33] "POST /sep_detail HTTP/1.1" 200 -
+2023-04-19 12:22:33,193 INFO     127.0.0.1 - - [19/Apr/2023 12:22:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:22:35,181 INFO     Finished reading
+2023-04-19 12:22:35,182 INFO     Reading setup.ini file...
+2023-04-19 12:22:35,185 INFO     Info populated
+2023-04-19 12:22:35,185 INFO     Reading Manex BOM Excel...
+2023-04-19 12:22:35,390 INFO     Finished reading
+2023-04-19 12:22:35,390 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-04-19 12:22:35,396 INFO     Finished mapping
+2023-04-19 12:22:35,396 INFO     Writing to Customer Bom Excel...
+2023-04-19 12:22:39,772 INFO     Finished writing
+2023-04-19 12:22:40,515 INFO     Writing to Manex BOM Excel...
+2023-04-19 12:22:40,587 INFO     Finished writing
+2023-04-19 12:22:40,814 INFO     127.0.0.1 - - [19/Apr/2023 12:22:40] "POST /sep_verify HTTP/1.1" 200 -
+2023-04-19 12:22:40,895 INFO     127.0.0.1 - - [19/Apr/2023 12:22:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 12:22:42,460 INFO     127.0.0.1 - - [19/Apr/2023 12:22:42] "[35m[1mGET /download/customer HTTP/1.1[0m" 500 -
+2023-04-19 12:22:42,611 INFO     127.0.0.1 - - [19/Apr/2023 12:22:42] "[35m[1mGET /download/customer HTTP/1.1[0m" 500 -
+2023-04-19 13:02:39,721 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-04-19 13:02:39,886 INFO      * Restarting with stat
+2023-04-19 13:02:42,658 WARNING   * Debugger is active!
+2023-04-19 13:02:42,671 INFO      * Debugger PIN: 216-535-958
+2023-04-19 13:05:53,224 INFO     Reading Customer BOM Excel...
+2023-04-19 13:05:53,314 INFO     127.0.0.1 - - [19/Apr/2023 13:05:53] "POST /processing HTTP/1.1" 200 -
+2023-04-19 13:05:53,367 INFO     127.0.0.1 - - [19/Apr/2023 13:05:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 13:05:55,449 INFO     127.0.0.1 - - [19/Apr/2023 13:05:55] "POST /check HTTP/1.1" 200 -
+2023-04-19 13:05:55,549 INFO     127.0.0.1 - - [19/Apr/2023 13:05:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 13:06:03,682 INFO     127.0.0.1 - - [19/Apr/2023 13:06:03] "POST /sep_detail HTTP/1.1" 200 -
+2023-04-19 13:06:03,730 INFO     127.0.0.1 - - [19/Apr/2023 13:06:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 13:06:06,473 INFO     Finished reading
+2023-04-19 13:06:06,473 INFO     Reading setup.ini file...
+2023-04-19 13:06:06,474 INFO     Info populated
+2023-04-19 13:06:06,474 INFO     Reading Manex BOM Excel...
+2023-04-19 13:06:06,676 INFO     Finished reading
+2023-04-19 13:06:06,676 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-04-19 13:06:06,685 INFO     Finished mapping
+2023-04-19 13:06:06,685 INFO     Writing to Customer Bom Excel...
+2023-04-19 13:06:10,302 INFO     Finished writing
+2023-04-19 13:06:12,103 INFO     Writing to Manex BOM Excel...
+2023-04-19 13:06:12,168 INFO     Finished writing
+2023-04-19 13:06:12,305 INFO     127.0.0.1 - - [19/Apr/2023 13:06:12] "POST /sep_verify HTTP/1.1" 200 -
+2023-04-19 13:06:12,390 INFO     127.0.0.1 - - [19/Apr/2023 13:06:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-04-19 13:06:14,742 INFO     127.0.0.1 - - [19/Apr/2023 13:06:14] "GET /download/customer HTTP/1.1" 200 -
+2023-04-19 13:06:18,033 INFO     127.0.0.1 - - [19/Apr/2023 13:06:18] "GET /download/manex HTTP/1.1" 200 -
+2023-04-19 13:21:14,868 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-04-19 13:21:15,146 INFO      * Restarting with stat
+2023-04-19 13:21:25,548 WARNING   * Debugger is active!
+2023-04-19 13:21:26,391 INFO      * Debugger PIN: 216-535-958

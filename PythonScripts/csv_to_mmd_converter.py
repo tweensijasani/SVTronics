@@ -44,7 +44,7 @@ def convert(csv_file):
         logging.error("Error while creating mmd file data!")
         logging.error(f"{e}")
         print(e, "\n Error while creating mmd file data!")
-        return False, False
+        return False, False, f"Error while creating mmd file data\n{e.__class__}\n{e}"
 
     try:
         logging.info("Writing mmd file...")
@@ -54,12 +54,12 @@ def convert(csv_file):
         f.close()
 
         logging.info("Finished writing!")
-        return True, new_file_name
+        return True, new_file_name, None
 
     except Exception as e:
         logging.error(f"{e.__class__}")
         logging.error("Error while writing mmd file!")
         logging.error(f"{e}")
         print(e, "\n Error while writing mmd file!")
-        return False, False
+        return False, False, f"Error while writing mmd file\n{e.__class__}\n{e}"
 
