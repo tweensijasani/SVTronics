@@ -407,7 +407,7 @@ def Map_both(bot_bom_data, top_bom_data, bot_list, top_list):
 def Write_both_mmd(bot_textfile, top_textfile, bot_list, top_list):
     try:
         logging.info("Writing modified bot.mmd file...")
-        var = bot_textfile.name.split("/")
+        var = bot_textfile.split("/")
         last_item = var.pop()
         if ".mmd" in last_item:
             new_file_name = last_item.replace(".mmd", "_Svt_PartNo.mmd")
@@ -422,7 +422,7 @@ def Write_both_mmd(bot_textfile, top_textfile, bot_list, top_list):
         f.close()
 
         logging.info("Writing modified top.mmd file...")
-        var = top_textfile.name.split("/")
+        var = top_textfile.split("/")
         last_item = var.pop()
         if ".mmd" in last_item:
             new_file_name = last_item.replace(".mmd", "_Svt_PartNo.mmd")
@@ -620,7 +620,7 @@ def Mapping(bom_data, mmd_list):
 def Write_mmd(mmd_textfile, mmd_list):
     try:
         logging.info("Writing modified mmd file...")
-        var = mmd_textfile.name.split("/")
+        var = mmd_textfile.split("/")
         last_item = var.pop()
         if ".mmd" in last_item:
             new_file_name = last_item.replace(".mmd", "_Svt_PartNo.mmd")

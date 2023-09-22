@@ -44,7 +44,7 @@ def processing():
     possible_errors = ["Make sure that the BOM is the first sheet of the workbook",
                        "Check if the file extension is either .xls or .xlsx",
                        "The RefDes is recommended to be comma separated",
-                       "The column names in Web Manex BOM should consists RefDesg, QtyEach and PART_NO",
+                       "The column names in Web Manex BOM should consists RefDesg, QtyEach, item_no and PART_NO",
                        "Start row in Manex BOM should be 2",
                        "Make sure you enter correct Customer BOM details"]
     session["possibilities"] = possible_errors
@@ -69,7 +69,7 @@ def processing():
         separator = sep.get(request.form.get("separator"))
         session['CustomerBom'] = customer_bom.filename
         session['ManexBom'] = manex_bom.filename
-        result, error = Add_manex_pn.ReadCustBom(cust_file_path, man_file_path, designator, quantity, int(start_row), int(end_row), delimiter, separator)
+        result, error = Add_manex_pn.CheckBom(cust_file_path, man_file_path, designator, quantity, int(start_row), int(end_row), delimiter, separator)
         if result is True:
             return render_template('output.html', customer_bom=customer_bom.filename, manex_bom=manex_bom.filename)
         elif bool(result):
@@ -85,12 +85,13 @@ def processing():
             session['sep_dict'] = {}
             session['sep_detail'] = result[0]
             session['sep_position'] = result[4]
+            session['manex_dict'] = result[5]
             if session['sep_count'] < session['sep_len']:
                 return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
             else:
                 result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
-                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
+                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'], session['manex_dict'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])
@@ -98,7 +99,11 @@ def processing():
                     session["error"] = error
                     return render_template('add_manexpn.html', error="notsafe")
         else:
-            session["error"] = error
+            if type(error) == list:
+                session["error"] = error[0]
+                session["possibilities"] = error[1]
+            else:
+                session["error"] = error
             return render_template('add_manexpn.html', error="notsafe")
     else:
         return index()
@@ -124,7 +129,7 @@ def check():
         return render_template('separator_check.html', item=session['sep_detail'][session['sep_count']][0])
     else:
         if session["task"] == 1:
-            result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
+            result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"], session["manex_bom"], session['file_extension'], session['start_row'], session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'], session['manex_dict'])
             if result is True:
                 return render_template('output.html', customer_bom=session['CustomerBom'], manex_bom=session['ManexBom'])
             else:
@@ -163,7 +168,7 @@ def sep_verify():
             if session["task"] == 1:
                 result, error = Add_manex_pn.CustBomInfo(session['sep_detail'], session['bom_data'], session["customer_bom"],
                                                   session["manex_bom"], session['file_extension'], session['start_row'],
-                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'])
+                                                  session['end_row'], session['bom_col_des'], session["sep_dict"], session['sep_position'], session['manex_dict'])
                 if result is True:
                     return render_template('output.html', customer_bom=session['CustomerBom'],
                                            manex_bom=session['ManexBom'])

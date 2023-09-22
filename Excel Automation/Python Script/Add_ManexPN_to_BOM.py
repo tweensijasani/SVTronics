@@ -41,7 +41,7 @@ def getfiles():
                                                     filetypes=(("Excel files", "*.xlsx"), ("Excel files", "*.xls")))
             counter += 1
         if Manex_File == '':
-            messagebox.showerror(title="Invalid Input", message="Something went wrong!! Please try again....")
+            messagebox.showerror(title="Invalid Input", message="Terminated: Manex BOM not selected!")
             logging.error("Terminated: Manex BOM not selected!")
             sys.exit(1)
         else:
@@ -55,7 +55,7 @@ def getfiles():
             Bom_File = filedialog.askopenfilename(title="Select Customer BOM", filetypes=(("Excel files", "*.xlsx"), ("Excel files", "*.xls")))
             counter += 1
         if Bom_File == '':
-            messagebox.showerror(title="Invalid Input", message="Something went wrong!! Please try again....")
+            messagebox.showerror(title="Invalid Input", message="Terminated: Customer BOM not selected!")
             logging.error("Terminated: Customer BOM not selected!")
             sys.exit(1)
         else:
@@ -63,7 +63,7 @@ def getfiles():
         return Manex_File, Bom_File
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while fetching files!!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__}")
         logging.error("Error while fetching files!")
         logging.error(f"{e}")
@@ -77,6 +77,7 @@ def manex_metadata():
         config = configparser.ConfigParser()
         config.read('setup.ini')
 
+        manex_itemno = config['INITIALIZATION']['item_no']
         manex_designator = config['INITIALIZATION']['RefDes']
         manex_quantity = config['INITIALIZATION']['Quantity']
         manex_partno = config['INITIALIZATION']['PartNumber']
@@ -84,21 +85,21 @@ def manex_metadata():
         manex_delimiter = config['INITIALIZATION']['Delimiter']
         manex_separator = config['INITIALIZATION']['Separator']
 
-        manex_dict = {"manex_designator": manex_designator, "manex_quantity": manex_quantity, "manex_partno": manex_partno,
-                      "manex_start_row": manex_start_row, "manex_delimiter": manex_delimiter, "manex_separator": manex_separator}
+        manex_dict = {"manex_itemno": manex_itemno, "manex_designator": manex_designator, "manex_quantity": manex_quantity,
+                      "manex_partno": manex_partno, "manex_start_row": manex_start_row, "manex_delimiter": manex_delimiter, "manex_separator": manex_separator}
         logging.info("Info populated")
         return manex_dict
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while reading setup.ini!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 98")
-        logging.error("Error while getting Manex BOM Detail!")
+        logging.error("Error while reading setup.ini!")
         logging.error(f"{e}")
-        print(e, "\n Error while getting Manex BOM Detail!")
+        print(e, "\n Error while reading setup.ini!")
         sys.exit(1)
 
 
-def Manex_data(Manex_File, manex_dict, separator_dict):
+def Manex_data(Manex_File, manex_dict):
     try:
         logging.info("Reading Manex BOM Excel...")
         wb_manex = openpyxl.load_workbook(Manex_File, data_only=True)
@@ -110,24 +111,64 @@ def Manex_data(Manex_File, manex_dict, separator_dict):
         for values in manex_rows[0]:
             header.append(values.value)
         try:
+            manex_col_itemno = header.index(manex_dict["manex_itemno"])
             manex_col_des = header.index(manex_dict["manex_designator"])
             manex_col_qty = header.index(manex_dict["manex_quantity"])
             manex_col_partno = header.index(manex_dict["manex_partno"])
             manex_dict.update({"manex_col_partno": manex_col_partno})
         except Exception as e:
-            messagebox.showerror(title=f"{e.__class__}", message="Can't locate RefDesg/QtEach/PART_NO in Manex BOM!!")
+            messagebox.showerror(title=f"{e.__class__}", message=f"Can't locate item_no/RefDesg/QtEach/PART_NO in Manex BOM!!\n\n{e.__class__}\n{e}")
             logging.error(f"{e.__class__} from line 184")
-            logging.error("Error while reading Manex BOM File!")
+            logging.error("Can't locate item_no/RefDesg/QtEach/PART_NO in Manex BOM!!")
             logging.error(f"{e}")
-            print(e, "\n Error while reading Manex BOM File!")
+            print(e, "\n Can't locate item_no/RefDesg/QtEach/PART_NO in Manex BOM!!")
             sys.exit(1)
         manex_data = []
-        # tolerate = 0
+        error_msg = []
         for row in manex_rows[int(manex_dict["manex_start_row"])-1:int(manex_end_row)]:
-            y = row[manex_col_des].value
+            y1 = row[manex_col_des].value
+            y2 = str(row[manex_col_qty].value)
+            y3 = row[manex_col_partno].value
+            y4 = row[manex_col_itemno].value
+            if not bool(y1):
+                error_msg.append(f"Missing designator for item no {y4}\n")
+                logging.error(f"Missing designator for item no {y4}\n")
+            if not bool(y2):
+                error_msg.append(f"Missing quantity for item no {y4}\n")
+                logging.error(f"Missing quantity for item no {y4}\n")
+            elif not y2.isnumeric():
+                error_msg.append(f"Non-integer quantity for item no {y4}\n")
+                logging.error(f"Non-integer quantity for item no {y4}\n")
+            elif int(y2) == 0:
+                error_msg.append(f"Zero quantity for item no {y4}\n")
+                logging.error(f"Zero quantity for item no {y4}\n")
+            if not bool(y3):
+                error_msg.append(f"Missing part-no for item no {y4}\n")
+                logging.error(f"Missing part-no for item no {y4}\n")
+            manex_data.append([y1, y2, y3, y4])
+        wb_manex.close()
+        if bool(error_msg):
+            messagebox.showerror(title="Manex BOM Error", message="".join(error_msg))
+            logging.error("Terminated!! Manex BOM not clean!!")
+            sys.exit(1)
+        return manex_data
+
+    except Exception as e:
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while reading Manex BOM!!\n\n{e.__class__}\n{e}")
+        logging.error(f"{e.__class__} from line 184")
+        logging.error("Error while reading Manex BOM!!")
+        logging.error(f"{e}")
+        print(e, "\n Error while reading Manex BOM!!")
+        sys.exit(1)
+
+
+def Manex_data_interpretation(manex_dict, manex_data, separator_dict):
+    try:
+        for row in manex_data:
+            y = row[0]
             if bool(y):
                 if manex_dict["manex_delimiter"] is not None:
-                    y = (row[manex_col_des].value).replace(" ", "").split(manex_dict["manex_delimiter"])
+                    y = y.replace(" ", "").split(manex_dict["manex_delimiter"])
                     y = list(filter(None, y))
                 rem = []
                 new = []
@@ -184,25 +225,16 @@ def Manex_data(Manex_File, manex_dict, separator_dict):
                         pointer = y.index(obj)
                         y.pop(pointer)
                     y.extend(new)
-                # if row[manex_col_qty].value > 1 and len(y) < 2:
-                #     tolerate += 1
-                # if tolerate > 5:
-                    # messagebox.showerror(title="Delimiter Undefined", message="No Delimiter Found!!! Check Web Manex BOM.....")
-                    # logging.info("Delimiter missing in Manex\n\n")
-                    # logging.info("Quantity and RefDesg mismatch in Manex BOM\n\n")
-                    # print("Program Terminated!!!")
-                    # sys.exit(1)
-            manex_data.append([y, row[manex_col_qty].value, row[manex_col_partno].value])
-        logging.info("Finished reading")
-        wb_manex.close()
+            row[0] = y
+        logging.info("Manex data interpreted!!")
         return manex_data
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while interpreting Manex BOM!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 158")
-        logging.error("Error while reading Manex BOM File!")
+        logging.error("Error while interpreting Manex BOM!")
         logging.error(f"{e}")
-        print(e, "\n Error while reading Manex BOM File!")
+        print(e, "\n Error while interpreting Manex BOM!")
         sys.exit(1)
 
 
@@ -236,7 +268,7 @@ def BOM_metadata():
         return bom_dict
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while getting Customer BOM Detail Inputs!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 67")
         logging.error("Error while getting Customer BOM Detail Inputs!")
         logging.error(f"{e}")
@@ -244,65 +276,119 @@ def BOM_metadata():
         sys.exit(1)
 
 
+def isfloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False
+
+
 def BOM_data(Bom_File, bom_dict):
 
-    messagebox.showinfo(title="Permission",
-                        message="Please close the BOM files if open. \nHit OK only when both files are closed!")
+    messagebox.showinfo(title="Permission", message="Please close the BOM files if open. \nHit OK only when both files are closed!")
     try:
         file_extension = pathlib.Path(Bom_File).suffix
         logging.info("Reading Customer BOM Excel...")
-        separator_dict = {}
-        separator_position = []
+        bom_data = []
+        error_msg = []
+        itemno = 1
+        bom_col_des = ord(bom_dict["bom_designator"]) - 65
+        bom_dict.update({"bom_col_des": bom_col_des})
+        bom_col_qty = ord(bom_dict["bom_quantity"]) - 65
         if file_extension == ".xls" or file_extension == ".XLS":
             wb_bom = xlrd.open_workbook(Bom_File)
             ws_bom = wb_bom.sheet_by_index(0)
-            bom_data = []
-            bom_col_des = ord(bom_dict["bom_designator"]) - 65
-            bom_dict.update({"bom_col_des": bom_col_des})
-            bom_col_qty = ord(bom_dict["bom_quantity"]) - 65
             for row in range(bom_dict["bom_start_row"] - 1, bom_dict["bom_end_row"]):
                 var = ws_bom.row_values(row)
-                x = var[bom_col_des]
-                res, sep_dict = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
-                if bool(sep_dict):
-                    separator_dict.update(sep_dict)
-                    separator_position.append([row, len(bom_data)])
-                if bool(res) and bool(var[bom_col_qty]) and len(res) != int(var[bom_col_qty]):
-                    qty = False
-                else:
-                    qty = True
-                bom_data.append([res, var[bom_col_qty], qty])
+                x1 = var[bom_col_des]
+                x2 = str(var[bom_col_qty])
+                if not bool(x1):
+                    error_msg.append(f"Missing designator for item no {itemno} or line no {row+1}\n")
+                    logging.error(f"Missing designator for item no {itemno} or line no {row+1}\n")
+                if not bool(x2):
+                    error_msg.append(f"Missing quantity for item no {itemno} or line no {row+1}\n")
+                    logging.error(f"Missing quantity for item no {itemno} or line no {row+1}\n")
+                elif not x2.isnumeric():
+                    if isfloat(x2):
+                        if not float(x2).is_integer():
+                            error_msg.append(f"Non-integer quantity for item no {itemno} or line no {row+1}\n")
+                            logging.error(f"Non-integer quantity for item no {itemno} or line no {row+1}\n")
+                        else:
+                            x2 = int(float(x2))
+                    else:
+                        error_msg.append(f"Non-integer quantity for item no {itemno} or line no {row + 1}\n")
+                        logging.error(f"Non-integer quantity for item no {itemno} or line no {row + 1}\n")
+                bom_data.append([x1, x2, 0, row])
+                itemno += 1
+
         else:
             wb_bom = openpyxl.load_workbook(Bom_File, data_only=True)
             ws_bom = wb_bom.worksheets[0]
             bom_rows = list(ws_bom.rows)
-            bom_data = []
-            bom_col_des = ord(bom_dict["bom_designator"]) - 65
-            bom_dict.update({"bom_col_des": bom_col_des})
-            bom_col_qty = ord(bom_dict["bom_quantity"]) - 65
             count = bom_dict["bom_start_row"]
             for row in bom_rows[bom_dict["bom_start_row"] - 1:bom_dict["bom_end_row"]]:
-                x = row[bom_col_des].value
-                res, sep_dict = readbom(x, bom_dict["bom_delimiter"], bom_dict["bom_separator"])
-                if bool(sep_dict):
-                    separator_dict.update(sep_dict)
-                    separator_position.append([count, len(bom_data)])
-                if bool(res) and bool(row[bom_col_qty].value) and len(res) != int(row[bom_col_qty].value):
-                    qty = False
-                else:
-                    qty = True
-                bom_data.append([res, row[bom_col_qty].value, qty])
+                x1 = row[bom_col_des].value
+                x2 = str(row[bom_col_qty].value)
+                if not bool(x1):
+                    error_msg.append(f"Missing designator for item no {itemno} or line no {count}\n")
+                    logging.error(f"Missing designator for item no {itemno} or line no {count}\n")
+                if not bool(x2):
+                    error_msg.append(f"Missing quantity for item no {itemno} or line no {count}\n")
+                    logging.error(f"Missing quantity for item no {itemno} or line no {count}\n")
+                elif not x2.isnumeric():
+                    if isfloat(x2):
+                        if not float(x2).is_integer():
+                            error_msg.append(f"Non-integer quantity for item no {itemno} or line no {count}\n")
+                            logging.error(f"Non-integer quantity for item no {itemno} or line no {count}\n")
+                        else:
+                            x2 = int(float(x2))
+                    else:
+                        error_msg.append(f"Non-integer quantity for item no {itemno} or line no {count}\n")
+                        logging.error(f"Non-integer quantity for item no {itemno} or line no {count}\n")
+                bom_data.append([x1, x2, 0, count])
+                itemno += 1
                 count += 1
             wb_bom.close()
-        logging.info("Finished reading")
-        return bom_data, separator_dict, separator_position
+        if bool(error_msg):
+            messagebox.showerror(title="Customer BOM Error", message="".join(error_msg))
+            logging.error("Terminated!! Customer BOM not clean!!")
+            sys.exit(1)
+        return bom_data
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while reading Customer BOM File!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 122")
         logging.error("Error while reading Customer BOM File!")
         logging.error(f"{e}")
         print(e, "\n Error while reading Customer BOM File!")
+        sys.exit(1)
+
+
+def Bom_data_interpretation(bom_data, bom_dict):
+    try:
+        separator_dict = {}
+        separator_position = []
+        for data in bom_data:
+            res, sep_dict = readbom(data[0], bom_dict["bom_delimiter"], bom_dict["bom_separator"])
+            if bool(sep_dict):
+                separator_dict.update(sep_dict)
+                separator_position.append([data[3], bom_data.index(data)])
+            if len(res) != int(data[1]):
+                qty = False
+            else:
+                qty = True
+            data[0] = res
+            data[2] = qty
+            data.pop()
+        return bom_data, separator_dict, separator_position
+
+    except Exception as e:
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while interpreting Customer BOM!\n\n{e.__class__}\n{e}")
+        logging.error(f"{e.__class__} from line 122")
+        logging.error("Error while interpreting Customer BOM File!")
+        logging.error(f"{e}")
+        print(e, "\n Error while interpreting Customer BOM File!")
         sys.exit(1)
 
 
@@ -460,7 +546,7 @@ def Map_RefDes(bom_data, manex_data):
         return manex_pn, duplicate
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while mapping designators from Manex BOM to Customer BOM!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 185")
         logging.error("Error while mapping designators from Manex BOM to Customer BOM!")
         logging.error(f"{e}")
@@ -510,54 +596,17 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_posit
                     wksht.Cells(i, col).Font.ColorIndex = 3
             pointer += 1
 
-        for value in separator_position:
-            wksht.Cells(value[0]+1, bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
+        file_extension = pathlib.Path(Bom_File).suffix
+        if file_extension == ".xls" or file_extension == ".XLS":
+            for value in separator_position:
+                wksht.Cells(value[0]+1, bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
+        else:
+            for value in separator_position:
+                wksht.Cells(value[0], bom_dict["bom_col_des"]+3).Value = ", ".join(bom_data[value[1]][0])
 
         wkbk.Save()
         wkbk.Close(True)
         xlApp.Quit()
-        # else:
-        #     wb_bom = openpyxl.load_workbook(Bom_File, data_only=True)
-        #     ws_bom = wb_bom.worksheets[0]
-        #     # for shape in ws_bom.legacy_drawing:
-        #     #     shape.left += 20
-        #     ws_bom.insert_cols(0)
-        #     i = 0
-        #     for row_num in range(int(bom_dict["bom_start_row"]), int(bom_dict["bom_end_row"])+1):
-        #         ws_bom.cell(row=row_num, column=1).value = manex_pn[i]
-        #         i += 1
-        #
-        #     ws_bom.insert_cols(0)
-        #     r = bom_dict["bom_start_row"]
-        #     pointer = 0
-        #     for rows in ws_bom.iter_rows(min_row=bom_dict["bom_start_row"], max_row=bom_dict["bom_end_row"], min_col=1, max_col=20):
-        #         if ws_bom[f"B{str(r)}"].value == "Not in Manex":
-        #             rows[0].fill = PatternFill(start_color="00FFFF00", end_color="00FFFF00", fill_type="solid")
-        #             rows[0].value = "Check"
-        #         elif ws_bom[f"B{str(r)}"].value in duplicate:
-        #             rows[0].fill = PatternFill(start_color="000096FF", end_color="000096FF", fill_type="solid")
-        #             rows[0].value = "Duplicate RefDesgs in BOM"
-        #         if not bool(bom_data[pointer][2]):
-        #             rows[0].value = "Quantity Column and RefDesg Count does not match"
-        #         if not bool(bom_data[pointer][1]):
-        #             for cell in rows:
-        #                 cell.font = Font(color="00FF1414")
-        #         pointer += 1
-        #         r += 1
-        #
-        #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-        #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-        #     ws_bom.cell(row=bom_dict["bom_end_row"]+2, column=2).value = f"Manex PN added on {str(datetime.datetime.now())}"
-        #     # if bool(pcb) and pcb[0] not in manex_pn:
-        #     #     ws_bom.insert_rows(bom_dict["bom_end_row"]+1)
-        #     #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=bom_dict["bom_col_des"]+3).value = "PCB"
-        #     #     ws_bom.cell(row=bom_dict["bom_end_row"]+1, column=2).value = pcb[0]
-        #     # for shape in ws_bom.legacy_drawing:
-        #     #     shape.left -= 20
-        #     for value in separator_position:
-        #         ws_bom.cell(row=value[0], column=bom_dict["bom_col_des"]+3).value = ", ".join(bom_data[value[1]][0])
-        #
-        #     wb_bom.save(Bom_File)
 
         if bool(bom_dict["work_order"]):
             name = Bom_File.split("/")
@@ -568,7 +617,7 @@ def Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_posit
             os.rename(Bom_File, new_name)
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while writing Customer BOM!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 242")
         logging.error("Error while writing Customer BOM!")
         logging.error(f"{e}")
@@ -590,18 +639,18 @@ def Write_Manex(Manex_File, manex_dict, manex_pn, duplicate):
         ws_manex = wb_manex.worksheets[0]
         r = manex_dict["manex_start_row"]
         for rows in ws_manex.iter_rows(min_row=manex_dict["manex_start_row"], max_row=manex_dict["manex_end_row"], min_col=1, max_col=20):
-            if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value in duplicate:
-                for cell in rows:
-                    cell.font = Font(color="000096FF")
             if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value not in manex_pn:
                 for cell in rows:
                     cell.font = Font(color="00FF1414")
+            if ws_manex[f"{chr(manex_dict['manex_col_partno']+65)}{str(r)}"].value in duplicate:
+                for cell in rows:
+                    cell.font = Font(color="000096FF")
             r += 1
         logging.info("Finished writing")
         wb_manex.save(Manex_File)
 
     except Exception as e:
-        messagebox.showerror(title=f"{e.__class__}", message="Something went wrong!! Please try again....")
+        messagebox.showerror(title=f"{e.__class__}", message=f"Error while writing Manex BOM!\n\n{e.__class__}\n{e}")
         logging.error(f"{e.__class__} from line 242")
         logging.error("Error while writing Manex BOM!")
         logging.error(f"{e}")
@@ -617,14 +666,16 @@ if __name__ == "__main__":
     Manex_File, Bom_File = getfiles()
 
     manex_dict = manex_metadata()
+    manex_data = Manex_data(Manex_File, manex_dict)
     bom_dict = BOM_metadata()
+    bom_data = BOM_data(Bom_File, bom_dict)
 
-    bom_data, separator_dict, separator_position = BOM_data(Bom_File, bom_dict)
-    manex_data = Manex_data(Manex_File, manex_dict, separator_dict)
+    bom_data_manipulated, separator_dict, separator_position = Bom_data_interpretation(bom_data, bom_dict)
+    manex_data_manipulated = Manex_data_interpretation(manex_dict, manex_data, separator_dict)
 
-    manex_pn, duplicate = Map_RefDes(bom_data, manex_data)
+    manex_pn, duplicate = Map_RefDes(bom_data_manipulated, manex_data_manipulated)
 
-    Write_Bom(Bom_File, bom_data, bom_dict, manex_pn, duplicate, separator_position)
+    Write_Bom(Bom_File, bom_data_manipulated, bom_dict, manex_pn, duplicate, separator_position)
     Write_Manex(Manex_File, manex_dict, manex_pn, duplicate)
 
     logging.info("Successfully Executed!!!\n\n")

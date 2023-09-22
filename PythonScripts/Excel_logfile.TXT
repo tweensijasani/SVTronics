@@ -1942,3 +1942,837 @@
 2023-04-19 13:21:15,146 INFO      * Restarting with stat
 2023-04-19 13:21:25,548 WARNING   * Debugger is active!
 2023-04-19 13:21:26,391 INFO      * Debugger PIN: 216-535-958
+2023-08-14 08:33:18,163 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.103:5000
+2023-08-14 08:33:18,164 INFO     [33mPress CTRL+C to quit[0m
+2023-08-14 08:33:18,166 INFO      * Restarting with stat
+2023-08-14 08:33:19,165 WARNING   * Debugger is active!
+2023-08-14 08:33:19,171 INFO      * Debugger PIN: 116-136-821
+2023-08-14 08:38:50,497 INFO     127.0.0.1 - - [14/Aug/2023 08:38:50] "GET / HTTP/1.1" 200 -
+2023-08-14 08:38:50,534 INFO     127.0.0.1 - - [14/Aug/2023 08:38:50] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-14 08:38:50,571 INFO     127.0.0.1 - - [14/Aug/2023 08:38:50] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-14 08:38:50,782 INFO     127.0.0.1 - - [14/Aug/2023 08:38:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-08-14 13:24:30,936 INFO     10.0.2.52 - - [14/Aug/2023 13:24:30] "[33mGET /rootDesc.xml HTTP/1.1[0m" 404 -
+2023-08-29 14:33:51,402 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:33:51,402 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:33:51,405 INFO      * Restarting with stat
+2023-08-29 14:33:52,867 WARNING   * Debugger is active!
+2023-08-29 14:33:52,879 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:35:17,167 INFO     127.0.0.1 - - [29/Aug/2023 14:35:17] "GET / HTTP/1.1" 200 -
+2023-08-29 14:35:17,193 INFO     127.0.0.1 - - [29/Aug/2023 14:35:17] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-29 14:35:17,238 INFO     127.0.0.1 - - [29/Aug/2023 14:35:17] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-29 14:35:19,119 INFO     127.0.0.1 - - [29/Aug/2023 14:35:19] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 14:35:19,136 INFO     127.0.0.1 - - [29/Aug/2023 14:35:19] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-29 14:35:19,152 INFO     127.0.0.1 - - [29/Aug/2023 14:35:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:35:19,172 INFO     127.0.0.1 - - [29/Aug/2023 14:35:19] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-29 14:35:47,922 INFO     Reading setup.ini file...
+2023-08-29 14:35:47,934 INFO     Info populated
+2023-08-29 14:35:47,934 INFO     Reading Manex BOM Excel...
+2023-08-29 14:35:47,971 ERROR    Missing designator for item no 26
+2023-08-29 14:35:47,971 ERROR    Non-integer quantity for item no 26
+2023-08-29 14:35:47,971 INFO     Finished reading
+2023-08-29 14:35:47,971 ERROR    Terminated!! Manex BOM not clean!!
+2023-08-29 14:35:47,985 INFO     127.0.0.1 - - [29/Aug/2023 14:35:47] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:35:48,041 INFO     127.0.0.1 - - [29/Aug/2023 14:35:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:35:48,058 INFO     127.0.0.1 - - [29/Aug/2023 14:35:48] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:35:49,959 INFO     127.0.0.1 - - [29/Aug/2023 14:35:49] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:35:50,002 INFO     127.0.0.1 - - [29/Aug/2023 14:35:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:38:00,336 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-08-29 14:38:00,464 INFO      * Restarting with stat
+2023-08-29 14:38:01,878 WARNING   * Debugger is active!
+2023-08-29 14:38:01,881 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:38:05,479 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:38:05,479 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:38:05,481 INFO      * Restarting with stat
+2023-08-29 14:38:06,399 WARNING   * Debugger is active!
+2023-08-29 14:38:06,403 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:38:33,309 INFO     Reading setup.ini file...
+2023-08-29 14:38:33,311 INFO     Info populated
+2023-08-29 14:38:33,311 INFO     Reading Manex BOM Excel...
+2023-08-29 14:38:33,341 ERROR    Missing designator for item no 26
+2023-08-29 14:38:33,342 ERROR    Non-integer quantity for item no 26
+2023-08-29 14:38:33,342 INFO     Finished reading
+2023-08-29 14:38:33,342 ERROR    Terminated!! Manex BOM not clean!!
+2023-08-29 14:38:33,356 INFO     127.0.0.1 - - [29/Aug/2023 14:38:33] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:38:33,401 INFO     127.0.0.1 - - [29/Aug/2023 14:38:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:38:33,401 INFO     127.0.0.1 - - [29/Aug/2023 14:38:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:38:35,024 INFO     127.0.0.1 - - [29/Aug/2023 14:38:35] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:38:35,172 INFO     127.0.0.1 - - [29/Aug/2023 14:38:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:39:36,491 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-08-29 14:39:36,763 INFO      * Restarting with stat
+2023-08-29 14:39:38,217 WARNING   * Debugger is active!
+2023-08-29 14:39:38,227 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:39:41,228 INFO     Reading setup.ini file...
+2023-08-29 14:39:41,231 INFO     Info populated
+2023-08-29 14:39:41,231 INFO     Reading Manex BOM Excel...
+2023-08-29 14:39:41,284 ERROR    Missing designator for item no 26
+2023-08-29 14:39:41,285 ERROR    Non-integer quantity for item no 26
+2023-08-29 14:39:41,285 INFO     Finished reading
+2023-08-29 14:39:41,285 ERROR    Terminated!! Manex BOM not clean!!
+2023-08-29 14:39:41,309 INFO     127.0.0.1 - - [29/Aug/2023 14:39:41] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:39:41,384 INFO     127.0.0.1 - - [29/Aug/2023 14:39:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:39:41,385 INFO     127.0.0.1 - - [29/Aug/2023 14:39:41] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:39:42,959 INFO     127.0.0.1 - - [29/Aug/2023 14:39:42] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:39:43,023 INFO     127.0.0.1 - - [29/Aug/2023 14:39:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:40:20,592 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-08-29 14:40:20,850 INFO      * Restarting with stat
+2023-08-29 14:40:22,257 WARNING   * Debugger is active!
+2023-08-29 14:40:22,266 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:40:23,021 INFO     Reading setup.ini file...
+2023-08-29 14:40:23,024 INFO     Info populated
+2023-08-29 14:40:23,024 INFO     Reading Manex BOM Excel...
+2023-08-29 14:40:23,072 ERROR    Missing designator for item no 26
+2023-08-29 14:40:23,072 ERROR    Non-integer quantity for item no 26
+2023-08-29 14:40:23,072 INFO     Finished reading
+2023-08-29 14:40:23,072 ERROR    Terminated!! Manex BOM not clean!!
+2023-08-29 14:40:23,089 INFO     127.0.0.1 - - [29/Aug/2023 14:40:23] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:40:23,140 INFO     127.0.0.1 - - [29/Aug/2023 14:40:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:40:23,156 INFO     127.0.0.1 - - [29/Aug/2023 14:40:23] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:40:24,487 INFO     127.0.0.1 - - [29/Aug/2023 14:40:24] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:40:24,546 INFO     127.0.0.1 - - [29/Aug/2023 14:40:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:40:57,601 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-08-29 14:40:58,348 INFO      * Restarting with stat
+2023-08-29 14:40:59,612 WARNING   * Debugger is active!
+2023-08-29 14:40:59,616 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:41:02,196 INFO     Reading setup.ini file...
+2023-08-29 14:41:02,198 INFO     Info populated
+2023-08-29 14:41:02,198 INFO     Reading Manex BOM Excel...
+2023-08-29 14:41:02,250 ERROR    Missing designator for item no 26
+2023-08-29 14:41:02,250 ERROR    Non-integer quantity for item no 26
+2023-08-29 14:41:02,250 INFO     Finished reading
+2023-08-29 14:41:02,251 ERROR    Terminated!! Manex BOM not clean!!
+2023-08-29 14:41:02,273 INFO     127.0.0.1 - - [29/Aug/2023 14:41:02] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:41:02,340 INFO     127.0.0.1 - - [29/Aug/2023 14:41:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:41:02,343 INFO     127.0.0.1 - - [29/Aug/2023 14:41:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:41:03,692 INFO     127.0.0.1 - - [29/Aug/2023 14:41:03] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:41:03,739 INFO     127.0.0.1 - - [29/Aug/2023 14:41:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:41:33,949 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-08-29 14:41:34,276 INFO      * Restarting with stat
+2023-08-29 14:41:35,372 WARNING   * Debugger is active!
+2023-08-29 14:41:35,376 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:42:06,336 INFO     Reading setup.ini file...
+2023-08-29 14:42:06,338 INFO     Info populated
+2023-08-29 14:42:06,338 INFO     Reading Manex BOM Excel...
+2023-08-29 14:42:06,391 INFO     Finished reading
+2023-08-29 14:42:06,391 INFO     Reading Customer BOM Excel...
+2023-08-29 14:42:06,445 ERROR    Missing designator for item no 19 or line no 20
+2023-08-29 14:42:06,445 ERROR    Non-integer quantity for item no 20 or line no 21
+2023-08-29 14:42:06,445 ERROR    Terminated!! Customer BOM not clean!!
+2023-08-29 14:42:06,465 INFO     127.0.0.1 - - [29/Aug/2023 14:42:06] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:42:06,519 INFO     127.0.0.1 - - [29/Aug/2023 14:42:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:42:06,529 INFO     127.0.0.1 - - [29/Aug/2023 14:42:06] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:42:07,677 INFO     127.0.0.1 - - [29/Aug/2023 14:42:07] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:42:07,745 INFO     127.0.0.1 - - [29/Aug/2023 14:42:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:42:45,944 INFO     Reading setup.ini file...
+2023-08-29 14:42:45,945 INFO     Info populated
+2023-08-29 14:42:45,945 INFO     Reading Manex BOM Excel...
+2023-08-29 14:42:46,016 INFO     Finished reading
+2023-08-29 14:42:46,016 INFO     Reading Customer BOM Excel...
+2023-08-29 14:42:46,072 INFO     Finished reading
+2023-08-29 14:42:46,072 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 14:42:46,076 INFO     Finished mapping
+2023-08-29 14:42:46,076 INFO     Writing to Customer Bom Excel...
+2023-08-29 14:42:46,106 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 14:42:46,107 ERROR    Error while writing Customer BOM excel!
+2023-08-29 14:42:46,107 ERROR    Excel.Application.Workbooks
+2023-08-29 14:42:46,107 INFO     Writing to Manex BOM Excel...
+2023-08-29 14:42:46,139 INFO     Finished writing
+2023-08-29 14:42:46,218 INFO     127.0.0.1 - - [29/Aug/2023 14:42:46] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:42:46,306 INFO     127.0.0.1 - - [29/Aug/2023 14:42:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:42:46,306 INFO     127.0.0.1 - - [29/Aug/2023 14:42:46] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:42:47,974 INFO     127.0.0.1 - - [29/Aug/2023 14:42:47] "[35m[1mGET /error_tab HTTP/1.1[0m" 500 -
+2023-08-29 14:42:48,028 INFO     127.0.0.1 - - [29/Aug/2023 14:42:48] "GET /error_tab?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:42:48,062 INFO     127.0.0.1 - - [29/Aug/2023 14:42:48] "GET /error_tab?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:42:48,122 INFO     127.0.0.1 - - [29/Aug/2023 14:42:48] "GET /error_tab?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:42:48,152 INFO     127.0.0.1 - - [29/Aug/2023 14:42:48] "[36mGET /error_tab?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:44:21,534 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:44:21,541 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:44:21,546 INFO      * Restarting with stat
+2023-08-29 14:44:23,948 WARNING   * Debugger is active!
+2023-08-29 14:44:23,963 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:44:25,403 INFO     127.0.0.1 - - [29/Aug/2023 14:44:25] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+2023-08-29 14:44:25,444 INFO     127.0.0.1 - - [29/Aug/2023 14:44:25] "GET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:44:25,454 INFO     127.0.0.1 - - [29/Aug/2023 14:44:25] "GET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:44:25,521 INFO     127.0.0.1 - - [29/Aug/2023 14:44:25] "GET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:44:25,566 INFO     127.0.0.1 - - [29/Aug/2023 14:44:25] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:45:11,770 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:45:11,770 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:45:11,773 INFO      * Restarting with stat
+2023-08-29 14:45:13,993 WARNING   * Debugger is active!
+2023-08-29 14:45:14,010 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:45:16,681 INFO     127.0.0.1 - - [29/Aug/2023 14:45:16] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+2023-08-29 14:45:16,716 INFO     127.0.0.1 - - [29/Aug/2023 14:45:16] "[36mGET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:45:16,726 INFO     127.0.0.1 - - [29/Aug/2023 14:45:16] "[36mGET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-08-29 14:45:16,755 INFO     127.0.0.1 - - [29/Aug/2023 14:45:16] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:49:12,766 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:49:12,766 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:49:12,768 INFO      * Restarting with stat
+2023-08-29 14:49:14,017 WARNING   * Debugger is active!
+2023-08-29 14:49:14,022 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:49:22,896 INFO     127.0.0.1 - - [29/Aug/2023 14:49:22] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+2023-08-29 14:49:22,919 INFO     127.0.0.1 - - [29/Aug/2023 14:49:22] "[36mGET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:49:22,922 INFO     127.0.0.1 - - [29/Aug/2023 14:49:22] "[36mGET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-08-29 14:49:22,938 INFO     127.0.0.1 - - [29/Aug/2023 14:49:22] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:49:35,897 INFO     127.0.0.1 - - [29/Aug/2023 14:49:35] "GET / HTTP/1.1" 200 -
+2023-08-29 14:49:35,920 INFO     127.0.0.1 - - [29/Aug/2023 14:49:35] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-29 14:49:35,934 INFO     127.0.0.1 - - [29/Aug/2023 14:49:35] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-29 14:49:38,127 INFO     127.0.0.1 - - [29/Aug/2023 14:49:38] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 14:49:38,147 INFO     127.0.0.1 - - [29/Aug/2023 14:49:38] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-29 14:49:38,151 INFO     127.0.0.1 - - [29/Aug/2023 14:49:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:49:38,152 INFO     127.0.0.1 - - [29/Aug/2023 14:49:38] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-29 14:50:02,331 INFO     Reading setup.ini file...
+2023-08-29 14:50:02,332 INFO     Info populated
+2023-08-29 14:50:02,332 INFO     Reading Manex BOM Excel...
+2023-08-29 14:50:02,367 INFO     Finished reading
+2023-08-29 14:50:02,367 INFO     Reading Customer BOM Excel...
+2023-08-29 14:50:02,425 INFO     Finished reading
+2023-08-29 14:50:02,426 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 14:50:02,430 INFO     Finished mapping
+2023-08-29 14:50:02,431 INFO     Writing to Customer Bom Excel...
+2023-08-29 14:50:02,441 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 14:50:02,441 ERROR    Error while writing Customer BOM excel!
+2023-08-29 14:50:02,441 ERROR    Excel.Application.Workbooks
+2023-08-29 14:50:02,441 INFO     Writing to Manex BOM Excel...
+2023-08-29 14:50:02,461 INFO     Finished writing
+2023-08-29 14:50:02,535 INFO     127.0.0.1 - - [29/Aug/2023 14:50:02] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:50:02,604 INFO     127.0.0.1 - - [29/Aug/2023 14:50:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:50:02,605 INFO     127.0.0.1 - - [29/Aug/2023 14:50:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:50:04,243 INFO     127.0.0.1 - - [29/Aug/2023 14:50:04] "[35m[1mGET /error_tab HTTP/1.1[0m" 500 -
+2023-08-29 14:50:04,258 INFO     127.0.0.1 - - [29/Aug/2023 14:50:04] "GET /error_tab?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:50:04,261 INFO     127.0.0.1 - - [29/Aug/2023 14:50:04] "GET /error_tab?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:50:04,274 INFO     127.0.0.1 - - [29/Aug/2023 14:50:04] "GET /error_tab?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:50:04,327 INFO     127.0.0.1 - - [29/Aug/2023 14:50:04] "[36mGET /error_tab?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:52:08,241 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-08-29 14:52:08,756 INFO      * Restarting with stat
+2023-08-29 14:52:11,262 WARNING   * Debugger is active!
+2023-08-29 14:52:11,266 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:52:18,279 INFO     127.0.0.1 - - [29/Aug/2023 14:52:18] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+2023-08-29 14:52:18,296 INFO     127.0.0.1 - - [29/Aug/2023 14:52:18] "GET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:52:18,303 INFO     127.0.0.1 - - [29/Aug/2023 14:52:18] "GET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:52:18,311 INFO     127.0.0.1 - - [29/Aug/2023 14:52:18] "GET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:52:18,330 INFO     127.0.0.1 - - [29/Aug/2023 14:52:18] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:52:32,087 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.148:5000
+2023-08-29 14:52:32,088 INFO     [33mPress CTRL+C to quit[0m
+2023-08-29 14:52:32,090 INFO      * Restarting with stat
+2023-08-29 14:52:32,968 WARNING   * Debugger is active!
+2023-08-29 14:52:32,971 INFO      * Debugger PIN: 116-136-821
+2023-08-29 14:52:45,501 INFO     127.0.0.1 - - [29/Aug/2023 14:52:45] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-08-29 14:52:45,532 INFO     127.0.0.1 - - [29/Aug/2023 14:52:45] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:52:45,539 INFO     127.0.0.1 - - [29/Aug/2023 14:52:45] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:52:45,568 INFO     127.0.0.1 - - [29/Aug/2023 14:52:45] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:52:45,772 INFO     127.0.0.1 - - [29/Aug/2023 14:52:45] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 14:52:54,512 INFO     127.0.0.1 - - [29/Aug/2023 14:52:54] "GET / HTTP/1.1" 200 -
+2023-08-29 14:52:54,534 INFO     127.0.0.1 - - [29/Aug/2023 14:52:54] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-29 14:52:54,549 INFO     127.0.0.1 - - [29/Aug/2023 14:52:54] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-29 14:52:55,902 INFO     127.0.0.1 - - [29/Aug/2023 14:52:55] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 14:52:55,925 INFO     127.0.0.1 - - [29/Aug/2023 14:52:55] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-29 14:52:55,927 INFO     127.0.0.1 - - [29/Aug/2023 14:52:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:52:55,930 INFO     127.0.0.1 - - [29/Aug/2023 14:52:55] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-29 14:53:19,445 INFO     Reading setup.ini file...
+2023-08-29 14:53:19,446 INFO     Info populated
+2023-08-29 14:53:19,446 INFO     Reading Manex BOM Excel...
+2023-08-29 14:53:19,482 INFO     Finished reading
+2023-08-29 14:53:19,482 INFO     Reading Customer BOM Excel...
+2023-08-29 14:53:19,516 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 14:53:19,519 INFO     Finished mapping
+2023-08-29 14:53:19,519 INFO     Writing to Customer Bom Excel...
+2023-08-29 14:53:19,527 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 14:53:19,527 ERROR    Error while writing Customer BOM excel!
+2023-08-29 14:53:19,527 ERROR    Excel.Application.Workbooks
+2023-08-29 14:53:19,527 INFO     Writing to Manex BOM Excel...
+2023-08-29 14:53:19,543 INFO     Finished writing
+2023-08-29 14:53:19,628 INFO     127.0.0.1 - - [29/Aug/2023 14:53:19] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:53:19,701 INFO     127.0.0.1 - - [29/Aug/2023 14:53:19] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:53:19,716 INFO     127.0.0.1 - - [29/Aug/2023 14:53:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:53:21,505 INFO     127.0.0.1 - - [29/Aug/2023 14:53:21] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:53:21,546 INFO     127.0.0.1 - - [29/Aug/2023 14:53:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:06,679 INFO     127.0.0.1 - - [29/Aug/2023 14:56:06] "GET / HTTP/1.1" 200 -
+2023-08-29 14:56:06,716 INFO     127.0.0.1 - - [29/Aug/2023 14:56:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:07,728 INFO     127.0.0.1 - - [29/Aug/2023 14:56:07] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 14:56:07,779 INFO     127.0.0.1 - - [29/Aug/2023 14:56:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:07,795 INFO     127.0.0.1 - - [29/Aug/2023 14:56:07] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:56:31,589 INFO     Reading setup.ini file...
+2023-08-29 14:56:31,590 INFO     Info populated
+2023-08-29 14:56:31,590 INFO     Reading Manex BOM Excel...
+2023-08-29 14:56:31,625 INFO     Finished reading
+2023-08-29 14:56:31,625 INFO     Reading Customer BOM Excel...
+2023-08-29 14:56:31,662 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 14:56:31,664 INFO     Finished mapping
+2023-08-29 14:56:31,664 INFO     Writing to Customer Bom Excel...
+2023-08-29 14:56:31,671 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 14:56:31,672 ERROR    Error while writing Customer BOM excel!
+2023-08-29 14:56:31,672 ERROR    Excel.Application.Workbooks
+2023-08-29 14:56:31,672 INFO     Writing to Manex BOM Excel...
+2023-08-29 14:56:31,691 INFO     Finished writing
+2023-08-29 14:56:31,730 INFO     127.0.0.1 - - [29/Aug/2023 14:56:31] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:56:31,768 INFO     127.0.0.1 - - [29/Aug/2023 14:56:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:31,774 INFO     127.0.0.1 - - [29/Aug/2023 14:56:31] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 14:56:33,280 INFO     127.0.0.1 - - [29/Aug/2023 14:56:33] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 14:56:33,321 INFO     127.0.0.1 - - [29/Aug/2023 14:56:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:38,460 INFO     Reading setup.ini file...
+2023-08-29 14:56:38,460 INFO     Info populated
+2023-08-29 14:56:38,461 INFO     Reading Manex BOM Excel...
+2023-08-29 14:56:38,492 INFO     Finished reading
+2023-08-29 14:56:38,492 INFO     Reading Customer BOM Excel...
+2023-08-29 14:56:38,573 INFO     127.0.0.1 - - [29/Aug/2023 14:56:38] "POST /processing HTTP/1.1" 200 -
+2023-08-29 14:56:38,627 INFO     127.0.0.1 - - [29/Aug/2023 14:56:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 14:56:40,029 INFO     127.0.0.1 - - [29/Aug/2023 14:56:40] "[35m[1mPOST /check HTTP/1.1[0m" 500 -
+2023-08-29 14:56:40,046 INFO     127.0.0.1 - - [29/Aug/2023 14:56:40] "GET /check?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-29 14:56:40,048 INFO     127.0.0.1 - - [29/Aug/2023 14:56:40] "GET /check?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-29 14:56:40,089 INFO     127.0.0.1 - - [29/Aug/2023 14:56:40] "GET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-29 14:56:40,110 INFO     127.0.0.1 - - [29/Aug/2023 14:56:40] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 15:09:50,258 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\index.py', reloading
+2023-08-29 15:09:50,416 INFO      * Restarting with stat
+2023-08-29 15:09:51,968 WARNING   * Debugger is active!
+2023-08-29 15:09:51,974 INFO      * Debugger PIN: 116-136-821
+2023-08-29 15:09:59,458 INFO     127.0.0.1 - - [29/Aug/2023 15:09:59] "[35m[1mPOST /check HTTP/1.1[0m" 500 -
+2023-08-29 15:09:59,475 INFO     127.0.0.1 - - [29/Aug/2023 15:09:59] "[36mGET /check?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-08-29 15:09:59,477 INFO     127.0.0.1 - - [29/Aug/2023 15:09:59] "[36mGET /check?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-08-29 15:09:59,486 INFO     127.0.0.1 - - [29/Aug/2023 15:09:59] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 15:09:59,509 INFO     127.0.0.1 - - [29/Aug/2023 15:09:59] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 15:10:02,187 INFO     127.0.0.1 - - [29/Aug/2023 15:10:02] "[35m[1mPOST /check HTTP/1.1[0m" 500 -
+2023-08-29 15:10:02,203 INFO     127.0.0.1 - - [29/Aug/2023 15:10:02] "[36mGET /check?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-08-29 15:10:02,207 INFO     127.0.0.1 - - [29/Aug/2023 15:10:02] "[36mGET /check?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-08-29 15:10:02,215 INFO     127.0.0.1 - - [29/Aug/2023 15:10:02] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 15:10:02,236 INFO     127.0.0.1 - - [29/Aug/2023 15:10:02] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-29 16:45:37,438 INFO     127.0.0.1 - - [29/Aug/2023 16:45:37] "GET / HTTP/1.1" 200 -
+2023-08-29 16:45:37,461 INFO     127.0.0.1 - - [29/Aug/2023 16:45:37] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-29 16:45:37,474 INFO     127.0.0.1 - - [29/Aug/2023 16:45:37] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-29 16:45:38,919 INFO     127.0.0.1 - - [29/Aug/2023 16:45:38] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 16:45:38,938 INFO     127.0.0.1 - - [29/Aug/2023 16:45:38] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-29 16:45:38,943 INFO     127.0.0.1 - - [29/Aug/2023 16:45:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:45:38,947 INFO     127.0.0.1 - - [29/Aug/2023 16:45:38] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-29 16:46:02,644 INFO     Reading setup.ini file...
+2023-08-29 16:46:02,649 INFO     Info populated
+2023-08-29 16:46:02,649 INFO     Reading Manex BOM Excel...
+2023-08-29 16:46:02,700 INFO     Finished reading
+2023-08-29 16:46:02,701 INFO     Reading Customer BOM Excel...
+2023-08-29 16:46:02,735 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 16:46:02,737 INFO     Finished mapping
+2023-08-29 16:46:02,737 INFO     Writing to Customer Bom Excel...
+2023-08-29 16:46:02,759 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 16:46:02,759 ERROR    Error while writing Customer BOM excel!
+2023-08-29 16:46:02,759 ERROR    Excel.Application.Workbooks
+2023-08-29 16:46:02,759 INFO     Writing to Manex BOM Excel...
+2023-08-29 16:46:02,775 INFO     Finished writing
+2023-08-29 16:46:02,844 INFO     127.0.0.1 - - [29/Aug/2023 16:46:02] "POST /processing HTTP/1.1" 200 -
+2023-08-29 16:46:02,885 INFO     127.0.0.1 - - [29/Aug/2023 16:46:02] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 16:46:02,897 INFO     127.0.0.1 - - [29/Aug/2023 16:46:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:46:04,635 INFO     127.0.0.1 - - [29/Aug/2023 16:46:04] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 16:46:04,669 INFO     127.0.0.1 - - [29/Aug/2023 16:46:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:54:33,467 INFO     Reading setup.ini file...
+2023-08-29 16:54:33,468 INFO     Info populated
+2023-08-29 16:54:33,468 INFO     Reading Manex BOM Excel...
+2023-08-29 16:54:33,499 INFO     Finished reading
+2023-08-29 16:54:33,500 INFO     Reading Customer BOM Excel...
+2023-08-29 16:54:33,535 ERROR    Missing designator for item no 15 or line no 16
+2023-08-29 16:54:33,535 ERROR    Missing quantity for item no 18 or line no 19
+2023-08-29 16:54:33,535 ERROR    Terminated!! Customer BOM not clean!!
+2023-08-29 16:54:33,539 INFO     127.0.0.1 - - [29/Aug/2023 16:54:33] "POST /processing HTTP/1.1" 200 -
+2023-08-29 16:54:33,572 INFO     127.0.0.1 - - [29/Aug/2023 16:54:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:54:33,575 INFO     127.0.0.1 - - [29/Aug/2023 16:54:33] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 16:54:34,870 INFO     127.0.0.1 - - [29/Aug/2023 16:54:34] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 16:54:34,902 INFO     127.0.0.1 - - [29/Aug/2023 16:54:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:55:03,016 INFO     127.0.0.1 - - [29/Aug/2023 16:55:03] "GET / HTTP/1.1" 200 -
+2023-08-29 16:55:03,047 INFO     127.0.0.1 - - [29/Aug/2023 16:55:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:55:03,919 INFO     127.0.0.1 - - [29/Aug/2023 16:55:03] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-29 16:55:03,943 INFO     127.0.0.1 - - [29/Aug/2023 16:55:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:55:03,954 INFO     127.0.0.1 - - [29/Aug/2023 16:55:03] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 16:55:23,967 INFO     Reading setup.ini file...
+2023-08-29 16:55:23,969 INFO     Info populated
+2023-08-29 16:55:23,969 INFO     Reading Manex BOM Excel...
+2023-08-29 16:55:24,003 INFO     Finished reading
+2023-08-29 16:55:24,003 INFO     Reading Customer BOM Excel...
+2023-08-29 16:55:24,023 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-29 16:55:24,025 INFO     Finished mapping
+2023-08-29 16:55:24,025 INFO     Writing to Customer Bom Excel...
+2023-08-29 16:55:24,029 ERROR    <class 'AttributeError'> from line 220
+2023-08-29 16:55:24,029 ERROR    Error while writing Customer BOM excel!
+2023-08-29 16:55:24,029 ERROR    Excel.Application.Workbooks
+2023-08-29 16:55:24,030 INFO     Writing to Manex BOM Excel...
+2023-08-29 16:55:24,043 INFO     Finished writing
+2023-08-29 16:55:24,077 INFO     127.0.0.1 - - [29/Aug/2023 16:55:24] "POST /processing HTTP/1.1" 200 -
+2023-08-29 16:55:24,110 INFO     127.0.0.1 - - [29/Aug/2023 16:55:24] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-08-29 16:55:24,124 INFO     127.0.0.1 - - [29/Aug/2023 16:55:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-29 16:55:25,383 INFO     127.0.0.1 - - [29/Aug/2023 16:55:25] "GET /error_tab HTTP/1.1" 200 -
+2023-08-29 16:55:25,415 INFO     127.0.0.1 - - [29/Aug/2023 16:55:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 13:14:55,152 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.218:5000
+2023-08-31 13:14:55,152 INFO     [33mPress CTRL+C to quit[0m
+2023-08-31 13:14:55,155 INFO      * Restarting with stat
+2023-08-31 13:14:56,388 WARNING   * Debugger is active!
+2023-08-31 13:14:56,401 INFO      * Debugger PIN: 116-136-821
+2023-08-31 13:15:01,128 INFO     127.0.0.1 - - [31/Aug/2023 13:15:01] "GET / HTTP/1.1" 200 -
+2023-08-31 13:15:01,149 INFO     127.0.0.1 - - [31/Aug/2023 13:15:01] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-31 13:15:01,183 INFO     127.0.0.1 - - [31/Aug/2023 13:15:01] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-31 13:15:01,759 INFO     127.0.0.1 - - [31/Aug/2023 13:15:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-08-31 13:15:03,001 INFO     127.0.0.1 - - [31/Aug/2023 13:15:03] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-31 13:15:03,020 INFO     127.0.0.1 - - [31/Aug/2023 13:15:03] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-31 13:15:03,027 INFO     127.0.0.1 - - [31/Aug/2023 13:15:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 13:15:03,050 INFO     127.0.0.1 - - [31/Aug/2023 13:15:03] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-31 13:15:37,715 INFO     Reading setup.ini file...
+2023-08-31 13:15:37,716 INFO     Info populated
+2023-08-31 13:15:37,716 INFO     Reading Manex BOM Excel...
+2023-08-31 13:15:37,776 INFO     Finished reading
+2023-08-31 13:15:37,777 INFO     Reading Customer BOM Excel...
+2023-08-31 13:15:37,834 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-31 13:15:37,838 INFO     Finished mapping
+2023-08-31 13:15:37,839 INFO     Writing to Customer Bom Excel...
+2023-08-31 13:15:40,837 INFO     Finished writing
+2023-08-31 13:15:41,644 INFO     Writing to Manex BOM Excel...
+2023-08-31 13:15:41,691 INFO     Finished writing
+2023-08-31 13:15:41,824 INFO     127.0.0.1 - - [31/Aug/2023 13:15:41] "POST /processing HTTP/1.1" 200 -
+2023-08-31 13:15:41,880 INFO     127.0.0.1 - - [31/Aug/2023 13:15:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 13:15:47,268 INFO     127.0.0.1 - - [31/Aug/2023 13:15:47] "GET /download/customer HTTP/1.1" 200 -
+2023-08-31 13:16:01,187 INFO     127.0.0.1 - - [31/Aug/2023 13:16:01] "GET /download/manex HTTP/1.1" 200 -
+2023-08-31 13:20:44,316 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-08-31 13:20:44,525 INFO      * Restarting with stat
+2023-08-31 13:20:46,435 WARNING   * Debugger is active!
+2023-08-31 13:20:46,443 INFO      * Debugger PIN: 116-136-821
+2023-08-31 13:23:09,644 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-08-31 13:23:09,718 INFO      * Restarting with stat
+2023-08-31 13:23:11,947 WARNING   * Debugger is active!
+2023-08-31 13:23:11,953 INFO      * Debugger PIN: 116-136-821
+2023-08-31 13:23:17,582 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.218:5000
+2023-08-31 13:23:17,583 INFO     [33mPress CTRL+C to quit[0m
+2023-08-31 13:23:17,586 INFO      * Restarting with stat
+2023-08-31 13:23:19,344 WARNING   * Debugger is active!
+2023-08-31 13:23:19,377 INFO      * Debugger PIN: 116-136-821
+2023-08-31 13:24:31,723 INFO     Reading setup.ini file...
+2023-08-31 13:24:31,726 INFO     Info populated
+2023-08-31 13:24:31,726 INFO     Reading Manex BOM Excel...
+2023-08-31 13:24:31,772 INFO     Finished reading
+2023-08-31 13:24:31,772 INFO     Reading Customer BOM Excel...
+2023-08-31 13:24:31,822 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-08-31 13:24:31,825 INFO     Finished mapping
+2023-08-31 13:24:31,826 INFO     Writing to Customer Bom Excel...
+2023-08-31 13:24:33,993 INFO     Finished writing
+2023-08-31 13:24:36,255 INFO     Writing to Manex BOM Excel...
+2023-08-31 13:24:36,290 INFO     Finished writing
+2023-08-31 13:24:36,394 INFO     127.0.0.1 - - [31/Aug/2023 13:24:36] "POST /processing HTTP/1.1" 200 -
+2023-08-31 13:24:36,431 INFO     127.0.0.1 - - [31/Aug/2023 13:24:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 13:46:21,079 INFO     Reading setup.ini file...
+2023-08-31 13:46:21,079 INFO     Info populated
+2023-08-31 13:46:21,080 INFO     Reading Manex BOM Excel...
+2023-08-31 13:46:21,124 INFO     Finished reading
+2023-08-31 13:46:21,124 INFO     Reading Customer BOM Excel...
+2023-08-31 13:46:21,217 INFO     127.0.0.1 - - [31/Aug/2023 13:46:21] "POST /processing HTTP/1.1" 200 -
+2023-08-31 13:46:21,268 INFO     127.0.0.1 - - [31/Aug/2023 13:46:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 13:46:22,693 INFO     127.0.0.1 - - [31/Aug/2023 13:46:22] "[35m[1mPOST /check HTTP/1.1[0m" 500 -
+2023-08-31 13:46:22,727 INFO     127.0.0.1 - - [31/Aug/2023 13:46:22] "GET /check?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-31 13:46:22,739 INFO     127.0.0.1 - - [31/Aug/2023 13:46:22] "GET /check?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-31 13:46:22,790 INFO     127.0.0.1 - - [31/Aug/2023 13:46:22] "GET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-31 13:46:22,811 INFO     127.0.0.1 - - [31/Aug/2023 13:46:22] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-08-31 14:14:47,245 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.218:5000
+2023-08-31 14:14:47,246 INFO     [33mPress CTRL+C to quit[0m
+2023-08-31 14:14:47,251 INFO      * Restarting with stat
+2023-08-31 14:14:49,747 WARNING   * Debugger is active!
+2023-08-31 14:14:49,759 INFO      * Debugger PIN: 116-136-821
+2023-08-31 14:15:01,963 INFO     127.0.0.1 - - [31/Aug/2023 14:15:01] "GET / HTTP/1.1" 200 -
+2023-08-31 14:15:01,992 INFO     127.0.0.1 - - [31/Aug/2023 14:15:01] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-08-31 14:15:02,003 INFO     127.0.0.1 - - [31/Aug/2023 14:15:02] "GET /static/style.css HTTP/1.1" 200 -
+2023-08-31 14:15:03,618 INFO     127.0.0.1 - - [31/Aug/2023 14:15:03] "GET /add_manexpn HTTP/1.1" 200 -
+2023-08-31 14:15:03,638 INFO     127.0.0.1 - - [31/Aug/2023 14:15:03] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-08-31 14:15:03,650 INFO     127.0.0.1 - - [31/Aug/2023 14:15:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 14:15:03,652 INFO     127.0.0.1 - - [31/Aug/2023 14:15:03] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-08-31 14:15:35,479 INFO     Reading setup.ini file...
+2023-08-31 14:15:35,480 INFO     Info populated
+2023-08-31 14:15:35,480 INFO     Reading Manex BOM Excel...
+2023-08-31 14:15:35,600 INFO     Finished reading
+2023-08-31 14:15:35,601 INFO     Reading Customer BOM Excel...
+2023-08-31 14:34:28,488 INFO     127.0.0.1 - - [31/Aug/2023 14:34:28] "POST /processing HTTP/1.1" 200 -
+2023-08-31 14:34:28,568 INFO     127.0.0.1 - - [31/Aug/2023 14:34:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-08-31 14:34:37,587 INFO     127.0.0.1 - - [31/Aug/2023 14:34:37] "[35m[1mPOST /check HTTP/1.1[0m" 500 -
+2023-08-31 14:34:37,621 INFO     127.0.0.1 - - [31/Aug/2023 14:34:37] "GET /check?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-08-31 14:34:37,628 INFO     127.0.0.1 - - [31/Aug/2023 14:34:37] "GET /check?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-08-31 14:34:37,688 INFO     127.0.0.1 - - [31/Aug/2023 14:34:37] "GET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-08-31 14:34:37,705 INFO     127.0.0.1 - - [31/Aug/2023 14:34:37] "[36mGET /check?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-09-05 13:40:55,670 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 13:40:55,671 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 13:40:55,676 INFO      * Restarting with stat
+2023-09-05 13:40:57,353 WARNING   * Debugger is active!
+2023-09-05 13:40:57,371 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:09:47,448 INFO     127.0.0.1 - - [05/Sep/2023 16:09:47] "GET / HTTP/1.1" 200 -
+2023-09-05 16:09:47,485 INFO     127.0.0.1 - - [05/Sep/2023 16:09:47] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-09-05 16:09:47,496 INFO     127.0.0.1 - - [05/Sep/2023 16:09:47] "GET /static/style.css HTTP/1.1" 200 -
+2023-09-05 16:09:47,678 INFO     127.0.0.1 - - [05/Sep/2023 16:09:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-09-05 16:09:49,045 INFO     127.0.0.1 - - [05/Sep/2023 16:09:49] "GET /add_manexpn HTTP/1.1" 200 -
+2023-09-05 16:09:49,061 INFO     127.0.0.1 - - [05/Sep/2023 16:09:49] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-09-05 16:09:49,066 INFO     127.0.0.1 - - [05/Sep/2023 16:09:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:09:49,091 INFO     127.0.0.1 - - [05/Sep/2023 16:09:49] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-09-05 16:10:16,386 INFO     Reading setup.ini file...
+2023-09-05 16:10:16,388 INFO     Info populated
+2023-09-05 16:10:16,388 INFO     Reading Manex BOM Excel...
+2023-09-05 16:10:16,455 INFO     Finished reading
+2023-09-05 16:10:16,455 INFO     Reading Customer BOM Excel...
+2023-09-05 16:10:16,492 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:10:16,496 INFO     Finished mapping
+2023-09-05 16:10:16,497 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:10:19,827 INFO     Finished writing
+2023-09-05 16:10:22,350 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:10:22,383 INFO     Finished writing
+2023-09-05 16:10:22,505 INFO     127.0.0.1 - - [05/Sep/2023 16:10:22] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:10:22,552 INFO     127.0.0.1 - - [05/Sep/2023 16:10:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:10:25,183 INFO     127.0.0.1 - - [05/Sep/2023 16:10:25] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:11:42,209 INFO     127.0.0.1 - - [05/Sep/2023 16:11:42] "GET / HTTP/1.1" 200 -
+2023-09-05 16:11:42,242 INFO     127.0.0.1 - - [05/Sep/2023 16:11:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:11:43,165 INFO     127.0.0.1 - - [05/Sep/2023 16:11:43] "GET /add_manexpn HTTP/1.1" 200 -
+2023-09-05 16:11:43,205 INFO     127.0.0.1 - - [05/Sep/2023 16:11:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:11:43,207 INFO     127.0.0.1 - - [05/Sep/2023 16:11:43] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-09-05 16:12:00,539 INFO     Reading setup.ini file...
+2023-09-05 16:12:00,540 INFO     Info populated
+2023-09-05 16:12:00,540 INFO     Reading Manex BOM Excel...
+2023-09-05 16:12:00,587 INFO     Finished reading
+2023-09-05 16:12:00,587 INFO     Reading Customer BOM Excel...
+2023-09-05 16:12:00,634 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:12:00,638 INFO     Finished mapping
+2023-09-05 16:12:00,638 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:12:02,862 INFO     Finished writing
+2023-09-05 16:12:05,051 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:12:05,087 INFO     Finished writing
+2023-09-05 16:12:05,146 INFO     127.0.0.1 - - [05/Sep/2023 16:12:05] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:12:05,182 INFO     127.0.0.1 - - [05/Sep/2023 16:12:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:12:06,888 INFO     127.0.0.1 - - [05/Sep/2023 16:12:06] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:15:43,832 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 16:15:43,981 INFO      * Restarting with stat
+2023-09-05 16:15:46,005 WARNING   * Debugger is active!
+2023-09-05 16:15:46,009 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:15:48,697 INFO     Reading setup.ini file...
+2023-09-05 16:15:48,699 INFO     Info populated
+2023-09-05 16:15:48,699 INFO     Reading Manex BOM Excel...
+2023-09-05 16:15:48,742 INFO     Finished reading
+2023-09-05 16:15:48,742 INFO     Reading Customer BOM Excel...
+2023-09-05 16:15:48,792 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:15:48,795 INFO     Finished mapping
+2023-09-05 16:15:48,795 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:15:51,082 INFO     Finished writing
+2023-09-05 16:15:53,256 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:15:53,295 INFO     Finished writing
+2023-09-05 16:15:53,377 INFO     127.0.0.1 - - [05/Sep/2023 16:15:53] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:15:53,410 INFO     127.0.0.1 - - [05/Sep/2023 16:15:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:15:54,953 INFO     127.0.0.1 - - [05/Sep/2023 16:15:54] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:16:29,014 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 16:16:29,089 INFO      * Restarting with stat
+2023-09-05 16:16:31,217 WARNING   * Debugger is active!
+2023-09-05 16:16:31,222 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:16:35,990 INFO     Reading setup.ini file...
+2023-09-05 16:16:35,992 INFO     Info populated
+2023-09-05 16:16:35,992 INFO     Reading Manex BOM Excel...
+2023-09-05 16:16:36,046 INFO     Finished reading
+2023-09-05 16:16:36,047 INFO     Reading Customer BOM Excel...
+2023-09-05 16:16:36,100 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:16:36,110 INFO     Finished mapping
+2023-09-05 16:16:36,111 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:16:38,439 INFO     Finished writing
+2023-09-05 16:16:40,122 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:16:40,154 INFO     Finished writing
+2023-09-05 16:16:40,246 INFO     127.0.0.1 - - [05/Sep/2023 16:16:40] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:16:40,279 INFO     127.0.0.1 - - [05/Sep/2023 16:16:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:16:43,080 INFO     127.0.0.1 - - [05/Sep/2023 16:16:43] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:17:07,614 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 16:17:07,615 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 16:17:07,617 INFO      * Restarting with stat
+2023-09-05 16:17:08,753 WARNING   * Debugger is active!
+2023-09-05 16:17:08,757 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:17:26,796 INFO     127.0.0.1 - - [05/Sep/2023 16:17:26] "GET /add_manexpn HTTP/1.1" 200 -
+2023-09-05 16:17:26,833 INFO     127.0.0.1 - - [05/Sep/2023 16:17:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:17:26,846 INFO     127.0.0.1 - - [05/Sep/2023 16:17:26] "[36mGET /static/frontImg.jpg HTTP/1.1[0m" 304 -
+2023-09-05 16:17:46,753 INFO     Reading setup.ini file...
+2023-09-05 16:17:46,754 INFO     Info populated
+2023-09-05 16:17:46,754 INFO     Reading Manex BOM Excel...
+2023-09-05 16:17:46,797 INFO     Finished reading
+2023-09-05 16:17:46,798 INFO     Reading Customer BOM Excel...
+2023-09-05 16:17:46,826 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:17:46,829 INFO     Finished mapping
+2023-09-05 16:17:46,829 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:17:49,460 INFO     Finished writing
+2023-09-05 16:17:51,128 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:17:51,166 INFO     Finished writing
+2023-09-05 16:17:51,243 INFO     127.0.0.1 - - [05/Sep/2023 16:17:51] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:17:51,283 INFO     127.0.0.1 - - [05/Sep/2023 16:17:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:17:53,064 INFO     127.0.0.1 - - [05/Sep/2023 16:17:53] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:20:15,697 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 16:20:16,565 INFO      * Restarting with stat
+2023-09-05 16:20:19,977 WARNING   * Debugger is active!
+2023-09-05 16:20:20,000 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:20:21,375 INFO     Reading setup.ini file...
+2023-09-05 16:20:21,376 INFO     Info populated
+2023-09-05 16:20:21,376 INFO     Reading Manex BOM Excel...
+2023-09-05 16:20:21,426 INFO     Finished reading
+2023-09-05 16:20:21,426 INFO     Reading Customer BOM Excel...
+2023-09-05 16:20:21,459 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:20:21,462 INFO     Finished mapping
+2023-09-05 16:20:21,462 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:20:26,198 INFO     Finished writing
+2023-09-05 16:20:27,643 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:20:27,693 INFO     Finished writing
+2023-09-05 16:20:27,790 INFO     127.0.0.1 - - [05/Sep/2023 16:20:27] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:20:27,844 INFO     127.0.0.1 - - [05/Sep/2023 16:20:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:22:49,337 INFO     127.0.0.1 - - [05/Sep/2023 16:22:49] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:23:12,245 INFO     127.0.0.1 - - [05/Sep/2023 16:23:12] "GET /download/manex HTTP/1.1" 200 -
+2023-09-05 16:23:49,925 INFO     Reading setup.ini file...
+2023-09-05 16:23:49,926 INFO     Info populated
+2023-09-05 16:23:49,926 INFO     Reading Manex BOM Excel...
+2023-09-05 16:23:49,990 INFO     Finished reading
+2023-09-05 16:23:49,990 INFO     Reading Customer BOM Excel...
+2023-09-05 16:23:50,017 INFO     Finished reading
+2023-09-05 16:23:50,018 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:23:50,020 INFO     Finished mapping
+2023-09-05 16:23:50,020 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:23:52,358 INFO     Finished writing
+2023-09-05 16:23:54,028 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:23:54,062 INFO     Finished writing
+2023-09-05 16:23:54,135 INFO     127.0.0.1 - - [05/Sep/2023 16:23:54] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:23:54,196 INFO     127.0.0.1 - - [05/Sep/2023 16:23:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:23:55,893 INFO     127.0.0.1 - - [05/Sep/2023 16:23:55] "[35m[1mGET /download/customer HTTP/1.1[0m" 500 -
+2023-09-05 16:24:02,317 INFO     127.0.0.1 - - [05/Sep/2023 16:24:02] "[35m[1mGET /download/customer HTTP/1.1[0m" 500 -
+2023-09-05 16:34:26,633 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 16:34:26,634 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 16:34:26,636 INFO      * Restarting with stat
+2023-09-05 16:34:28,142 WARNING   * Debugger is active!
+2023-09-05 16:34:28,153 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:40:11,446 INFO     127.0.0.1 - - [05/Sep/2023 16:40:11] "[35m[1mPOST /processing HTTP/1.1[0m" 500 -
+2023-09-05 16:40:11,497 INFO     127.0.0.1 - - [05/Sep/2023 16:40:11] "GET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-09-05 16:40:11,512 INFO     127.0.0.1 - - [05/Sep/2023 16:40:11] "GET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-09-05 16:40:11,579 INFO     127.0.0.1 - - [05/Sep/2023 16:40:11] "GET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-09-05 16:40:11,614 INFO     127.0.0.1 - - [05/Sep/2023 16:40:11] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-09-05 16:40:23,291 INFO     127.0.0.1 - - [05/Sep/2023 16:40:23] "[35m[1mGET /processing HTTP/1.1[0m" 500 -
+2023-09-05 16:40:23,306 INFO     127.0.0.1 - - [05/Sep/2023 16:40:23] "[36mGET /processing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:40:23,313 INFO     127.0.0.1 - - [05/Sep/2023 16:40:23] "[36mGET /processing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-09-05 16:40:23,337 INFO     127.0.0.1 - - [05/Sep/2023 16:40:23] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-09-05 16:40:23,356 INFO     127.0.0.1 - - [05/Sep/2023 16:40:23] "[36mGET /processing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-09-05 16:40:35,330 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 16:40:35,331 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 16:40:35,333 INFO      * Restarting with stat
+2023-09-05 16:40:36,955 WARNING   * Debugger is active!
+2023-09-05 16:40:36,962 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:40:41,992 INFO     127.0.0.1 - - [05/Sep/2023 16:40:41] "GET / HTTP/1.1" 200 -
+2023-09-05 16:40:42,023 INFO     127.0.0.1 - - [05/Sep/2023 16:40:42] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-09-05 16:40:42,032 INFO     127.0.0.1 - - [05/Sep/2023 16:40:42] "GET /static/style.css HTTP/1.1" 200 -
+2023-09-05 16:40:43,738 INFO     127.0.0.1 - - [05/Sep/2023 16:40:43] "GET /add_manexpn HTTP/1.1" 200 -
+2023-09-05 16:40:43,753 INFO     127.0.0.1 - - [05/Sep/2023 16:40:43] "[32mGET /static//frontImg.jpg HTTP/1.1[0m" 308 -
+2023-09-05 16:40:43,762 INFO     127.0.0.1 - - [05/Sep/2023 16:40:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:40:43,763 INFO     127.0.0.1 - - [05/Sep/2023 16:40:43] "GET /static/frontImg.jpg HTTP/1.1" 200 -
+2023-09-05 16:41:06,631 INFO     Reading setup.ini file...
+2023-09-05 16:41:06,634 INFO     Info populated
+2023-09-05 16:41:06,634 INFO     Reading Manex BOM Excel...
+2023-09-05 16:41:06,693 INFO     Finished reading
+2023-09-05 16:41:06,693 INFO     Reading Customer BOM Excel...
+2023-09-05 16:41:06,726 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:41:06,731 INFO     Finished mapping
+2023-09-05 16:41:06,731 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:41:09,204 INFO     Finished writing
+2023-09-05 16:41:11,139 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:41:11,259 INFO     Finished writing
+2023-09-05 16:41:11,355 INFO     127.0.0.1 - - [05/Sep/2023 16:41:11] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:41:11,404 INFO     127.0.0.1 - - [05/Sep/2023 16:41:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:41:13,341 INFO     127.0.0.1 - - [05/Sep/2023 16:41:13] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:41:37,934 INFO     Reading setup.ini file...
+2023-09-05 16:41:37,935 INFO     Info populated
+2023-09-05 16:41:37,935 INFO     Reading Manex BOM Excel...
+2023-09-05 16:41:37,982 INFO     Finished reading
+2023-09-05 16:41:37,982 INFO     Reading Customer BOM Excel...
+2023-09-05 16:41:38,006 INFO     Finished reading
+2023-09-05 16:41:38,006 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:41:38,010 INFO     Finished mapping
+2023-09-05 16:41:38,010 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:41:40,351 INFO     Finished writing
+2023-09-05 16:41:42,154 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:41:42,206 INFO     Finished writing
+2023-09-05 16:41:42,259 INFO     127.0.0.1 - - [05/Sep/2023 16:41:42] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:41:42,311 INFO     127.0.0.1 - - [05/Sep/2023 16:41:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:43:45,879 INFO     127.0.0.1 - - [05/Sep/2023 16:43:45] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:44:15,662 INFO     Reading setup.ini file...
+2023-09-05 16:44:15,663 INFO     Info populated
+2023-09-05 16:44:15,663 INFO     Reading Manex BOM Excel...
+2023-09-05 16:44:15,703 INFO     Finished reading
+2023-09-05 16:44:15,703 INFO     Reading Customer BOM Excel...
+2023-09-05 16:44:15,787 INFO     127.0.0.1 - - [05/Sep/2023 16:44:15] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:44:15,824 INFO     127.0.0.1 - - [05/Sep/2023 16:44:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:17,229 INFO     127.0.0.1 - - [05/Sep/2023 16:44:17] "POST /check HTTP/1.1" 200 -
+2023-09-05 16:44:17,264 INFO     127.0.0.1 - - [05/Sep/2023 16:44:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:23,096 INFO     127.0.0.1 - - [05/Sep/2023 16:44:23] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 16:44:23,133 INFO     127.0.0.1 - - [05/Sep/2023 16:44:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:26,635 INFO     127.0.0.1 - - [05/Sep/2023 16:44:26] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 16:44:26,668 INFO     127.0.0.1 - - [05/Sep/2023 16:44:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:27,832 INFO     127.0.0.1 - - [05/Sep/2023 16:44:27] "POST /check HTTP/1.1" 200 -
+2023-09-05 16:44:27,867 INFO     127.0.0.1 - - [05/Sep/2023 16:44:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:40,286 INFO     127.0.0.1 - - [05/Sep/2023 16:44:40] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 16:44:40,320 INFO     127.0.0.1 - - [05/Sep/2023 16:44:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:42,032 INFO     127.0.0.1 - - [05/Sep/2023 16:44:42] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 16:44:42,067 INFO     127.0.0.1 - - [05/Sep/2023 16:44:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:49,502 INFO     127.0.0.1 - - [05/Sep/2023 16:44:49] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 16:44:49,544 INFO     127.0.0.1 - - [05/Sep/2023 16:44:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:50,426 INFO     127.0.0.1 - - [05/Sep/2023 16:44:50] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 16:44:50,453 INFO     127.0.0.1 - - [05/Sep/2023 16:44:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:57,029 INFO     127.0.0.1 - - [05/Sep/2023 16:44:57] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 16:44:57,067 INFO     127.0.0.1 - - [05/Sep/2023 16:44:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:44:57,892 INFO     Finished reading
+2023-09-05 16:44:57,893 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 16:44:57,896 INFO     Finished mapping
+2023-09-05 16:44:57,896 INFO     Writing to Customer Bom Excel...
+2023-09-05 16:45:00,040 INFO     Finished writing
+2023-09-05 16:45:02,207 INFO     Writing to Manex BOM Excel...
+2023-09-05 16:45:02,266 INFO     Finished writing
+2023-09-05 16:45:02,322 INFO     127.0.0.1 - - [05/Sep/2023 16:45:02] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 16:45:02,360 INFO     127.0.0.1 - - [05/Sep/2023 16:45:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:45:09,481 INFO     127.0.0.1 - - [05/Sep/2023 16:45:09] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 16:47:18,634 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 16:47:18,738 INFO      * Restarting with stat
+2023-09-05 16:47:20,065 WARNING   * Debugger is active!
+2023-09-05 16:47:20,071 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:50:07,742 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 16:50:07,743 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 16:50:07,748 INFO      * Restarting with stat
+2023-09-05 16:50:10,407 WARNING   * Debugger is active!
+2023-09-05 16:50:10,425 INFO      * Debugger PIN: 216-535-958
+2023-09-05 16:50:22,938 INFO     Reading setup.ini file...
+2023-09-05 16:50:22,944 INFO     Info populated
+2023-09-05 16:50:22,945 INFO     Reading Manex BOM Excel...
+2023-09-05 16:50:23,060 INFO     Finished reading
+2023-09-05 16:50:23,061 INFO     Reading Customer BOM Excel...
+2023-09-05 16:50:23,232 INFO     127.0.0.1 - - [05/Sep/2023 16:50:23] "POST /processing HTTP/1.1" 200 -
+2023-09-05 16:50:23,280 INFO     127.0.0.1 - - [05/Sep/2023 16:50:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:50:26,301 INFO     127.0.0.1 - - [05/Sep/2023 16:50:26] "POST /check HTTP/1.1" 200 -
+2023-09-05 16:50:26,339 INFO     127.0.0.1 - - [05/Sep/2023 16:50:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:50:33,027 INFO     127.0.0.1 - - [05/Sep/2023 16:50:33] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 16:50:33,066 INFO     127.0.0.1 - - [05/Sep/2023 16:50:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:50:35,177 INFO     127.0.0.1 - - [05/Sep/2023 16:50:35] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 16:50:35,211 INFO     127.0.0.1 - - [05/Sep/2023 16:50:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 16:59:11,545 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 16:59:11,546 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 16:59:11,552 INFO      * Restarting with stat
+2023-09-05 16:59:14,123 WARNING   * Debugger is active!
+2023-09-05 16:59:14,135 INFO      * Debugger PIN: 216-535-958
+2023-09-05 17:00:42,036 INFO     Reading setup.ini file...
+2023-09-05 17:00:42,037 INFO     Info populated
+2023-09-05 17:00:42,037 INFO     Reading Manex BOM Excel...
+2023-09-05 17:00:42,172 INFO     Finished reading
+2023-09-05 17:00:42,173 INFO     Reading Customer BOM Excel...
+2023-09-05 17:01:48,082 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 17:01:48,494 INFO      * Restarting with stat
+2023-09-05 17:01:53,836 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.112:5000
+2023-09-05 17:01:53,837 INFO     [33mPress CTRL+C to quit[0m
+2023-09-05 17:01:53,842 INFO      * Restarting with stat
+2023-09-05 17:01:55,252 WARNING   * Debugger is active!
+2023-09-05 17:01:55,260 INFO      * Debugger PIN: 216-535-958
+2023-09-05 17:02:00,185 INFO     Reading setup.ini file...
+2023-09-05 17:02:00,190 INFO     Info populated
+2023-09-05 17:02:00,190 INFO     Reading Manex BOM Excel...
+2023-09-05 17:02:00,240 INFO     Finished reading
+2023-09-05 17:02:00,240 INFO     Reading Customer BOM Excel...
+2023-09-05 17:02:00,299 INFO     127.0.0.1 - - [05/Sep/2023 17:02:00] "POST /processing HTTP/1.1" 200 -
+2023-09-05 17:02:00,334 INFO     127.0.0.1 - - [05/Sep/2023 17:02:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:01,548 INFO     127.0.0.1 - - [05/Sep/2023 17:02:01] "POST /check HTTP/1.1" 200 -
+2023-09-05 17:02:01,602 INFO     127.0.0.1 - - [05/Sep/2023 17:02:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:08,176 INFO     127.0.0.1 - - [05/Sep/2023 17:02:08] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 17:02:08,215 INFO     127.0.0.1 - - [05/Sep/2023 17:02:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:11,377 INFO     127.0.0.1 - - [05/Sep/2023 17:02:11] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 17:02:11,412 INFO     127.0.0.1 - - [05/Sep/2023 17:02:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:12,798 INFO     127.0.0.1 - - [05/Sep/2023 17:02:12] "POST /check HTTP/1.1" 200 -
+2023-09-05 17:02:12,830 INFO     127.0.0.1 - - [05/Sep/2023 17:02:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:17,795 INFO     127.0.0.1 - - [05/Sep/2023 17:02:17] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 17:02:17,832 INFO     127.0.0.1 - - [05/Sep/2023 17:02:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:19,402 INFO     Finished reading
+2023-09-05 17:02:19,402 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 17:02:19,404 INFO     Finished mapping
+2023-09-05 17:02:19,404 INFO     Writing to Customer Bom Excel...
+2023-09-05 17:02:21,341 INFO     Finished writing
+2023-09-05 17:02:23,261 INFO     Writing to Manex BOM Excel...
+2023-09-05 17:02:23,318 INFO     Finished writing
+2023-09-05 17:02:23,379 INFO     127.0.0.1 - - [05/Sep/2023 17:02:23] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 17:02:23,414 INFO     127.0.0.1 - - [05/Sep/2023 17:02:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:02:25,146 INFO     127.0.0.1 - - [05/Sep/2023 17:02:25] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 17:03:40,150 INFO      * Detected change in 'C:\\Users\\LENOVO\\Desktop\\PythonScripts\\Add_manex_pn.py', reloading
+2023-09-05 17:03:40,295 INFO      * Restarting with stat
+2023-09-05 17:03:41,483 WARNING   * Debugger is active!
+2023-09-05 17:03:41,490 INFO      * Debugger PIN: 216-535-958
+2023-09-05 17:09:26,040 INFO     127.0.0.1 - - [05/Sep/2023 17:09:26] "GET /download/customer HTTP/1.1" 200 -
+2023-09-05 17:09:56,631 INFO     Reading setup.ini file...
+2023-09-05 17:09:56,632 INFO     Info populated
+2023-09-05 17:09:56,632 INFO     Reading Manex BOM Excel...
+2023-09-05 17:09:56,679 INFO     Finished reading
+2023-09-05 17:09:56,679 INFO     Reading Customer BOM Excel...
+2023-09-05 17:09:56,737 INFO     127.0.0.1 - - [05/Sep/2023 17:09:56] "POST /processing HTTP/1.1" 200 -
+2023-09-05 17:09:56,771 INFO     127.0.0.1 - - [05/Sep/2023 17:09:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:09:58,192 INFO     127.0.0.1 - - [05/Sep/2023 17:09:58] "POST /check HTTP/1.1" 200 -
+2023-09-05 17:09:58,222 INFO     127.0.0.1 - - [05/Sep/2023 17:09:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:03,770 INFO     127.0.0.1 - - [05/Sep/2023 17:10:03] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 17:10:03,806 INFO     127.0.0.1 - - [05/Sep/2023 17:10:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:05,003 INFO     127.0.0.1 - - [05/Sep/2023 17:10:05] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 17:10:05,035 INFO     127.0.0.1 - - [05/Sep/2023 17:10:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:05,968 INFO     127.0.0.1 - - [05/Sep/2023 17:10:05] "POST /check HTTP/1.1" 200 -
+2023-09-05 17:10:05,995 INFO     127.0.0.1 - - [05/Sep/2023 17:10:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:10,809 INFO     127.0.0.1 - - [05/Sep/2023 17:10:10] "POST /sep_detail HTTP/1.1" 200 -
+2023-09-05 17:10:10,849 INFO     127.0.0.1 - - [05/Sep/2023 17:10:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:11,793 INFO     Finished reading
+2023-09-05 17:10:11,794 INFO     Mapping designators from Manex BOM to Customer BOM...
+2023-09-05 17:10:11,796 INFO     Finished mapping
+2023-09-05 17:10:11,797 INFO     Writing to Customer Bom Excel...
+2023-09-05 17:10:13,745 INFO     Finished writing
+2023-09-05 17:10:14,661 INFO     Writing to Manex BOM Excel...
+2023-09-05 17:10:14,725 INFO     Finished writing
+2023-09-05 17:10:14,790 INFO     127.0.0.1 - - [05/Sep/2023 17:10:14] "POST /sep_verify HTTP/1.1" 200 -
+2023-09-05 17:10:14,825 INFO     127.0.0.1 - - [05/Sep/2023 17:10:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-09-05 17:10:16,545 INFO     127.0.0.1 - - [05/Sep/2023 17:10:16] "GET /download/customer HTTP/1.1" 200 -
+2023-09-11 15:16:58,573 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.1.0.120:5000
+2023-09-11 15:16:58,573 INFO     [33mPress CTRL+C to quit[0m
+2023-09-11 15:16:58,576 INFO      * Restarting with stat
+2023-09-11 15:16:59,855 WARNING   * Debugger is active!
+2023-09-11 15:16:59,874 INFO      * Debugger PIN: 216-535-958
+2023-09-11 15:17:20,709 INFO     127.0.0.1 - - [11/Sep/2023 15:17:20] "GET / HTTP/1.1" 200 -
+2023-09-11 15:17:20,737 INFO     127.0.0.1 - - [11/Sep/2023 15:17:20] "[32mGET /static//style.css HTTP/1.1[0m" 308 -
+2023-09-11 15:17:20,777 INFO     127.0.0.1 - - [11/Sep/2023 15:17:20] "GET /static/style.css HTTP/1.1" 200 -
+2023-09-11 15:17:20,986 INFO     127.0.0.1 - - [11/Sep/2023 15:17:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

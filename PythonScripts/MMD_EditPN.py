@@ -190,7 +190,7 @@ def modify(bomfile, bot_file, top_file, bom_data):
 
     try:
         logging.info("Writing modified mmd file...")
-        var = bot_textfile.name.split("/")
+        var = bot_textfile.split("/")
         last_item = var.pop()
         if ".mmd" in last_item:
             new_file_name = last_item.replace(".mmd", "_Svt_PartNo.mmd")
@@ -207,7 +207,7 @@ def modify(bomfile, bot_file, top_file, bom_data):
 
         if bool(top_file):
             logging.info("Writing modified mmd file...")
-            var = top_textfile.name.split("/")
+            var = top_textfile.split("/")
             last_item = var.pop()
             if ".mmd" in last_item:
                 new_file_name = last_item.replace(".mmd", "_Svt_PartNo.mmd")
